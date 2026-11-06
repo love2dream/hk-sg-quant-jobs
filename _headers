@@ -1,0 +1,38 @@
+# Cloudflare Pages - custom response headers
+# This file MUST sit at the root of the build output directory. For this project
+# that is the repository root: Framework preset "None", no build command,
+# Build output directory left empty / set to the repo root. Pages parses this
+# file and never serves it as a static asset.
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+#
+# NOTE 1: when one request matches several rules, Pages MERGES their headers
+# and joins duplicate header names with a comma. Do NOT add a "/*" rule with
+# Cache-Control here - it would be concatenated with the no-store below.
+#
+# NOTE 2: URL matching is on the path only. Cloudflare's header/redirect
+# matcher does not support query-parameter rules, so "/data/jobs.json?v=..."
+# hits the SAME rule as "/data/jobs.json". No extra rule is needed for the
+# frontend's 10-minute cache-buster.
+#
+# NOTE 3: "no-store" is sufficient on its own. Cloudflare honours it for both
+# browser and edge regardless of Origin Cache Control, so no extra
+# CDN-Cache-Control header or Cache Rule override is required. After the first
+# deploy, verify BOTH URLs (with and without the ?v= query):
+#   curl -sI https://<project>.pages.dev/data/jobs.json | grep -i cache-control
+#   curl -sI "https://<project>.pages.dev/data/jobs.json?v=1" | grep -i cache-control
+# Both must print "Cache-Control: no-store, max-age=0, must-revalidate".
+
+# Regenerated 4x/day by GitHub Actions. Never serve a stale copy.
+/data/jobs.json
+  Cache-Control: no-store, max-age=0, must-revalidate
+
+# Written once/day by linkedin-apify.yml. Not fetched by the frontend directly,
+# but keep it uncacheable so a stale cache never gets inspected during debugging.
+/data/linkedin_apify_cache.json
+  Cache-Control: no-store, max-age=0, must-revalidate
+
+# Always revalidate the HTML so a new frontend build is visible immediately.
+/frontend/
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/frontend/index.html
+  Cache-Control: no-cache, max-age=0, must-revalidate

@@ -1,0 +1,174 @@
+# ---------------------------------------------------------------------------
+# LinkedIn via Apify — 付费按需源，和 scrape.yml（4 次/日免费官方源）完全隔离
+#
+# 为什么单独一个 workflow
+#   * Apify Store Actor 按结果计费，绝不能跟着 scrape.yml 一天跑 4 次。
+#   * 免费额度耗尽 / 缺 token / Actor 挂掉时必须 fail-open：
+#     保留旧缓存、照常重建官方源数据，jobs.json 不中断。
+#   * 抓取结果先落 data/linkedin_apify_cache.json，
+#     再由 main_scraper.py 的全量模式合并进 data/jobs.json（TTL 72h）。
+#
+# 启用前必做（只需一次）
+#   1. Apify Console > Account > Integrations > 生成 API token
+#   2. GitHub repo > Settings > Secrets and variables > Actions
+#      > New repository secret > Name: APIFY_API_TOKEN
+#   3. Actions > 本 workflow > Run workflow（先手动跑 3~5 天，看账单和数据质量）
+#   4. 确认无误后再把下面 on.schedule 的注释打开（每天 1 次，别更多）
+#
+# 成本护栏（三处，缺一不可）
+#   funds_config.py : limit_per_query / max_items_per_run / max_total_charge_usd
+#   main_scraper.py : retries=0（POST 重试 = 重复扣费）+ 三层上限
+#   本 workflow      : 失败保留旧缓存、空结果不覆盖、每次只跑 1 个 job
+#
+# 注意：commit message 不要带 [CI Skip] / [Skip CI] / [CF-Pages-Skip]，
+#       否则 Cloudflare Pages 不会部署，jobs.json 更新就看不到。
+# ---------------------------------------------------------------------------
+name: LinkedIn via Apify (budget-capped)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "只预览，不写缓存、不 push"
+        type: boolean
+        default: false
+  # 手动跑稳之后再启用（UTC 07:30 = 香港 / 新加坡 15:30）：
+  # schedule:
+  #   - cron: "30 7 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hk-sg-linkedin-apify
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # -----------------------------------------------------------------
+      # 1) 调 Apify Actor，写临时文件。任何失败都只 warning，不 fail job。
+      #    main_scraper.py 内部对 Apify 请求用 timeout_override=300s，
+      #    所以这里不需要放大 --timeout（那只会影响其它源的 socket 超时）。
+      # -----------------------------------------------------------------
+      - name: 1/5 Run Apify Actor
+        id: apify
+        env:
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+        run: |
+          if [ -z "$APIFY_API_TOKEN" ]; then
+            echo "::warning::APIFY_API_TOKEN 未配置，跳过付费源（fail-open）"
+            echo "ran=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          set +e
+          python scrapers/main_scraper.py \
+            --fund "LinkedIn via Apify" \
+            --output data/linkedin_apify_cache.json.tmp
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ]; then
+            echo "::warning::Apify 抓取失败 (exit $code)，保留旧缓存"
+            rm -f data/linkedin_apify_cache.json.tmp
+            echo "ran=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "ran=true" >> "$GITHUB_OUTPUT"
+
+      # -----------------------------------------------------------------
+      # 2) 只有「有效且非空」的新结果才允许覆盖缓存，避免一次空跑把
+      #    昨天的好数据清掉。缓存 TTL 由 main_scraper.py 再兜一层。
+      # -----------------------------------------------------------------
+      - name: 2/5 Validate & promote cache
+        if: steps.apify.outputs.ran == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          tmp = Path("data/linkedin_apify_cache.json.tmp")
+          dst = Path("data/linkedin_apify_cache.json")
+          try:
+              payload = json.loads(tmp.read_text(encoding="utf-8"))
+              jobs = payload.get("jobs") or []
+          except Exception as exc:
+              print(f"::warning::缓存不可读 ({exc})，保留旧缓存")
+              tmp.unlink(missing_ok=True)
+              raise SystemExit(0)
+
+          bad = [j for j in jobs
+                 if not isinstance(j, dict)
+                 or j.get("source") != "LinkedIn"
+                 or not str(j.get("url") or "").startswith("https://")]
+          if not jobs or bad:
+              print(f"::warning::缓存为空或含脏数据 ({len(jobs)} 条 / {len(bad)} 脏)，保留旧缓存")
+              tmp.unlink(missing_ok=True)
+              raise SystemExit(0)
+
+          print(f"Apify 缓存有效：{len(jobs)} 条 LinkedIn 岗位")
+          tmp.replace(dst)
+          PY
+
+      # -----------------------------------------------------------------
+      # 3) 全量重建：29 个免费官方源 + 上面的 LinkedIn 缓存。
+      #    不带 --fund，所以不会再触发 Apify 付费 run。
+      # -----------------------------------------------------------------
+      - name: 3/5 Rebuild jobs.json
+        run: python scrapers/main_scraper.py
+
+      - name: 4/5 Quality gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path("data/jobs.json").read_text(encoding="utf-8"))
+          rows = data["total_jobs"]
+          jobs = data["jobs"]
+          assert rows == len(jobs), "total_jobs 与 jobs 长度不一致"
+          assert rows >= 80, f"职位数异常偏低: {rows}（正常约 259）"
+          assert all(str(j["url"]).startswith("https://") for j in jobs), "存在非 https 链接"
+          assert all(j.get("company") and j.get("title") for j in jobs), "存在空字段"
+          linkedin = sum(1 for j in jobs if j["source"] == "LinkedIn")
+          print(f"PASS: {rows} rows | LinkedIn={linkedin} | errors={len(data['errors'])}")
+          PY
+
+      # -----------------------------------------------------------------
+      # 5) 只有数据真的变了才 push。用 GITHUB_TOKEN 产生的 push 不会
+      #    触发新的 Actions run（防递归），但会触发 Cloudflare Pages 部署。
+      # -----------------------------------------------------------------
+      - name: 5/5 Commit & push
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          # 首次运行 / token 未配置时 cache 文件还不存在，git add 一个不存在的
+          # 路径会直接让 step 失败。只收集真实存在的文件。
+          paths=""
+          for f in data/jobs.json data/linkedin_apify_cache.json; do
+            [ -f "$f" ] && paths="$paths $f"
+          done
+          if [ -z "$paths" ]; then
+            echo "No data files to publish"
+            exit 0
+          fi
+          # status --porcelain 同时覆盖 modified 和 untracked（首次新增 cache）。
+          # shellcheck disable=SC2086
+          if [ -z "$(git status --porcelain -- $paths)" ]; then
+            echo "No changes to publish"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # shellcheck disable=SC2086
+          git add -- $paths
+          git commit -m "chore: refresh LinkedIn via Apify (budget-capped)"
+          git push

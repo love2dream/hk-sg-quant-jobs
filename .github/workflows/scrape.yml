@@ -1,0 +1,268 @@
+# =============================================================================
+# HK/SG Quant Jobs — free, unattended refresh pipeline
+# -----------------------------------------------------------------------------
+# Pipeline: cron -> python scraper (stdlib only) -> validate -> git push -> CDN
+# Contract: the ONLY integration point is data/jobs.json. The frontend reads it
+#           with fetch("/data/jobs.json"). No server, no database, no secrets.
+# Hosting:  Cloudflare Pages (Git integration). Every push of this file's
+#           refreshed jobs.json triggers a new Pages deployment + CDN refresh.
+# Cost:     $0. Public repo = unlimited standard GitHub-hosted runner minutes.
+#
+# CLOUDFLARE PAGES compatibility (checked before the first deploy):
+#   * Connect Pages to this SAME default branch, `main`. Framework preset
+#     "None", no build command, Build output directory = repository root.
+#   * A push made with GITHUB_TOKEN does NOT start another Actions run, so the
+#     4x/day cron can never loop. It DOES reach Cloudflare's GitHub App, which
+#     is exactly what republishes the refreshed jobs.json to the edge.
+#   * 4 pushes/day x 30 = ~120 builds/month, under the Pages Free plan's 500.
+#   * Keep `permissions: contents: write`, keep the `data/last-run.txt`
+#     heartbeat, and never put "skip ci" / "[CF-Pages-Skip]" in the commit
+#     message - any of those would silently freeze the published site.
+#   * This workflow never calls Cloudflare. Creating, renaming or redeploying
+#     the Pages project cannot affect the cron schedule or the scraper.
+#
+# MAINTENANCE (no coding needed):
+#   * Change WHEN it runs  -> edit the `cron` lines below (UTC!).
+#   * Run it right now     -> Actions tab -> "Refresh HK/SG Quant Jobs" ->
+#                             "Run workflow".
+#   * Something broke      -> Actions tab -> red run -> open the failing step.
+#   * Tune the safety gate -> MIN_ROWS / MAX_FAILED_FUNDS in the validate step.
+#   * Add a job source     -> edit funds_config.py. Official public JSON APIs
+#                             (greenhouse/lever/polymer_api/eightfold_api/
+#                             phenom_api) plus the efc_api aggregator all run
+#                             here on every scheduled refresh.
+#   * Tune deduplication   -> SOURCE_TIER / IDENTITY_DESCRIPTION_GUARD in
+#                             scrapers/main_scraper.py (deduplicate section).
+#
+# Deduplication runs after ALL sources are collected (not streamed), so the
+# result never depends on thread completion order:
+#   1. canonical URL with tracking/utm params stripped
+#   2. company + title + location (normalised) when the URLs differ
+#   Winner = official source first, then the most complete record.
+#   Before/after counts and merge reasons are in `dedupe` and `stats` in
+#   data/jobs.json. `duplicates_removed` is kept for backwards compatibility.
+#
+# eFinancialCareers (efc_api) IS enabled in this workflow, 4 runs/day.
+#   It is deliberately conservative: 10s crawl-delay between pages, zero
+#   retries on 4xx/5xx, and per-source error isolation, so an eFC outage can
+#   never take the other 29 sources down. To switch it off (e.g. persistent
+#   403/429 or a compliance request) set enabled=False in funds_config.py —
+#   no workflow change needed. Its robots.txt disallows /search and /v1.
+#
+# DO NOT enable linkedin_guest here: LinkedIn's robots.txt explicitly
+# disallows /jobs-guest/ and a ban would take the free runner's egress down.
+# It stays opt-in for manual, one-off `--fund` runs only.
+#
+# LinkedIn via Apify is a PAID, per-result source. It must NOT be enabled here
+# (4 runs/day = 4x the bill). It has its own workflow, linkedin-apify.yml,
+# which runs at most once/day and writes data/linkedin_apify_cache.json.
+# That cache is merged into jobs.json by this scraper on every full run
+# (`run(..., merge_cache=True)`), with a 72h TTL and fail-open behaviour:
+# missing / stale / broken cache simply means "no LinkedIn rows today".
+# No secret is needed in this workflow.
+# =============================================================================
+
+name: Refresh HK/SG Quant Jobs
+
+on:
+  # GitHub cron is UTC. Beijing (UTC+8) times are noted on the right.
+  # Minutes are deliberately off-the-hour: GitHub warns that runs scheduled at
+  # the start of an hour are delayed or dropped under high load.
+  # FOUR slots, not three: the requirement is "at least 3 refreshes/day", and
+  # GitHub may drop a scheduled run under load. One slot is redundancy. A
+  # public repo has unlimited runner minutes, so this still costs exactly $0.
+  schedule:
+    - cron: "23 0 * * *"    # 08:23 Asia/Shanghai
+    - cron: "23 6 * * *"    # 14:23 Asia/Shanghai
+    - cron: "23 12 * * *"   # 20:23 Asia/Shanghai
+    - cron: "23 18 * * *"   # 02:23 Asia/Shanghai (next day, redundancy)
+
+  # Manual button in the Actions tab — use this to verify the setup.
+  workflow_dispatch:
+
+  # Re-run when the pipeline itself changes, so edits get validated immediately.
+  # GITHUB_TOKEN pushes do NOT re-trigger workflows, so this cannot loop.
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/scrape.yml"
+      - "scrapers/main_scraper.py"
+      - "funds_config.py"
+
+# Minimum privilege needed to push the refreshed JSON back to this repo.
+permissions:
+  contents: write
+
+# Never let two refreshes overlap (e.g. a manual run colliding with a cron run).
+concurrency:
+  group: hk-sg-quant-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    # ubuntu-latest is 1x billing minutes. Windows is 2x, macOS is 10x.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          # No `pip install` step on purpose: the scraper uses only the stdlib.
+
+      - name: Scrape all sources
+        # --json-logs emits one structured JSON object per log line, which makes
+        # Actions logs searchable when a fund's ATS changes its API.
+        run: python scrapers/main_scraper.py --json-logs
+
+      # -----------------------------------------------------------------------
+      # Quality gate. A partial outage must NOT overwrite a good 318-row index
+      # with a 3-row one. On any failure the job exits non-zero and the commit
+      # step is skipped, so the previously published JSON stays live.
+      # -----------------------------------------------------------------------
+      - name: Validate the generated index
+        id: validate
+        env:
+          MIN_ROWS: "80"            # absolute floor (a healthy run is ~318 after dedupe; ~354 before it)
+          MAX_FAILED_FUNDS: "7"     # 30 enabled sources; tolerate a few flaky endpoints
+        run: |
+          python - <<'PY'
+          import datetime, json, os, pathlib, subprocess, sys
+
+          path = pathlib.Path("data/jobs.json")
+
+          def fail(msg):
+              sys.exit("VALIDATION FAILED: " + msg)
+
+          try:
+              new = json.loads(path.read_text(encoding="utf-8"))
+          except Exception as exc:
+              fail("jobs.json is not valid JSON: %s" % exc)
+
+          # 1. Shape of the top-level contract (also consumed by the frontend).
+          required = ("schema_version", "fetched_at", "total_jobs",
+                      "stats", "errors", "jobs")
+          missing = [k for k in required if k not in new]
+          if missing:
+              fail("missing top-level keys: %s" % missing)
+
+          jobs = new["jobs"]
+          if not isinstance(jobs, list):
+              fail("jobs is not a list")
+          n = len(jobs)
+          if n != new["total_jobs"]:
+              fail("total_jobs=%s but len(jobs)=%s" % (new["total_jobs"], n))
+
+          # 2. Absolute floor — catches "everything returned 403" runs.
+          floor = int(os.environ["MIN_ROWS"])
+          if n < floor:
+              fail("only %s roles (minimum is %s)" % (n, floor))
+
+          # 3. Relative floor vs the currently committed copy.
+          old_n = None
+          r = subprocess.run(["git", "show", "HEAD:data/jobs.json"],
+                             capture_output=True, text=True)
+          if r.returncode == 0:
+              try:
+                  old_n = len(json.loads(r.stdout)["jobs"])
+              except Exception:
+                  pass  # first run, or legacy file — skip the comparison
+          if old_n and n < old_n * 0.6:
+              fail("%s roles is under 60%% of the previous %s" % (n, old_n))
+
+          # 4. Spot-check the fields the job cards actually render.
+          for key in ("id", "title", "company", "location", "url", "source"):
+              if not jobs[0].get(key):
+                  fail("first job is missing '%s'" % key)
+          if not str(jobs[0]["url"]).startswith("https://"):
+              fail("first job url is not https")
+
+          # 5. Source health. The scraper intentionally returns 0 even when a
+          #    few funds fail (they are recorded in errors/stats), so the exit
+          #    code alone is not a usable health signal.
+          stats = new["stats"]
+          failed = stats.get("funds_error", 0)
+          max_failed = int(os.environ["MAX_FAILED_FUNDS"])
+          if failed > max_failed:
+              fail("%s funds failed (limit is %s)" % (failed, max_failed))
+
+          # 6. Freshness — a stale file means the scraper never actually ran.
+          stamp = str(new["fetched_at"]).replace("Z", "+00:00")
+          try:
+              when = datetime.datetime.fromisoformat(stamp)
+              if when.tzinfo is None:
+                  when = when.replace(tzinfo=datetime.timezone.utc)
+              age = (datetime.datetime.now(datetime.timezone.utc) - when).total_seconds()
+          except Exception as exc:
+              fail("unreadable fetched_at: %s" % exc)
+          if age < 0 or age > 3600:
+              fail("fetched_at is %ss old: %s" % (int(age), stamp))
+
+          summary = ("OK: %s roles (previous %s) | %s funds OK | %s funds failed | "
+                     "%s errors | %ss old" %
+                     (n, old_n, stats.get("funds_ok", "?"), failed,
+                      len(new["errors"] or []), int(age)))
+          print(summary)
+
+          # Expose the row count to the commit message below.
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write("rows=%s\n" % n)
+
+          # Human-readable run summary on the Actions page.
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as out:
+              out.write("## Index refreshed\n\n"
+                        "- Roles published: **%s** (previous: %s)\n"
+                        "- Funds OK: %s / Failed: %s\n"
+                        "- Errors recorded: %s\n"
+                        "- Generated: %s\n" %
+                        (n, old_n, stats.get("funds_ok", "?"), failed,
+                         len(new["errors"] or []), new["fetched_at"]))
+          PY
+
+      # -----------------------------------------------------------------------
+      # data/last-run.txt changes on every successful run, so this produces a
+      # small commit 4x/day. That is intentional: GitHub auto-disables scheduled
+      # workflows in public repos after 60 days of no repository activity.
+      # This heartbeat keeps the schedule alive and doubles as a run log.
+      # NOTE: the commit message must NOT contain a "skip ci" / "[CI Skip]" /
+      # "[CF-Pages-Skip]" tag. Both GitHub Pages and Cloudflare Pages honour
+      # these prefixes, which would silently freeze the published site.
+      # -----------------------------------------------------------------------
+      - name: Commit and push the refreshed index
+        env:
+          ROWS: ${{ steps.validate.outputs.rows }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # The run id makes this line unique on every run, so a commit is
+          # always produced. It is also a human-readable one-line run log.
+          printf '%s | run=%s | roles=%s | trigger=%s\n' \
+            "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+            "${GITHUB_RUN_ID:-manual}" "${ROWS}" "${GITHUB_EVENT_NAME:-local}" \
+            > data/last-run.txt
+          git add data/jobs.json data/last-run.txt
+
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+
+          git commit -m "chore(data): refresh HK/SG quant index - ${ROWS} roles ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+
+          # Retry with a rebase in case someone pushed to main meanwhile.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Published ${ROWS} roles."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing and retrying..."
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          done
+          echo "Could not push after 3 attempts."
+          exit 1
