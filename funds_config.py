@@ -32,6 +32,12 @@ HK/SG Quant Jobs - 配置与数据契约 (funds_config.py)
     notes            str   实测结论 / 已知限制 / 合规提示
     verified_at      str   最后一次人工核实日期 (YYYY-MM-DD)
 
+【数据契约 - Job 字段补充】
+    employer_type    str   "direct" = 雇主直招 | "agency" = 猎头 / 第三方代招
+                          由 classify_employer() 写入，统计见 stats.by_employer_type。
+                          判定规则集中在下面第 3b 节（名单 / 关键词 / JD 措辞），
+                          改名单即可纠偏，不必改抓取器或前端。
+
 【数据源分级】
     A 官方公开 JSON（每日 4 次自动更新）：greenhouse / lever / polymer_api /
       eightfold_api / phenom_api
@@ -152,6 +158,76 @@ QUANT_KEYWORDS = [
     "data scientist", "machine learning", "software engineer", "developer",
     "engineer", "c++", "python", "kdb", "hft", "low latency", "execution",
 ]
+
+# ---------------------------------------------------------------------------
+# 3b. 雇主类型：直招 vs 猎头（唯一事实来源）
+#     eFinancialCareers 这类聚合站里，company 字段是「发布广告的公司」，
+#     不一定是真正的雇主。抓到职位后由 main_scraper.classify_employer()
+#     为每条写入 employer_type = "direct" | "agency"，前端据此显示 Agency
+#     徽章并提供筛选。这里只放配置，判定逻辑在 scrapers/main_scraper.py。
+#
+#     维护方式：发现漏标 / 误标的公司，直接改下面两个名单即可，无需改代码。
+#     名单里的名字按原始公司名写，比对时会统一做 normalize_company()
+#     归一化（小写、去标点、去 Ltd / LP / Group 等法律后缀）。
+# ---------------------------------------------------------------------------
+
+# 已知第三方招聘 / 猎头公司。判定优先级最高。
+RECRUITER_AGENCIES = [
+    # 公司名本身即标明招聘业务
+    "Gravitas Recruitment Group",
+    "SilverStrand Executive Search Limited",
+    "Michael Page International Singapore",
+    "TEKsystems (Allegis Group Singapore Pte Ltd)",
+    # 量化 / 金融垂直猎头
+    "BAH Partners",
+    "Oxford Knight",
+    "Pinpoint Asia",
+    "Sanderson-iKas",
+    "Selby Jennings",
+    "Larson Maddox",
+    "Webbe International",
+    "Aptitude Asia",
+    "Alan Partners",
+    "Westbury Partners",       # boutique executive search, westbury-partners.com
+    "Principle Partners",      # buy-side executive search, principle-partners.com
+    "Eka Finance",             # ekafinance.com: "global quantitative search"
+    "NLS",
+    "Tribus",
+    # 复核项：JD 全程用第三人称描述未具名雇主（"A global systematic hedge
+    # fund is hiring..."），且与 Investor Relations 这类岗位混在一起发布，
+    # 判定为代招。若日后确认它其实是直雇机构，直接删掉这一行即可。
+    "DARMAX GLOBAL",
+]
+
+# 新出现的猎头若公司名带这些词，即使不在名单里也会被标记。
+# 刻意保持窄口径：不含 "partners" / "consulting" / "search" 单词，
+# 避免把 PDT Partners、Jane Street 这类直雇机构误判成猎头。
+RECRUITER_NAME_PATTERNS = [
+    r"\brecruit(?:ment|er|ers|ing)?\b",
+    r"\bstaffing\b",
+    r"\bheadhunt(?:er|ers|ing)?\b",
+    r"\bexecutive\s+search\b",
+    r"\btalent\s+(?:solutions|acquisition)\b",
+    r"\bemployment\s+agency\b",
+]
+
+# 兜底保护：这些公司即使命中上面的关键词也一律算直招。
+DIRECT_EMPLOYER_OVERRIDES = [
+    "Balyasny Asset Management LP",
+    "GIC Private Limited",
+    "CITIC Securities International Company Limited",
+    "United Overseas Bank",
+    "AIA Singapore Private Limited",
+]
+
+# JD 措辞信号（只在聚合站来源上生效，避免银行 describing their own clients
+# 时被误判）。实测在现有数据里 8 家公司命中，0 家直雇机构误伤。
+AGENCY_DESCRIPTION_SIGNALS = [
+    r"\bour\s+client\b",
+    r"\bon\s+behalf\s+of\s+(?:a|an|our|the)\b",
+    r"\bwe(?:'re|\s+are)\s+(?:working\s+with|partnered\s+with)\s+(?:a|an|our)\b",
+]
+AGENCY_SIGNAL_SOURCES = {"eFC", "LinkedIn", "linkedin_guest"}
 
 # ---------------------------------------------------------------------------
 # 4. 基金名单

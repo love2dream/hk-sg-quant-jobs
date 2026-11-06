@@ -31,7 +31,9 @@
          (5) Mobile collapses, never hides, the resume-matching tools
   Constraints: Single static HTML file; the only runtime data request is
          /data/jobs.json (plus the static favicon assets at the site root);
-         all-English UI, responsive, reduced-motion safe.
+         all-English UI, responsive, reduced-motion safe. The Agency badge is
+         data-owned: it reads jobs[].employer_type, produced by the scraper
+         from the editable rules in funds_config.py (section 3b).
 -->
 <style>
 /* ---------- tokens ---------- */
@@ -241,6 +243,12 @@ mark.hl{background:var(--mark);color:var(--mark-ink);padding:0 .1em;border-radiu
   letter-spacing:.16em;animation:newpulse 2.6s var(--ease) 1;
 }
 @keyframes newpulse{0%,100%{box-shadow:0 0 0 0 rgba(178,64,43,0)}30%{box-shadow:0 0 0 4px rgba(178,64,43,.18)}}
+/* Agency is data-owned (jobs[].employer_type), not a user marker: it sits
+   next to the company name so a recruiter listing is obvious before clicking. */
+.badge-agency{
+  margin-left:.5rem;background:#f4ecdc;color:#7a5a22;border-color:#e2d0a8;
+  letter-spacing:.1em;
+}
 .st-saved{background:#fbf0cb;color:#7a5a0c;border-color:#e6d28c}
 .st-applied{background:#e4f0fa;color:#1c5c93;border-color:#bcd8ee}
 .st-interview{background:#f0e7fa;color:#6b3f96;border-color:#d6c2ec}
@@ -265,6 +273,7 @@ mark.hl{background:var(--mark);color:var(--mark-ink);padding:0 .1em;border-radiu
 .window-note b{color:var(--ink-2);font-weight:700}
 .status-filter{max-width:11.5rem}
 .source-filter{max-width:10.5rem}
+.employer-filter{max-width:10.5rem}
 .track-panel{border-top:1px solid var(--line-strong);padding-top:1.4rem}
 .legend{list-style:none;margin:.9rem 0 0;padding:0;display:flex;flex-direction:column;gap:.55rem}
 .legend li{display:flex;align-items:center;gap:.55rem;font-size:.75rem;color:var(--muted);line-height:1.4}
@@ -328,7 +337,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   .apply{margin-left:0;width:100%;margin-top:.35rem}
   .job-title{font-size:1.02rem}
   .badge-new{margin-left:.4rem}
-  .status-filter,.source-filter{max-width:100%}
+  .status-filter,.source-filter,.employer-filter{max-width:100%}
   .status-select{max-width:100%}
   .skeleton{grid-template-columns:2rem 1fr}
   .sk.s{display:none}
@@ -409,6 +418,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
         <ul class="legend">
           <li><span class="badge badge-new">NEW</span> posted after your last visit</li>
           <li><span class="badge st-saved">Saved</span> your own status, kept until you change it</li>
+          <li><span class="badge badge-agency" style="margin-left:0">Agency</span> third-party recruiter, employer may be undisclosed</li>
         </ul>
         <div class="track-stats" id="trackStats" aria-live="polite">Reading local markers…</div>
         <div class="track-actions">
@@ -426,6 +436,11 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
           <label for="sourceFilter">Source</label>
           <select class="input source-filter" id="sourceFilter" aria-label="Filter by job source">
             <option value="all" selected>All Sources</option>
+          </select>
+          <label for="employerFilter">Employer</label>
+          <select class="input employer-filter" id="employerFilter" aria-label="Filter by employer type"
+                  title="Agency = listed by a recruiter, not by the hiring firm itself">
+            <option value="all" selected>All employers</option>
           </select>
           <label for="statusFilter">Status</label>
           <select class="input status-filter" id="statusFilter" aria-label="Filter by your status">
@@ -539,6 +554,22 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     return String(s).replace(/[_-]+/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   }
 
+  /* Employer type is decided by the scraper (funds_config.py section 3b) and
+     shipped as jobs[].employer_type = "direct" | "agency". The fallback below
+     is only for an older index that predates the field: it is deliberately
+     best-effort (name keywords + "our client" wording), never authoritative.
+     When in doubt, an unclassified job stays "direct" rather than being
+     wrongly branded a recruiter. */
+  var AGENCY_NAME_RE = /\brecruit(?:ment|er|ers|ing)?\b|\bstaffing\b|\bheadhunt(?:er|ers|ing)?\b|\bexecutive\s+search\b|\btalent\s+(?:solutions|acquisition)\b|\bemployment\s+agency\b/i;
+  var AGENCY_DESC_RE = /\bour\s+client\b|\bon\s+behalf\s+of\s+(?:a|an|our|the)\b/i;
+  function isAgency(j) {
+    if (j.employer_type === "agency") return true;
+    if (j.employer_type === "direct") return false;
+    if (typeof j.is_recruiter === "boolean") return j.is_recruiter;
+    return AGENCY_NAME_RE.test(String(j.company || "")) ||
+           AGENCY_DESC_RE.test(String(j.description || ""));
+  }
+
   var VOCAB = [];
   var allJobs = [];
   var recentJobs = [];       // jobs inside the 90-day window
@@ -553,6 +584,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     sort: "relevance",
     statusFilter: "visible",
     sourceFilter: "all",
+    employerFilter: "all",
     resumeTerms: [],
     resumeSet: new Set()
   };
@@ -566,7 +598,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     resumeBadge: $("resumeBadge"), matchNote: $("matchNote"), sort: $("sort"),
     clearFilters: $("clearFilters"), clearResume: $("clearResume"),
     statusFilter: $("statusFilter"), sourceFilter: $("sourceFilter"),
-    windowNote: $("windowNote"),
+    employerFilter: $("employerFilter"), windowNote: $("windowNote"),
     trackStats: $("trackStats"), resetSeen: $("resetSeen"),
     clearStatuses: $("clearStatuses")
   };
@@ -755,6 +787,17 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     el.sourceFilter.value = state.sourceFilter;
   }
 
+  /* Counts describe the whole index (not the 90-day window) so the menu does
+     not change shape while other filters narrow the visible list. */
+  function renderEmployerOptions(jobs) {
+    var agencies = jobs.filter(isAgency).length;
+    el.employerFilter.innerHTML =
+      '<option value="all">All employers</option>' +
+      '<option value="direct">Direct only (' + (jobs.length - agencies) + ')</option>' +
+      '<option value="agency">Agencies only (' + agencies + ')</option>';
+    el.employerFilter.value = state.employerFilter;
+  }
+
   function renderTicker() {
     var firms = uniq(allJobs.map(function (j) { return j.company; })).length;
     var sources = (meta.stats && meta.stats.funds_ok) || uniq(allJobs.map(function (j) { return j.source; })).length;
@@ -772,6 +815,8 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     // recentJobs is already the 90-day window; anything older is never rendered.
     var list = recentJobs.filter(function (j) {
       if (state.sourceFilter !== "all" && String(j.source || "") !== state.sourceFilter) return false;
+      if (state.employerFilter !== "all" &&
+          (state.employerFilter === "agency") !== isAgency(j)) return false;
       if (state.location) {
         var locs = j.locations || [];
         if (locs.length ? locs.indexOf(state.location) === -1
@@ -857,6 +902,8 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
         "</h3>" +
         '<div class="job-meta">' +
           '<span class="firm">' + esc(j.company) + "</span>" +
+          (isAgency(j) ? '<span class="badge badge-agency" ' +
+             'title="Posted by a recruitment agency; the hiring firm may be undisclosed">Agency</span>' : "") +
           '<span class="dot" aria-hidden="true">·</span>' +
           '<span class="loc">' + esc(j.location) + "</span>" +
         "</div>" +
@@ -916,7 +963,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   function render() {
     var list = currentList();
     var filtered = Boolean(state.query || state.location || state.statusFilter !== "visible" ||
-                           state.sourceFilter !== "all");
+                           state.sourceFilter !== "all" || state.employerFilter !== "all");
     var total = recentJobs.length;
     el.count.innerHTML = filtered
       ? "Showing <b>" + list.length + "</b> of " + total + " roles (last " + WINDOW_DAYS + " days)"
@@ -948,9 +995,11 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   function clearAll() {
     state.query = ""; state.location = ""; state.statusFilter = "visible";
     state.sourceFilter = "all";
+    state.employerFilter = "all";
     el.search.value = "";
     el.statusFilter.value = "visible";
     el.sourceFilter.value = "all";
+    el.employerFilter.value = "all";
     var radios = document.querySelectorAll('input[name="loc"]');
     Array.prototype.forEach.call(radios, function (r) { r.checked = r.value === ""; });
     render();
@@ -1011,6 +1060,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
         meta = data;
         buildIndex(allJobs);
         renderSourceOptions(allJobs);
+        renderEmployerOptions(allJobs);
         userStatuses = loadStatuses();
         initMarkers(allJobs);
         renderTicker();
@@ -1062,6 +1112,10 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   /* ---------- source / status filters, per-card status, local markers ---------- */
   el.sourceFilter.addEventListener("change", function () {
     state.sourceFilter = el.sourceFilter.value;
+    render();
+  });
+  el.employerFilter.addEventListener("change", function () {
+    state.employerFilter = el.employerFilter.value;
     render();
   });
   el.statusFilter.addEventListener("change", function () {

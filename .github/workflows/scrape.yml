@@ -175,11 +175,18 @@ jobs:
               fail("%s roles is under 60%% of the previous %s" % (n, old_n))
 
           # 4. Spot-check the fields the job cards actually render.
-          for key in ("id", "title", "company", "location", "url", "source"):
+          for key in ("id", "title", "company", "location", "url", "source",
+                      "employer_type"):
               if not jobs[0].get(key):
                   fail("first job is missing '%s'" % key)
           if not str(jobs[0]["url"]).startswith("https://"):
               fail("first job url is not https")
+          # The Agency badge / Employer filter need this on EVERY row, not just
+          # the first one. Catch a scraper regression before it is published.
+          bad_types = [j.get("employer_type") for j in jobs
+                       if j.get("employer_type") not in ("direct", "agency")]
+          if bad_types:
+              fail("%s jobs have an invalid employer_type" % len(bad_types))
 
           # 5. Source health. The scraper intentionally returns 0 even when a
           #    few funds fail (they are recorded in errors/stats), so the exit

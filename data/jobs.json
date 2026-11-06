@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "fetched_at": "2026-11-06T16:20:31Z",
-  "generated_at": "2026-11-06T16:20:31Z",
-  "total_jobs": 318,
+  "fetched_at": "2026-11-06T17:00:51Z",
+  "generated_at": "2026-11-06T17:00:51Z",
+  "total_jobs": 319,
   "filters": {
     "locations": [
       "Hong Kong",
@@ -15,8 +15,8 @@
   },
   "dedupe": {
     "strategy": "canonical_url -> company+title+location; official > aggregator > LinkedIn; then completeness",
-    "candidates": 449,
-    "kept": 318,
+    "candidates": 450,
+    "kept": 319,
     "removed_total": 131,
     "by_url": 95,
     "by_identity": 36,
@@ -37,31 +37,35 @@
     "funds_empty": 0,
     "funds_error": 0,
     "funds_needs_playwright": 4,
-    "raw_jobs": 1653,
+    "raw_jobs": 1654,
     "dropped_location": 1081,
     "dropped_quant": 123,
     "duplicates_removed": 131,
-    "dedupe_candidates": 449,
-    "total_jobs": 318,
+    "dedupe_candidates": 450,
+    "total_jobs": 319,
     "apify_cache_jobs": 0,
     "apify_cache_kept": 0,
     "by_source": {
       "eFC": 86,
       "eightfold": 33,
-      "greenhouse": 170,
+      "greenhouse": 171,
       "lever": 3,
       "polymer_api": 7,
       "phenom": 19
     },
     "by_location": {
-      "Hong Kong": 197,
-      "Singapore": 150
+      "Hong Kong": 198,
+      "Singapore": 151
     },
-    "elapsed_seconds": 85.52,
+    "by_employer_type": {
+      "agency": 59,
+      "direct": 260
+    },
+    "elapsed_seconds": 94.81,
     "dedupe": {
       "strategy": "canonical_url -> company+title+location; official > aggregator > LinkedIn; then completeness",
-      "candidates": 449,
-      "kept": 318,
+      "candidates": 450,
+      "kept": 319,
       "removed_total": 131,
       "by_url": 95,
       "by_identity": 36,
@@ -82,6 +86,7 @@
       "id": "eFC:efc:a1u8OTWAS9YohUcF",
       "title": "*** Software Engineer (Java, C++, C#, Python, Golang, Scala, OCaml) - Elite Quant Trading Firm - Hong Kong ***",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -96,7 +101,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 7,
       "matched_keywords": [
         "quant",
@@ -117,6 +122,7 @@
       "id": "eFC:efc:RVEniDtyKEi1kD9M",
       "title": "Senior Python Software Engineer – Quantitative Trading & Research",
       "company": "Westbury Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -131,7 +137,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 6,
       "matched_keywords": [
         "quantitative",
@@ -149,6 +155,7 @@
       "id": "eFC:efc:nYWUC0CgvQX5hgWK",
       "title": "Low-Latency C++ Developer, Global Quantitative Systematic Trading Firm - J12714",
       "company": "Pinpoint Asia",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -163,7 +170,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 5,
       "matched_keywords": [
         "quantitative",
@@ -181,6 +188,7 @@
       "id": "eFC:efc:JBbd9JXfqjW8naZf",
       "title": "Quantitative Researcher, Delta One Trading",
       "company": "Aptitude Asia",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -195,7 +203,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -209,6 +217,7 @@
       "id": "eFC:efc:cIa1l2jfmXWriMIZ",
       "title": "Quantitative Researcher, Delta One Trading",
       "company": "Aptitude Asia",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -223,7 +232,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -237,6 +246,7 @@
       "id": "eFC:efc:YgZjNbi4JcRD1Tik",
       "title": "Execution Quant Researcher / trader – Global Equities / Execution/ / Global Hedge Fund / Hong Kong",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -251,7 +261,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -267,6 +277,7 @@
       "id": "eFC:efc:MAtz903c5JMCrFxX",
       "title": "NEW ROLE: Platform Engineer - Exciting early-stage Quantitative Trading firm - Singapore (non-finance welcome to apply!)",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -281,7 +292,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -295,6 +306,7 @@
       "id": "eFC:efc:KiS3UsI15VRVrLfQ",
       "title": "Associate Director/ Director Quant Researcher, Delta One, Equity Derivatives",
       "company": "CITIC Securities International Company Limited",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -309,7 +321,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -325,6 +337,7 @@
       "id": "eFC:efc:idIOIKMauhWUJyYQ",
       "title": "Quantitative Researcher – Systematic Trading (APAC)",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -339,7 +352,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -356,6 +369,7 @@
       "id": "eFC:efc:bxYIE7FVV9NRm2F1",
       "title": "Quantitative Developer - Algo Execution (Python)",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -370,7 +384,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -388,6 +402,7 @@
       "id": "eFC:efc:86mdNXHLkfAlzS9a",
       "title": "Sr Python Developer - Front Office Trading (Quant)",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -402,7 +417,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -418,6 +433,7 @@
       "id": "eightfold:mlp.com:755942215829",
       "title": "Quantitative Developer/Trader, Systematic Equities",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -433,7 +449,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-03-26T00:00:00Z",
       "updated_at": "2025-03-26T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -449,6 +465,7 @@
       "id": "eFC:efc:VtrpSMOBjPe2WpFC",
       "title": "Trading Systems Engineer - Quantitative Execution - J13214",
       "company": "Pinpoint Asia",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -463,7 +480,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -480,6 +497,7 @@
       "id": "eFC:efc:axHaDnr7S6ixy9uc",
       "title": "Trading Systems Engineer - Quantitative Execution - J13214",
       "company": "Pinpoint Asia",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -494,7 +512,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -511,6 +529,7 @@
       "id": "greenhouse:squarepointcapital:6069464",
       "title": "Junior Quant Researcher - ML Alpha Research",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -526,7 +545,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-07-11T08:07:31-04:00",
       "updated_at": "2026-10-28T07:52:14-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -542,6 +561,7 @@
       "id": "eFC:efc:7w9c6N33pCET71qQ",
       "title": "Electronic trading Algo Quant researcher/Developer role with a top tier bank",
       "company": "Webbe International",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -556,7 +576,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -570,6 +590,7 @@
       "id": "eFC:efc:U5blzvbh6qsukriw",
       "title": "Systematic Market Making Trader/quant",
       "company": "Webbe International",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -584,7 +605,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -600,6 +621,7 @@
       "id": "lever:ambergroup:b49b1bd3-75cf-45ee-9863-ff85e1bdf0fa",
       "title": "Quant Researcher - Statistical Arbitrage",
       "company": "Amber Group",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -614,7 +636,7 @@
       "ats_slug": "ambergroup",
       "posted_at": "2023-02-10T11:52:57Z",
       "updated_at": "2023-02-10T11:52:57Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -627,6 +649,7 @@
       "id": "eFC:efc:DCE3dVUnvJKmOfcj",
       "title": "KDB+ Developer | Electronic FX Trading | Singapore",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -641,7 +664,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -657,6 +680,7 @@
       "id": "eFC:efc:yVY7CreFdNLEh8Rm",
       "title": "Quantitative Researcher / Data Scientist – Volatility & Options | Global Hedge Fund | Hong Kong",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -671,7 +695,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -687,6 +711,7 @@
       "id": "eFC:efc:aGmbrPJXlUrmJKCq",
       "title": "Senior Data Engineer – Global Data Platform - Elite Trading Firm - Hong Kong",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -701,7 +726,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -714,6 +739,7 @@
       "id": "eFC:efc:aQJRnnEzUmDP5kn3",
       "title": "Associate Director, EQD Quant, Market Making, Equity Derivatives",
       "company": "CITIC Securities International Company Limited",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -728,7 +754,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -745,6 +771,7 @@
       "id": "eFC:efc:mxgALFkrOLJPYU6h",
       "title": "Associate, Quant Developer, Equity Derivatives",
       "company": "CITIC Securities International Company Limited",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -759,7 +786,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -772,6 +799,7 @@
       "id": "eFC:efc:RB7ZWQQMZJufbCB3",
       "title": "Execution Quant, Trading",
       "company": "CITIC Securities International Company Limited",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -786,7 +814,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -799,6 +827,7 @@
       "id": "eFC:efc:1aA7yBtMly1MPqBn",
       "title": "Quantitative Researcher — APAC Equities (Mid/Low Frequency), Global Systematic Hedge Fund",
       "company": "DARMAX GLOBAL",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -813,7 +842,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -828,6 +857,7 @@
       "id": "eFC:efc:fobT78FrSKY24Hwg",
       "title": "Global Quant Trading Company Recruiting Senior Researcher / HK",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -842,7 +872,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -855,6 +885,7 @@
       "id": "greenhouse:flowtraders:7064123",
       "title": "Python Engineer, Trading Automation ",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -869,7 +900,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-07-17T21:58:55-04:00",
       "updated_at": "2026-10-07T22:53:37-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -884,6 +915,7 @@
       "id": "eFC:efc:0p8zpKwftWmUmisD",
       "title": "VP, Quantitative Research Analyst - Multi-Asset Liquidity & Execution Performance",
       "company": "GIC Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -898,7 +930,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -911,6 +943,7 @@
       "id": "eFC:efc:38o6nuUjCC8OH6tp",
       "title": "Python Quantitative Developer",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -925,7 +958,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -940,6 +973,7 @@
       "id": "eFC:efc:qZpBa3HvIeM1LZNu",
       "title": "Quant Developer - Central Liquidity Strategies",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -954,7 +988,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -967,6 +1001,7 @@
       "id": "eFC:efc:65Bo6VD8nxKqxbU9",
       "title": "Quantitative Developer (Python)",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -981,7 +1016,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -996,6 +1031,7 @@
       "id": "eFC:efc:M9jA9FOECe6rBXAH",
       "title": "Quantitative Developer Equity Volatility Execution",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1010,7 +1046,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1025,6 +1061,7 @@
       "id": "greenhouse:imc:4785803101",
       "title": "Quantitative Researcher - HFT",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1039,7 +1076,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-18T21:04:06-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1056,6 +1093,7 @@
       "id": "greenhouse:imc:4785808101",
       "title": "Quantitative Researcher - HFT Commodity Futures",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1070,7 +1108,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-20T00:48:10-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1088,6 +1126,7 @@
       "id": "greenhouse:imc:4787640101",
       "title": "Quantitative Trader – Equities (Live Trading)",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1102,7 +1141,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-20T22:56:40-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1117,6 +1156,7 @@
       "id": "greenhouse:imc:4930379101",
       "title": "Software Engineer - Research ",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1131,7 +1171,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-07-22T02:53:04-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "research",
@@ -1147,6 +1187,7 @@
       "id": "greenhouse:janestreet:6802323002",
       "title": "Machine Learning Research Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1161,7 +1202,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2023-06-13T16:46:07-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "research",
@@ -1176,6 +1217,7 @@
       "id": "eightfold:mlp.com:755959294924",
       "title": "Quant Developer - Equity Derivatives",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1190,7 +1232,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-20T00:00:00Z",
       "updated_at": "2026-10-20T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1203,6 +1245,7 @@
       "id": "eightfold:mlp.com:755957640548",
       "title": "Quant Research Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1217,7 +1260,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-24T00:00:00Z",
       "updated_at": "2026-07-24T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1230,6 +1273,7 @@
       "id": "eightfold:mlp.com:755959321326",
       "title": "Quantitative Developer - Central Liquidity Strategies",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1244,7 +1288,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-22T00:00:00Z",
       "updated_at": "2026-10-22T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1257,6 +1301,7 @@
       "id": "eightfold:mlp.com:755958065522",
       "title": "Quantitative Developer - Equity Volatility Execution",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1271,7 +1316,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-14T00:00:00Z",
       "updated_at": "2026-08-14T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1284,6 +1329,7 @@
       "id": "eightfold:mlp.com:755957362218",
       "title": "Quantitative Researcher, Quantitative Strategies",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -1299,7 +1345,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-10T00:00:00Z",
       "updated_at": "2026-07-10T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1312,6 +1358,7 @@
       "id": "eightfold:mlp.com:755955997873",
       "title": "Senior C++ Engineer - High Frequency Trading",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1326,7 +1373,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-04-29T00:00:00Z",
       "updated_at": "2026-04-29T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1341,6 +1388,7 @@
       "id": "eFC:efc:F4s5puPjplvv7sH3",
       "title": "C++ Quantitative Developer | Hong Kong/Singapore- Systematic Quant Fund",
       "company": "Oxford Knight",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1355,7 +1403,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-01",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1371,6 +1419,7 @@
       "id": "eFC:efc:t9GiQo1goAJK9Rle",
       "title": "C++ Quantitative Developer | Hong Kong/Singapore- Systematic Quant Fund",
       "company": "Oxford Knight",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1385,7 +1434,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-01",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1401,6 +1450,7 @@
       "id": "eFC:efc:TbSTMxkUM0P0Ce54",
       "title": "Quant Developer (Python/C++) - Model Implementation - Singapore- Global Hedge Fund",
       "company": "Oxford Knight",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1415,7 +1465,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1431,6 +1481,7 @@
       "id": "greenhouse:point72:8023550002",
       "title": "Quantitative Researcher - Machine Learning",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1445,7 +1496,7 @@
       "ats_slug": "point72",
       "posted_at": "2025-06-04T12:20:58-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1460,6 +1511,7 @@
       "id": "polymer_api:polymer-capital:5943512",
       "title": "Data Scientist, Trading & Execution",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1474,7 +1526,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-07-08",
       "updated_at": "2026-07-08",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1487,6 +1539,7 @@
       "id": "greenhouse:schonfeld:8350719",
       "title": "2027 Emerging Markets and Delta One Quantitative Researcher/Strat Intern",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1501,7 +1554,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-11-03T15:02:10-05:00",
       "updated_at": "2026-11-03T15:02:10-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1514,6 +1567,7 @@
       "id": "eFC:efc:oTBEC3FxeLKhqCI8",
       "title": "Python Quant Developer",
       "company": "Selby Jennings",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1528,7 +1582,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-26",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1543,6 +1597,7 @@
       "id": "eFC:efc:wOJWa8B4wrt7F1bl",
       "title": "Senior HFT Trader / Portfolio Manager",
       "company": "SilverStrand Executive Search Limited",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1557,7 +1612,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trader",
@@ -1570,6 +1625,7 @@
       "id": "greenhouse:squarepointcapital:3277003",
       "title": "Quant Developer (KDB)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -1585,7 +1641,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2021-07-06T12:41:19-04:00",
       "updated_at": "2026-10-28T07:40:00-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1600,6 +1656,7 @@
       "id": "greenhouse:squarepointcapital:1433622",
       "title": "Quant Developer (Python) ",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -1615,7 +1672,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-10-23T15:06:31-04:00",
       "updated_at": "2026-10-28T07:39:47-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1632,6 +1689,7 @@
       "id": "greenhouse:squarepointcapital:253413",
       "title": "Senior Quant Researcher - Intraday Statistical Arbitrage",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -1647,7 +1705,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:11-04:00",
       "updated_at": "2026-10-28T11:10:11-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1664,6 +1722,7 @@
       "id": "phenom:sig:11122",
       "title": "Quantitative Systematic Trading Internship - Master's: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1678,7 +1737,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-06-30",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1693,6 +1752,7 @@
       "id": "phenom:sig:11084",
       "title": "Quantitative Systematic Trading Internship - PhD: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1707,7 +1767,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-06-24",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1722,6 +1782,7 @@
       "id": "phenom:sig:11695",
       "title": "Trading Systems Devops Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1736,7 +1797,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-27",
       "updated_at": "2026-10-27",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1751,6 +1812,7 @@
       "id": "greenhouse:towerresearchcapital:4958633",
       "title": "Quantitative Trader / Researcher - APAC ",
       "company": "Tower Research Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -1766,7 +1828,7 @@
       "ats_slug": "towerresearchcapital",
       "posted_at": "2023-05-24T08:28:09-04:00",
       "updated_at": "2025-10-13T10:36:21-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1782,6 +1844,7 @@
       "id": "eFC:efc:DndrMRB9uqw9EwIJ",
       "title": "Unix/Linux Systems Engineer | Quant Trading | Hong Kong",
       "company": "Tribus",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1796,7 +1859,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1811,6 +1874,7 @@
       "id": "greenhouse:worldquant:4665468006",
       "title": "Quantitative Execution Strategist",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1825,7 +1889,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-03-23T17:18:01-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1838,6 +1902,7 @@
       "id": "eFC:efc:FvpoaV9nYFpXk3t8",
       "title": "Portfolio Manager, Derivatives (AIA Investment Management)",
       "company": "AIA Singapore Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1852,7 +1917,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "portfolio manager",
@@ -1864,6 +1929,7 @@
       "id": "lever:ambergroup:04e8d429-cec9-46be-8a82-6525a8df4448",
       "title": "Blockchain Developer (Algorithm) - Platform Trading - Global",
       "company": "Amber Group",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1878,7 +1944,7 @@
       "ats_slug": "ambergroup",
       "posted_at": "2022-04-07T07:32:46Z",
       "updated_at": "2022-04-07T07:32:46Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -1890,6 +1956,7 @@
       "id": "eFC:efc:G9Ug6MlLDATnCgco",
       "title": "Quant Researcher - Singapore",
       "company": "Aptitude Asia",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1904,7 +1971,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -1916,6 +1983,7 @@
       "id": "eFC:efc:T0ygIZT97N0Zr3C6",
       "title": "Quant Researcher, Top-tier Hedge Fund",
       "company": "Aptitude Asia",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1930,7 +1998,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -1942,6 +2010,7 @@
       "id": "eFC:efc:n1sodThQRSQMw4ln",
       "title": "Quantitative Researcher",
       "company": "BAH Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -1956,7 +2025,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -1968,6 +2037,7 @@
       "id": "eFC:efc:yR8xSySwFlZLrndB",
       "title": "Equity Volatility Quantitative Researcher",
       "company": "Balyasny Asset Management LP",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -1982,7 +2052,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-07-18",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -1994,6 +2064,7 @@
       "id": "eFC:efc:XWlRMrVlQkvzc9iJ",
       "title": "IKHO - Quantitative Researcher - Hong Kong / Singapore",
       "company": "Balyasny Asset Management LP",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2008,7 +2079,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2022,6 +2093,7 @@
       "id": "eFC:efc:Cd96197YimyZwAwt",
       "title": "Senior Quantitative Researcher, PM Engagement",
       "company": "Balyasny Asset Management LP",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2036,7 +2108,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-05-30",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2048,6 +2120,7 @@
       "id": "eFC:efc:rG1Ke4NN1KsWV2VH",
       "title": "Quant Trader",
       "company": "Caladan",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2062,7 +2135,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2074,6 +2147,7 @@
       "id": "eFC:efc:TWikyGow2AyFtQm4",
       "title": "Associate, Equity Derivatives Trading, Equity Derivatives",
       "company": "CITIC Securities International Company Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2088,7 +2162,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -2103,6 +2177,7 @@
       "id": "greenhouse:dvtrading:4733877005",
       "title": "2027 Quantitative Research Intern (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2117,7 +2192,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-15T22:59:27-04:00",
       "updated_at": "2026-10-20T00:09:20-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2133,6 +2208,7 @@
       "id": "greenhouse:dvtrading:4736954005",
       "title": "2027 Quantitative Researcher Graduate (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2147,7 +2223,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-24T00:16:05-04:00",
       "updated_at": "2026-10-20T00:05:22-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2163,6 +2239,7 @@
       "id": "greenhouse:dvtrading:4691298005",
       "title": "2027 Quantitative Trader Graduate (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2177,7 +2254,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-04T17:50:58-04:00",
       "updated_at": "2026-10-20T00:09:56-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2193,6 +2270,7 @@
       "id": "greenhouse:dvtrading:4738302005",
       "title": "Data Engineer (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2207,7 +2285,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-28T23:58:05-04:00",
       "updated_at": "2026-10-20T00:12:04-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -2223,6 +2301,7 @@
       "id": "greenhouse:dvtrading:4686253005",
       "title": "Junior Trader/Trading Assistant",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2237,7 +2316,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-04-27T14:16:36-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2251,6 +2330,7 @@
       "id": "greenhouse:dvtrading:4718028005",
       "title": "Quantitative Researcher",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2265,7 +2345,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-07-30T11:08:54-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2279,6 +2359,7 @@
       "id": "greenhouse:dvtrading:4733876005",
       "title": "Quantitative Researcher - Experienced (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2293,7 +2374,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-15T23:40:28-04:00",
       "updated_at": "2026-10-20T00:13:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2309,6 +2390,7 @@
       "id": "greenhouse:dvtrading:4691295005",
       "title": "Quantitative Trading Intern (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2323,7 +2405,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-04T17:50:45-04:00",
       "updated_at": "2026-10-20T00:10:44-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2339,6 +2421,7 @@
       "id": "eFC:efc:9xvPGXhLHUcA1sfu",
       "title": "Hong Kong Based Quant Researcher/ $ High",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2353,7 +2436,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2365,6 +2448,7 @@
       "id": "eFC:efc:U9qzShyde3szBVw6",
       "title": "Multi Strategy Fund Hiring Quant Strategies PM / Singapore",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2379,7 +2463,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2391,6 +2475,7 @@
       "id": "eFC:efc:wWkwVGs5dTCNluUV",
       "title": "Quant Analyst / Machine Learning Focus / Asia",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2405,7 +2490,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2419,6 +2504,7 @@
       "id": "eFC:efc:v7gv8YgaiKIgqBE5",
       "title": "Quant Macro Trader / Low Frequency / HK / Asia",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2433,7 +2519,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2448,6 +2534,7 @@
       "id": "eFC:efc:jS55yHI7TMGYjY8f",
       "title": "Quant Trader / Hong Kong",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2462,7 +2549,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2474,6 +2561,7 @@
       "id": "eFC:efc:S5V783SSI9GM9xd1",
       "title": "Quantitative Developer- Hong Kong",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2488,7 +2576,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2500,6 +2588,7 @@
       "id": "eFC:efc:PFJX6qEafTi3Okeg",
       "title": "Singapore Quant Trader",
       "company": "Eka Finance",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2514,7 +2603,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2526,6 +2615,7 @@
       "id": "greenhouse:flowtraders:7708220",
       "title": "Delta One Trader ",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2540,7 +2630,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-03-11T22:23:52-04:00",
       "updated_at": "2026-10-13T04:26:15-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2555,6 +2645,7 @@
       "id": "greenhouse:flowtraders:8222298",
       "title": "Experienced MFT Quantitative Researcher",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2569,7 +2660,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-09-21T23:23:04-04:00",
       "updated_at": "2026-09-21T23:23:04-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2583,6 +2674,7 @@
       "id": "greenhouse:flowtraders:4003450",
       "title": "Experienced Quantitative Researcher",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2597,7 +2689,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2022-03-04T00:31:35-05:00",
       "updated_at": "2026-09-18T04:15:09-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2611,6 +2703,7 @@
       "id": "greenhouse:flowtraders:8156203",
       "title": "PhD Graduate Quantitative Researcher",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2625,7 +2718,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-08-25T07:54:56-04:00",
       "updated_at": "2026-09-21T03:23:23-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2639,6 +2732,7 @@
       "id": "greenhouse:flowtraders:7431246",
       "title": "Senior Research Engineer",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2653,7 +2747,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-11-30T21:30:37-05:00",
       "updated_at": "2026-10-20T05:17:56-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "research",
@@ -2667,6 +2761,7 @@
       "id": "greenhouse:flowtraders:6993714",
       "title": "Senior Software Engineer, C++",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2681,7 +2776,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-06-26T00:56:39-04:00",
       "updated_at": "2026-11-06T00:27:40-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -2695,6 +2790,7 @@
       "id": "greenhouse:flowtraders:8212740",
       "title": "Senior Software Engineer, C++ (Market Data) ",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2709,7 +2805,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-09-17T22:57:48-04:00",
       "updated_at": "2026-11-06T00:28:17-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -2723,6 +2819,7 @@
       "id": "eFC:efc:5FC5LApEJMZlnWdf",
       "title": "Quantitative Researcher",
       "company": "Frontier Asset Management (Hong Kong)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2737,7 +2834,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-01",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2752,6 +2849,7 @@
       "id": "eFC:efc:78Frs5s8IlGUI0wy",
       "title": "Associate/AVP, Quantitative Strategist, Private Equity",
       "company": "GIC Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2766,7 +2864,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2778,6 +2876,7 @@
       "id": "eFC:efc:qRvvnoyhYRhHBPSg",
       "title": "AVP/VP, Quantitative Research Analyst, Exposure & Liquidity Research, Portfolio Exposure & Liquidity",
       "company": "GIC Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2792,7 +2891,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-29",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2804,6 +2903,7 @@
       "id": "eFC:efc:XdPXNkwsnzdAHWkg",
       "title": "VP, Quantitative Research Analyst, Exposure & Liquidity Research, Portfolio Exposure & Liquidity",
       "company": "GIC Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2818,7 +2918,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2830,6 +2930,7 @@
       "id": "eFC:efc:Hf10PILMQosZEuBE",
       "title": "Global Futures / CTA Quant Researcher | Hong Kong",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -2844,7 +2945,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2859,6 +2960,7 @@
       "id": "greenhouse:gravitonresearchcapital:8156976002",
       "title": "Central Execution Trader",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2873,7 +2975,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2025-09-08T06:04:56-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2885,6 +2987,7 @@
       "id": "greenhouse:gravitonresearchcapital:8862376002",
       "title": "Graduate Central Execution Trader ",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2899,7 +3002,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2026-10-01T22:07:12-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2911,6 +3014,7 @@
       "id": "greenhouse:gravitonresearchcapital:4114667002",
       "title": "Quantitative Researcher  (Singapore)",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2925,7 +3029,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2023-10-03T04:18:55-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2942,6 +3046,7 @@
       "id": "greenhouse:gravitonresearchcapital:8899670002",
       "title": "Quantitative Researcher - 2027 Graduates",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2956,7 +3061,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2026-10-19T05:23:17-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2968,6 +3073,7 @@
       "id": "greenhouse:gravitonresearchcapital:8899673002",
       "title": "Quantitative Researcher - 2027 Summer Internship ",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -2982,7 +3088,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2026-10-19T05:34:20-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2996,6 +3102,7 @@
       "id": "greenhouse:gravitonresearchcapital:8899671002",
       "title": "Quantitative Researcher PhD - 2027 Internship ",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3010,7 +3117,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2026-10-19T05:27:51-04:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3022,6 +3129,7 @@
       "id": "greenhouse:gravitonresearchcapital:4121745002",
       "title": "Quantitative Trader  - Singapore ",
       "company": "Graviton Research Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3036,7 +3144,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2020-02-13T02:51:15-05:00",
       "updated_at": "2026-10-29T06:00:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3051,6 +3159,7 @@
       "id": "greenhouse:imc:4908869101",
       "title": "Machine Learning Engineer",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3065,7 +3174,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-06-26T02:38:52-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -3079,6 +3188,7 @@
       "id": "greenhouse:imc:4941208101",
       "title": "Quantitative Research Intern 2027",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3093,7 +3203,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-08-12T03:59:42-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3107,6 +3217,7 @@
       "id": "greenhouse:imc:4754254101",
       "title": "Quantitative Researcher - Equities/ Futures ",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3121,7 +3232,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-01-14T21:30:39-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3139,6 +3250,7 @@
       "id": "greenhouse:imc:4941205101",
       "title": "Quantitative Trader Intern 2027",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3153,7 +3265,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-08-12T04:00:13-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3167,6 +3279,7 @@
       "id": "greenhouse:imc:4787639101",
       "title": "Quantitative Trader – Equities (Strategy Monetization)",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3181,7 +3294,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-23T01:16:58-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3195,6 +3308,7 @@
       "id": "greenhouse:imc:4931814101",
       "title": "Software Engineer - Tooling",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3209,7 +3323,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-07-22T02:53:05-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3225,6 +3339,7 @@
       "id": "greenhouse:imc:4941206101",
       "title": "Software Engineer Intern 2027",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3239,7 +3354,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-08-12T03:59:58-04:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3254,6 +3369,7 @@
       "id": "greenhouse:janestreet:7668113002",
       "title": "Data Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3268,7 +3384,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-10-03T20:16:05-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3282,6 +3398,7 @@
       "id": "greenhouse:janestreet:7449190002",
       "title": "Machine Learning Performance Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3296,7 +3413,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-05-20T17:22:15-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -3311,6 +3428,7 @@
       "id": "greenhouse:janestreet:7246309002",
       "title": "Machine Learning Researcher",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3325,7 +3443,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-04-15T11:23:08-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "researcher",
@@ -3341,6 +3459,7 @@
       "id": "greenhouse:janestreet:8693539002",
       "title": "Network Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3355,7 +3474,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-08-20T17:12:59-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3367,6 +3486,7 @@
       "id": "greenhouse:janestreet:8480752002",
       "title": "Network Engineer, Security",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3381,7 +3501,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-03-29T22:04:50-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3393,6 +3513,7 @@
       "id": "greenhouse:janestreet:7514485002",
       "title": "Quantitative Researcher",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3407,7 +3528,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-07-01T21:29:52-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3423,6 +3544,7 @@
       "id": "greenhouse:janestreet:8415898002",
       "title": "Quantitative Trader",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3437,7 +3559,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-09-09T06:44:12-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3451,6 +3573,7 @@
       "id": "greenhouse:janestreet:7111147002",
       "title": "Senior Network Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3465,7 +3588,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-01-25T22:13:18-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3477,6 +3600,7 @@
       "id": "greenhouse:janestreet:7284911002",
       "title": "Senior Network Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3491,7 +3615,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-03-17T22:42:29-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3503,6 +3627,7 @@
       "id": "greenhouse:janestreet:4756741002",
       "title": "Software Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3517,7 +3642,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2020-06-08T08:23:25-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3532,6 +3657,7 @@
       "id": "greenhouse:janestreet:5791948002",
       "title": "Software Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3546,7 +3672,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2021-12-29T01:07:46-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3561,6 +3687,7 @@
       "id": "greenhouse:janestreet:6313662002",
       "title": "Trading Desk Operations Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3575,7 +3702,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-08-11T23:38:05-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -3587,6 +3714,7 @@
       "id": "greenhouse:jumptrading:6603013",
       "title": "Deep Learning Researcher | Trading Team",
       "company": "Jump Trading",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -3602,7 +3730,7 @@
       "ats_slug": "jumptrading",
       "posted_at": "2025-02-04T17:56:44-05:00",
       "updated_at": "2026-08-08T01:01:15-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "researcher",
@@ -3617,6 +3745,7 @@
       "id": "eFC:efc:gNhXrHiYBoWvjXqo",
       "title": "Quantitative Researcher",
       "company": "Michael Page International Singapore",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3631,7 +3760,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3643,6 +3772,7 @@
       "id": "eightfold:mlp.com:755957516253",
       "title": "Deep Learning Quantitative Researcher",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -3658,7 +3788,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-21T00:00:00Z",
       "updated_at": "2026-07-24T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3672,6 +3802,7 @@
       "id": "eightfold:mlp.com:755956836387",
       "title": "Junior Execution Trader — Index Rebalance Pod",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3686,7 +3817,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-06-23T00:00:00Z",
       "updated_at": "2026-06-23T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -3698,6 +3829,7 @@
       "id": "eightfold:mlp.com:755957885726",
       "title": "Network Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3712,7 +3844,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-03T00:00:00Z",
       "updated_at": "2026-08-03T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3724,6 +3856,7 @@
       "id": "eightfold:mlp.com:755959574308",
       "title": "Network Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3738,7 +3871,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3750,6 +3883,7 @@
       "id": "eightfold:mlp.com:755953938404",
       "title": "Options Quantitative Developer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -3765,7 +3899,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-01-21T00:00:00Z",
       "updated_at": "2026-01-21T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3779,6 +3913,7 @@
       "id": "eightfold:mlp.com:755958978007",
       "title": "Platform / Site Reliability Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3792,8 +3927,8 @@
       "source": "eightfold",
       "ats_slug": "mlp.com",
       "posted_at": "2026-09-30T00:00:00Z",
-      "updated_at": "2026-11-06T12:12:33Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "updated_at": "2026-09-30T00:00:00Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3805,6 +3940,7 @@
       "id": "eightfold:mlp.com:755956478721",
       "title": "Quantitative Researcher",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3819,7 +3955,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3831,6 +3967,7 @@
       "id": "eightfold:mlp.com:755943523992",
       "title": "Quantitative Researcher, Equity",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -3846,7 +3983,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-05-18T00:00:00Z",
       "updated_at": "2025-05-18T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3858,6 +3995,7 @@
       "id": "eightfold:mlp.com:755954333809",
       "title": "Quantitative Trader",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3872,7 +4010,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-02-05T00:00:00Z",
       "updated_at": "2026-02-05T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3884,6 +4022,7 @@
       "id": "eightfold:mlp.com:755955914481",
       "title": "Senior Quantitative Researcher",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3898,7 +4037,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-04-23T00:00:00Z",
       "updated_at": "2026-04-23T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3910,6 +4049,7 @@
       "id": "eightfold:mlp.com:755959563394",
       "title": "Senior Software Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -3924,7 +4064,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3936,6 +4076,7 @@
       "id": "eightfold:mlp.com:755958904170",
       "title": "Software Engineer, Treasury Technology",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3950,7 +4091,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-09-25T00:00:00Z",
       "updated_at": "2026-09-25T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3962,6 +4103,7 @@
       "id": "eightfold:mlp.com:755958347593",
       "title": "Systematic Production Support Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -3976,7 +4118,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-24T00:00:00Z",
       "updated_at": "2026-08-24T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "systematic",
@@ -3988,6 +4130,7 @@
       "id": "eFC:efc:Jv8d72zSAaKCM2bV",
       "title": "Front Office Python Developer - Global Hedge Fund - Hong Kong",
       "company": "NLS",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4002,7 +4145,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -4016,6 +4159,7 @@
       "id": "eFC:efc:N1CRxA9WbdMZI7Ly",
       "title": "Quantitative Developer - Global Quant Fund - Hong Kong",
       "company": "NLS",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4030,7 +4174,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4044,6 +4188,7 @@
       "id": "eFC:efc:GyQFmGXecMMMpUD5",
       "title": "Quantitative Researcher - Global Crypto Exchange - APAC (Remote)",
       "company": "NLS",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4058,7 +4203,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4072,6 +4217,7 @@
       "id": "eFC:efc:1dLhnYKh2dxOOTTW",
       "title": "Quantitative Trading Internship (Singapore) - 2027",
       "company": "Optiver",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4086,7 +4232,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-09-08",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4098,6 +4244,7 @@
       "id": "eFC:efc:jWB3ZiyGsi4cRQuA",
       "title": "C++ Engineer - London & Singapore- Global Trading",
       "company": "Oxford Knight",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4112,7 +4259,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -4126,6 +4273,7 @@
       "id": "greenhouse:point72:7045980002",
       "title": "Cubist Quantitative Researcher",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4140,7 +4288,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:04:16-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4156,6 +4304,7 @@
       "id": "greenhouse:point72:7666631002",
       "title": "Cubist Quantitative Researcher",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4170,7 +4319,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-11-04T16:45:39-05:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4187,6 +4336,7 @@
       "id": "greenhouse:point72:8870196002",
       "title": "Quantitative Developer",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4201,7 +4351,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-10-06T11:31:03-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4218,6 +4368,7 @@
       "id": "greenhouse:point72:7297657002",
       "title": "Quantitative Researcher - Intern",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4232,7 +4383,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:02:22-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4248,6 +4399,7 @@
       "id": "polymer_api:polymer-capital:5864761",
       "title": "Data Scientist, Risk & Quant Analytics",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4262,7 +4414,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4274,6 +4426,7 @@
       "id": "polymer_api:polymer-capital:5864766",
       "title": "Full Stack Developer (Analyst / Associate, Risk & Quant Analytics)",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4288,7 +4441,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4300,6 +4453,7 @@
       "id": "eFC:efc:YF6OK1prB1aSf1qe",
       "title": "Quantitative Crypto Trader",
       "company": "Principle Partners",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4314,7 +4468,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4328,6 +4482,7 @@
       "id": "greenhouse:quadraturecapital:8028012",
       "title": "Quantitative Developer",
       "company": "Quadrature Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4342,7 +4497,7 @@
       "ats_slug": "quadraturecapital",
       "posted_at": "2026-06-25T06:08:05-04:00",
       "updated_at": "2026-11-05T04:14:27-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4358,6 +4513,7 @@
       "id": "eFC:efc:MN19Tx5boNqK4l1E",
       "title": "C++ Developer (Market Date/Quant Strategy/Market Connectivity)",
       "company": "Sanderson-iKas",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4372,7 +4528,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4387,6 +4543,7 @@
       "id": "greenhouse:schonfeld:8311597",
       "title": "2027 Index Rebalancing Quantitative Research Intern",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4401,7 +4558,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-22T10:11:32-04:00",
       "updated_at": "2026-10-22T10:11:32-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4413,6 +4570,7 @@
       "id": "greenhouse:schonfeld:8238451",
       "title": "2027 Quantitative C++ Developer Intern",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4427,7 +4585,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-09-29T10:30:14-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4442,6 +4600,7 @@
       "id": "greenhouse:schonfeld:8238448",
       "title": "2027 Quantitative Research Intern",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4456,7 +4615,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-09-29T10:31:51-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4470,6 +4629,7 @@
       "id": "greenhouse:schonfeld:8303536",
       "title": "AI Platform Engineer",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4485,7 +4645,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-21T08:57:01-04:00",
       "updated_at": "2026-11-05T06:51:12-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -4499,6 +4659,7 @@
       "id": "greenhouse:schonfeld:6772399",
       "title": "Quantitative Developer ",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4513,7 +4674,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2025-04-03T11:35:23-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4525,6 +4686,7 @@
       "id": "greenhouse:schonfeld:7624691",
       "title": "Quantitative Researcher",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4540,7 +4702,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-02-17T18:24:50-05:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4558,6 +4720,7 @@
       "id": "greenhouse:schonfeld:7517021",
       "title": "Quantitative Trading Associate",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4572,7 +4735,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-01-06T14:07:00-05:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4584,6 +4747,7 @@
       "id": "eFC:efc:iMf9MhVx8VURQsjf",
       "title": "OTC Quant Developer",
       "company": "Selby Jennings",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4598,7 +4762,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-30",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4613,6 +4777,7 @@
       "id": "eFC:efc:CoNM0tmiwBZZG5p7",
       "title": "Junior Quant Researcher",
       "company": "SilverStrand Executive Search Limited",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -4627,7 +4792,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4639,6 +4804,7 @@
       "id": "greenhouse:squarepointcapital:8002291",
       "title": "APAC Delta One Trader",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4654,7 +4820,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-09-11T06:53:55-04:00",
       "updated_at": "2026-10-28T09:19:47-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -4666,6 +4832,7 @@
       "id": "greenhouse:squarepointcapital:7918610",
       "title": "Graduate Quant Developer",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4680,7 +4847,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-05-12T16:39:08-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4692,6 +4859,7 @@
       "id": "greenhouse:squarepointcapital:243853",
       "title": "Intern Quant Researcher",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4707,7 +4875,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-07-06T04:50:24-04:00",
       "updated_at": "2026-10-28T07:50:43-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4723,6 +4891,7 @@
       "id": "greenhouse:squarepointcapital:8143287",
       "title": "Junior Execution Trader - Equity",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4737,7 +4906,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-09-14T05:07:59-04:00",
       "updated_at": "2026-10-30T06:21:36-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -4753,6 +4922,7 @@
       "id": "greenhouse:squarepointcapital:6034466",
       "title": "Junior Quant Developer",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4767,7 +4937,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T07:48:32-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4781,6 +4951,7 @@
       "id": "greenhouse:squarepointcapital:239376",
       "title": "Junior Quant Researcher",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4796,7 +4967,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-04-03T14:34:19-04:00",
       "updated_at": "2026-10-28T07:52:14-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4812,6 +4983,7 @@
       "id": "greenhouse:squarepointcapital:6040773",
       "title": "Junior Software Developer (KDB+/Q)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4826,7 +4998,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:55-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "kdb",
@@ -4840,6 +5012,7 @@
       "id": "greenhouse:squarepointcapital:6033550",
       "title": "Junior Software Developer (Python)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -4854,7 +5027,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T07:39:21-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -4869,6 +5042,7 @@
       "id": "greenhouse:squarepointcapital:253410",
       "title": "Senior Quant Researcher - CTA/Short-Term",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4884,7 +5058,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:11:58-04:00",
       "updated_at": "2026-10-28T11:11:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4900,6 +5074,7 @@
       "id": "greenhouse:squarepointcapital:253411",
       "title": "Senior Quant Researcher - Equity Mid/Low Frequency",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4915,7 +5090,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:43-04:00",
       "updated_at": "2026-10-28T11:10:43-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4932,6 +5107,7 @@
       "id": "greenhouse:squarepointcapital:1163559",
       "title": "Senior Quant Researcher - Fixed Income",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4947,7 +5123,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:32-04:00",
       "updated_at": "2026-10-28T11:10:32-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4963,6 +5139,7 @@
       "id": "greenhouse:squarepointcapital:253414",
       "title": "Senior Quant Researcher - Volatility",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -4978,7 +5155,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-05-28T11:12:02-04:00",
       "updated_at": "2026-10-28T11:09:04-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4994,6 +5171,7 @@
       "id": "greenhouse:squarepointcapital:4906785",
       "title": "Software Developer - Internal Compute Frameworks (Python)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5008,7 +5186,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-12-15T11:38:37-05:00",
       "updated_at": "2026-10-28T11:40:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -5022,6 +5200,7 @@
       "id": "greenhouse:squarepointcapital:5986280",
       "title": "Software Developer - Internal Compute Frameworks (Rust)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5036,7 +5215,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-05-28T11:32:51-04:00",
       "updated_at": "2026-10-28T11:39:59-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -5052,6 +5231,7 @@
       "id": "phenom:sig:11620",
       "title": "Machine Learning Engineering Internship: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5066,7 +5246,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-08",
       "updated_at": "2026-10-22",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -5080,6 +5260,7 @@
       "id": "phenom:sig:11381",
       "title": "Machine Learning Research Internship - PhD: 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5094,7 +5275,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-09-06",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "research",
@@ -5108,6 +5289,7 @@
       "id": "phenom:sig:11265",
       "title": "Pricing Developer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5122,7 +5304,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-20",
       "updated_at": "2026-11-04",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "pricing",
@@ -5137,6 +5319,7 @@
       "id": "phenom:sig:11121",
       "title": "Quantitative Research Internship - Master's: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5151,7 +5334,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-06-30",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5165,6 +5348,7 @@
       "id": "phenom:sig:11083",
       "title": "Quantitative Research Internship - PhD: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5179,7 +5363,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-06-29",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5193,6 +5377,7 @@
       "id": "phenom:sig:11170",
       "title": "Quantitative Strategy Developer Internship: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5207,7 +5392,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-07-06",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5222,6 +5407,7 @@
       "id": "phenom:sig:11169",
       "title": "Trading System Engineering Internship (C++): Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5236,7 +5422,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-07-06",
       "updated_at": "2026-11-02",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5251,6 +5437,7 @@
       "id": "phenom:sig:11266",
       "title": "Trading Systems C# Developer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5265,7 +5452,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-09-15",
       "updated_at": "2026-10-13",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5279,6 +5466,7 @@
       "id": "eFC:efc:Yzy7L88xkGuFfZ7p",
       "title": "Quantitative Research Intern, Quantitative Strategy (Jan - Jun 2027) (1368996757A2)",
       "company": "Temasek International Pte Ltd",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5293,7 +5481,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5305,6 +5493,7 @@
       "id": "eFC:efc:vhPMtiQQ3PyaIkFd",
       "title": "Equity Derivatives Trading Intern (Jan - June 2027)",
       "company": "United Overseas Bank",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5319,7 +5508,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5331,6 +5520,7 @@
       "id": "eFC:efc:AqECQq0eg5n5av3l",
       "title": "First VP, Interest Rate Strategist, Group Treasury & Research",
       "company": "United Overseas Bank",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5345,7 +5535,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "research",
@@ -5357,6 +5547,7 @@
       "id": "greenhouse:virtu:7617953002",
       "title": "2027 Internship - Quantitative Researcher (PhD)",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5371,7 +5562,7 @@
       "ats_slug": "virtu",
       "posted_at": "2024-08-30T00:24:42-04:00",
       "updated_at": "2026-09-17T22:25:57-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5383,6 +5574,7 @@
       "id": "greenhouse:virtu:5208637002",
       "title": "2027 Internship - Quantitative Trading",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5397,7 +5589,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-04-16T02:41:31-04:00",
       "updated_at": "2026-07-30T03:09:23-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5409,6 +5601,7 @@
       "id": "greenhouse:virtu:5513756002",
       "title": "2027 Internship – Software Engineer ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5423,7 +5616,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-08-31T22:41:17-04:00",
       "updated_at": "2026-07-30T03:09:40-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5435,6 +5628,7 @@
       "id": "greenhouse:virtu:8798302002",
       "title": "Electronic Trading Engineer (Retail Routing)",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5449,7 +5643,7 @@
       "ats_slug": "virtu",
       "posted_at": "2026-09-18T02:53:10-04:00",
       "updated_at": "2026-09-18T02:53:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5461,6 +5655,7 @@
       "id": "greenhouse:virtu:5360031002",
       "title": "Options Quantitative Strategist ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5475,7 +5670,7 @@
       "ats_slug": "virtu",
       "posted_at": "2022-02-01T06:06:33-05:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5489,6 +5684,7 @@
       "id": "greenhouse:virtu:4232867002",
       "title": "Quantitative Trader ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5503,7 +5699,7 @@
       "ats_slug": "virtu",
       "posted_at": "2019-03-11T16:01:36-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5515,6 +5711,7 @@
       "id": "greenhouse:virtu:7098757002",
       "title": "Virtu Execution Services (“VES”): Electronic Trading Sales, Coverage ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5529,7 +5726,7 @@
       "ats_slug": "virtu",
       "posted_at": "2024-01-16T22:52:57-05:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5541,6 +5738,7 @@
       "id": "greenhouse:worldquant:4701096006",
       "title": "C++ Software Engineer - Data Platform",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5555,7 +5753,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-08-02T21:57:26-04:00",
       "updated_at": "2026-08-12T21:38:39-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5569,6 +5767,7 @@
       "id": "greenhouse:worldquant:4252944006",
       "title": "Experienced Quantitative Strategist",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5583,7 +5782,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-07-17T10:37:41-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5595,6 +5794,7 @@
       "id": "greenhouse:worldquant:4408547006",
       "title": "Junior Execution Trader",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5609,7 +5809,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-09-10T22:12:01-04:00",
       "updated_at": "2026-09-10T22:12:01-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -5621,6 +5821,7 @@
       "id": "greenhouse:worldquant:4435904006",
       "title": "Quantitative Developer",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5635,7 +5836,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2025-01-17T10:41:39-05:00",
       "updated_at": "2026-08-12T21:37:21-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5647,6 +5848,7 @@
       "id": "greenhouse:worldquant:4451658006",
       "title": "Senior C++ Software Engineer",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5661,7 +5863,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-07-02T21:41:20-04:00",
       "updated_at": "2026-09-15T03:43:40-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5675,6 +5877,7 @@
       "id": "greenhouse:xtxmarketstechnologies:7831489003",
       "title": "C++ Software Engineer",
       "company": "XTX Markets",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5689,7 +5892,7 @@
       "ats_slug": "xtxmarketstechnologies",
       "posted_at": "2026-08-19T06:20:58-04:00",
       "updated_at": "2026-10-13T07:04:37-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5707,6 +5910,7 @@
       "id": "eFC:efc:cMgNT7DbOLbhIBOT",
       "title": "Product Management (Pricing), Analyst/Specialist",
       "company": "AIA Singapore Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5721,7 +5925,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "pricing"
@@ -5732,6 +5936,7 @@
       "id": "eFC:efc:QiYDHoaj8ROmf7WP",
       "title": "Senior Manager, Risk and Quantitative Analytics (AIA Investment Management)",
       "company": "AIA Singapore Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5746,7 +5951,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5757,6 +5962,7 @@
       "id": "greenhouse:akunacapital:6632731",
       "title": "Systems Engineer",
       "company": "Akuna Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5771,7 +5977,7 @@
       "ats_slug": "akunacapital",
       "posted_at": "2025-02-14T01:17:57-05:00",
       "updated_at": "2026-09-24T02:47:23-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5785,6 +5991,7 @@
       "id": "eFC:efc:hGbQmYxnQvTiXh13",
       "title": "Desk Quant - Macro Rate",
       "company": "Alan Partners",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5799,7 +6006,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5810,6 +6017,7 @@
       "id": "lever:ambergroup:a4df0b48-88f8-4cd9-9084-e211bdb0027e",
       "title": "Quant Intern",
       "company": "Amber Group",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5824,7 +6032,7 @@
       "ats_slug": "ambergroup",
       "posted_at": "2024-11-08T03:56:19Z",
       "updated_at": "2024-11-08T03:56:19Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5835,6 +6043,7 @@
       "id": "eFC:efc:S073lmVceAs2Uov6",
       "title": "Quantitative Analyst - Commodities Investment Team (Summer Internship)",
       "company": "Balyasny Asset Management LP",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5849,7 +6058,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-08-16",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5862,6 +6071,7 @@
       "id": "eFC:efc:5rkatz44S0dVPQb9",
       "title": "Risk Analyst - Risk Quant",
       "company": "CICC",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5876,7 +6086,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5887,6 +6097,7 @@
       "id": "eFC:efc:0oRGZU10azGfKHqN",
       "title": "Investor Relations Associate — Quantitative Hedge Fund",
       "company": "DARMAX GLOBAL",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5901,7 +6112,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-09-23",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5912,6 +6123,7 @@
       "id": "greenhouse:dvtrading:4733880005",
       "title": "2027 Software Developer Intern  (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5926,7 +6138,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-15T23:39:37-04:00",
       "updated_at": "2026-10-20T00:11:22-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -5943,6 +6155,7 @@
       "id": "greenhouse:dvtrading:4694946005",
       "title": "Equity Research  Analyst （DV QES）",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -5957,7 +6170,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-13T10:34:36-04:00",
       "updated_at": "2026-10-20T00:16:50-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -5972,6 +6185,7 @@
       "id": "greenhouse:dvtrading:4702373005",
       "title": "Experienced Trader",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -5986,7 +6200,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-06-24T10:52:29-04:00",
       "updated_at": "2026-08-07T10:53:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -5999,6 +6213,7 @@
       "id": "greenhouse:dvtrading:4219811005",
       "title": "Experienced Trader (DV Commodities)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6013,7 +6228,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2023-04-19T12:38:01-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -6026,6 +6241,7 @@
       "id": "greenhouse:dvtrading:4734953005",
       "title": "Institutional Sales and Trading (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6040,7 +6256,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-17T10:20:30-04:00",
       "updated_at": "2026-10-20T00:17:27-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -6054,6 +6270,7 @@
       "id": "greenhouse:dvtrading:4723943005",
       "title": "Portfolio Manager",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6068,7 +6285,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-08-13T10:58:59-04:00",
       "updated_at": "2026-08-13T10:58:59-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6081,6 +6298,7 @@
       "id": "greenhouse:dvtrading:4693324005",
       "title": "Software Developer - Experienced (DV QES)",
       "company": "DV Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6095,7 +6313,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-07T15:31:01-04:00",
       "updated_at": "2026-10-20T00:13:57-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -6112,6 +6330,7 @@
       "id": "greenhouse:flowtraders:7770955",
       "title": "Digital Assets Trader ",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6126,7 +6345,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-04-01T03:10:00-04:00",
       "updated_at": "2026-10-13T10:21:11-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -6139,6 +6358,7 @@
       "id": "greenhouse:flowtraders:8102618",
       "title": "Trading Intern ",
       "company": "Flow Traders",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6153,7 +6373,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-08-04T03:37:55-04:00",
       "updated_at": "2026-09-30T06:42:48-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -6164,6 +6384,7 @@
       "id": "eFC:efc:ADIT6boLseAfAGmY",
       "title": "VP, Risk Quantitative Analyst",
       "company": "GIC Private Limited",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6178,7 +6399,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6189,6 +6410,7 @@
       "id": "eFC:efc:b1ckJSHUYqcZZOkP",
       "title": "Assistant/Manager, Quantitative Risk Management",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6203,7 +6425,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6214,6 +6436,7 @@
       "id": "eFC:efc:RIgdQVmppgJjWfsr",
       "title": "C++ Market Data Developer",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6228,7 +6451,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -6241,6 +6464,7 @@
       "id": "eFC:efc:SlmsuKuwvq1kGNGR",
       "title": "Regional Finance Director, Quant Firm",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6255,7 +6479,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -6266,6 +6490,7 @@
       "id": "eFC:efc:Bw3K5zpnUhbBMbxP",
       "title": "VP - GM Liquid Financing Quantitative Analyst",
       "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6280,7 +6505,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-03",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6291,6 +6516,7 @@
       "id": "eFC:efc:nvXTYlDxgm2qpSs5",
       "title": "V.I.E. - 12 months - Quantitative Analyst / Commando F/M - Hong Kong",
       "company": "Groupe BPCE",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6305,7 +6531,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-23",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6316,6 +6542,7 @@
       "id": "greenhouse:imc:4785804101",
       "title": "Deep Learning Researcher",
       "company": "IMC Trading",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6330,7 +6557,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-18T21:44:36-05:00",
       "updated_at": "2026-11-05T13:51:25-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -6344,6 +6571,7 @@
       "id": "greenhouse:janestreet:6102180002",
       "title": "Data Centre Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6358,7 +6586,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2023-04-07T04:28:17-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6369,6 +6597,7 @@
       "id": "greenhouse:janestreet:6300684002",
       "title": "Data Centre Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6383,7 +6612,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-08-02T04:20:47-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6394,6 +6623,7 @@
       "id": "greenhouse:janestreet:8159216002",
       "title": "FIX Onboarding and Connectivity Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6408,7 +6638,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-09-11T23:56:59-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6419,6 +6649,7 @@
       "id": "greenhouse:janestreet:8161177002",
       "title": "FIX Onboarding and Connectivity Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6433,7 +6664,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-09-11T23:57:49-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6444,6 +6675,7 @@
       "id": "greenhouse:janestreet:8025274002",
       "title": "IT Operations Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6458,7 +6690,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-06-18T00:18:07-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6471,6 +6703,7 @@
       "id": "greenhouse:janestreet:8549353002",
       "title": "Korea Trading Controls Specialist",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6485,7 +6718,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-05-19T06:09:40-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -6496,6 +6729,7 @@
       "id": "greenhouse:janestreet:5548184002",
       "title": "Linux Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6510,7 +6744,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2021-09-16T23:59:13-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6523,6 +6757,7 @@
       "id": "greenhouse:janestreet:5701269002",
       "title": "Linux Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6537,7 +6772,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2021-11-16T23:09:54-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6550,6 +6785,7 @@
       "id": "greenhouse:janestreet:8884625002",
       "title": "MacOS Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6564,7 +6800,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-10-18T22:10:09-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6577,6 +6813,7 @@
       "id": "greenhouse:janestreet:8816159002",
       "title": "OTC Derivatives Reporting Specialist",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6591,7 +6828,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-10-06T23:58:26-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "derivatives"
@@ -6602,6 +6839,7 @@
       "id": "greenhouse:janestreet:5807402002",
       "title": "Production Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6616,7 +6854,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-01-10T02:56:14-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6627,6 +6865,7 @@
       "id": "greenhouse:janestreet:5807405002",
       "title": "Production Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6641,7 +6880,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-01-10T02:56:37-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6652,6 +6891,7 @@
       "id": "greenhouse:janestreet:8630687002",
       "title": "Sales and Trading",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6666,7 +6906,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-07-23T03:16:58-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -6677,6 +6917,7 @@
       "id": "greenhouse:janestreet:8034317002",
       "title": "Windows Engineer",
       "company": "Jane Street",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6691,7 +6932,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-06-23T05:19:52-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6704,6 +6945,7 @@
       "id": "eFC:efc:5wSOfw8iKKN4ybmE",
       "title": "Legal Counsel & Compliance Director - Quantitative Hedgefund",
       "company": "Larson Maddox",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6718,7 +6960,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-06",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6729,6 +6971,7 @@
       "id": "eFC:efc:BNsCu7YM0QBorcJp",
       "title": "Senior Research Specialist, Oil",
       "company": "London Stock Exchange Group",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6743,7 +6986,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -6754,6 +6997,7 @@
       "id": "eightfold:mlp.com:755958044949",
       "title": "AI Data Scientist",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6768,7 +7012,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-13T00:00:00Z",
       "updated_at": "2026-08-13T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6779,6 +7023,7 @@
       "id": "eightfold:mlp.com:755958192608",
       "title": "AI Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6793,7 +7038,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-20T00:00:00Z",
       "updated_at": "2026-08-20T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6804,6 +7049,7 @@
       "id": "eightfold:mlp.com:755943559825",
       "title": "Analyst / Senior Analyst / Portfolio Manager, Fundamental Equity",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -6819,7 +7065,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-05-21T00:00:00Z",
       "updated_at": "2025-05-21T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6830,6 +7076,7 @@
       "id": "eightfold:mlp.com:755958997059",
       "title": "Data Scientist",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6844,7 +7091,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-01T00:00:00Z",
       "updated_at": "2026-10-01T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6855,6 +7102,7 @@
       "id": "eightfold:mlp.com:755956682846",
       "title": "End User Support Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6869,7 +7117,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6880,6 +7128,7 @@
       "id": "eightfold:mlp.com:755956338275",
       "title": "Equity Research Analyst, China Industrials",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6894,7 +7143,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-05-28T00:00:00Z",
       "updated_at": "2026-05-28T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -6905,6 +7154,7 @@
       "id": "eightfold:mlp.com:755958997120",
       "title": "Infra Developer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6918,8 +7168,8 @@
       "source": "eightfold",
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-01T00:00:00Z",
-      "updated_at": "2026-11-06T12:12:33Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "updated_at": "2026-10-01T00:00:00Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -6930,6 +7180,7 @@
       "id": "eightfold:mlp.com:755957931077",
       "title": "Portfolio Finance Trader",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6944,7 +7195,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-04T00:00:00Z",
       "updated_at": "2026-08-04T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -6955,6 +7206,7 @@
       "id": "eightfold:mlp.com:755930336205",
       "title": "Portfolio Manager",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -6969,7 +7221,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2021-10-07T00:00:00Z",
       "updated_at": "2021-10-07T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6980,6 +7232,7 @@
       "id": "eightfold:mlp.com:755959286638",
       "title": "Production Support Engineer",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -6994,7 +7247,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-20T00:00:00Z",
       "updated_at": "2026-10-20T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7005,6 +7258,7 @@
       "id": "eightfold:mlp.com:755956237097",
       "title": "Quantitative Analyst",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7019,7 +7273,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-05-20T00:00:00Z",
       "updated_at": "2026-05-20T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7030,6 +7284,7 @@
       "id": "eightfold:mlp.com:755957532215",
       "title": "Server-Side Engineer (C++) - Pre-Trade Risk Technology",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7044,7 +7299,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-21T00:00:00Z",
       "updated_at": "2026-07-21T00:00:00Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7057,6 +7312,7 @@
       "id": "eightfold:mlp.com:755959066841",
       "title": "Systematic Project & Product Manager",
       "company": "Millennium Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7070,8 +7326,8 @@
       "source": "eightfold",
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-07T00:00:00Z",
-      "updated_at": "2026-11-06T12:12:33Z",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "updated_at": "2026-10-07T00:00:00Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "systematic"
@@ -7079,9 +7335,37 @@
       "tags": []
     },
     {
+      "id": "greenhouse:point72:8899753002",
+      "title": "2027 MI Data Research & AI Intern - APAC",
+      "company": "Point72",
+      "employer_type": "direct",
+      "location": "Hong Kong, Singapore",
+      "locations": [
+        "Hong Kong",
+        "Singapore"
+      ],
+      "city_key": "hong_kong|singapore",
+      "department": "Market Intelligence",
+      "description": "A Career with Point72’s proprietary research team \n On our proprietary research team—Market Intelligence—you’ll partner with our investment professionals and Compliance team to work with alternative data to uncover insights about companies, industries, and the broader economy through deep fundamental research and applying data science and engineering techniques. You’ll work alongside a talented team with diverse skills, backgrounds, and perspectives. Our sector data analysts, data scientists, data managers, and engineers work together to build compliant research products that are incorporated...",
+      "url": "https://boards.greenhouse.io/point72/jobs/8899753002?gh_jid=8899753002",
+      "apply_url": "https://boards.greenhouse.io/point72/jobs/8899753002?gh_jid=8899753002",
+      "career_url": "https://careers.point72.com/",
+      "source": "greenhouse",
+      "ats_slug": "point72",
+      "posted_at": "2026-11-06T04:58:09-05:00",
+      "updated_at": "2026-11-06T11:34:16-05:00",
+      "fetched_at": "2026-11-06T17:00:51Z",
+      "quant_score": 1,
+      "matched_keywords": [
+        "research"
+      ],
+      "tags": []
+    },
+    {
       "id": "greenhouse:point72:8932943002",
       "title": "2027 Trader Summer Intern (12-week program)",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7096,7 +7380,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-11-06T04:33:41-05:00",
       "updated_at": "2026-11-06T10:59:41-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7107,6 +7391,7 @@
       "id": "greenhouse:point72:8545515002",
       "title": "Canvas Fundamental Researcher",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7121,7 +7406,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-05-12T10:30:05-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -7132,6 +7417,7 @@
       "id": "greenhouse:point72:7001158002",
       "title": "Cubist Data Scientist",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7146,7 +7432,7 @@
       "ats_slug": "point72",
       "posted_at": "2023-11-20T13:23:03-05:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -7161,6 +7447,7 @@
       "id": "greenhouse:point72:7045941002",
       "title": "Cubist Portfolio Manager",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7175,7 +7462,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T16:56:42-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -7189,6 +7476,7 @@
       "id": "greenhouse:point72:7045996002",
       "title": "Cubist Portfolio Manager",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7203,7 +7491,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:00:07-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -7217,6 +7505,7 @@
       "id": "greenhouse:point72:7045995002",
       "title": "Cubist Senior Data Scientist",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7231,7 +7520,7 @@
       "ats_slug": "point72",
       "posted_at": "2023-12-15T09:26:33-05:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -7246,6 +7535,7 @@
       "id": "greenhouse:point72:8780028002",
       "title": "Equity Financing Trader, Asia Pacific",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7260,7 +7550,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-09-22T02:04:46-04:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7271,6 +7561,7 @@
       "id": "greenhouse:point72:8899750002",
       "title": "Long/Short Equity Support Research Intern, Hong Kong  ",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7285,7 +7576,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-11-06T09:29:43-05:00",
       "updated_at": "2026-11-06T11:11:19-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -7298,6 +7589,7 @@
       "id": "greenhouse:point72:8374726002",
       "title": "Research Analyst",
       "company": "Point72",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7312,7 +7604,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-01-14T13:29:51-05:00",
       "updated_at": "2026-11-05T14:17:39-05:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -7325,6 +7617,7 @@
       "id": "polymer_api:polymer-capital:5864769",
       "title": "Analyst/Associate, Risk & Quant Analytics (Quantitative Analytics)",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7339,7 +7632,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -7350,6 +7643,7 @@
       "id": "polymer_api:polymer-capital:6012234",
       "title": "Data Specialist (Analyst, Risk & Quant Analytics)",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7364,7 +7658,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-08-05",
       "updated_at": "2026-08-05",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -7375,6 +7669,7 @@
       "id": "polymer_api:polymer-capital:5864722",
       "title": "Junior Quantitative Analyst, Risk & Quant Analytics",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7389,7 +7684,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7400,6 +7695,7 @@
       "id": "polymer_api:polymer-capital:5864760",
       "title": "Software Developer (Analyst - Contractor, Development Lab)",
       "company": "Polymer Capital Management",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7414,7 +7710,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7425,6 +7721,7 @@
       "id": "eFC:efc:ctJSvrmTO2C2YkZE",
       "title": "Lead Equities Algo Developer - Leading Investment Bank",
       "company": "Sanderson-iKas",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7439,7 +7736,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7452,6 +7749,7 @@
       "id": "greenhouse:schonfeld:8311595",
       "title": "2027 AI Forward Deployed Engineer Intern",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7466,7 +7764,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-27T10:12:16-04:00",
       "updated_at": "2026-10-27T10:12:16-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7477,6 +7775,7 @@
       "id": "greenhouse:schonfeld:8303538",
       "title": "Forward Deployed Engineer",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -7492,7 +7791,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-21T08:53:55-04:00",
       "updated_at": "2026-10-22T06:33:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7503,6 +7802,7 @@
       "id": "greenhouse:schonfeld:8091369",
       "title": "Quantitative Risk Analyst",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7517,7 +7817,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-09-21T08:06:00-04:00",
       "updated_at": "2026-10-12T07:56:55-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7528,6 +7828,7 @@
       "id": "greenhouse:schonfeld:8119484",
       "title": "Strategist",
       "company": "Schonfeld Strategic Advisors",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -7542,7 +7843,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-08-18T17:22:57-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "strategist"
@@ -7555,6 +7856,7 @@
       "id": "greenhouse:squarepointcapital:2546549",
       "title": "Desk Quant Analyst",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -7570,7 +7872,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-12-21T04:26:42-05:00",
       "updated_at": "2026-10-28T07:49:11-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -7581,6 +7883,7 @@
       "id": "greenhouse:squarepointcapital:6040910",
       "title": "Graduate Software Developer",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7595,7 +7898,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T12:28:24-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7608,6 +7911,7 @@
       "id": "greenhouse:squarepointcapital:6100081",
       "title": "Graduate Trading Applications Specialist ",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -7623,7 +7927,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-08-08T06:24:12-04:00",
       "updated_at": "2026-10-28T10:58:27-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7634,6 +7938,7 @@
       "id": "greenhouse:squarepointcapital:7231006",
       "title": "Intern Software Developer - London - 2027",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7648,7 +7953,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2025-09-05T05:54:45-04:00",
       "updated_at": "2026-10-28T10:57:33-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7659,6 +7964,7 @@
       "id": "greenhouse:squarepointcapital:7905463",
       "title": "Intern Software Developer - Montreal - 2027",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7673,7 +7979,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-05-07T16:37:33-04:00",
       "updated_at": "2026-10-28T10:57:33-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7684,6 +7990,7 @@
       "id": "greenhouse:squarepointcapital:6201998",
       "title": "Intern Software Developer - Singapore - 2027",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7698,7 +8005,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-08-28T10:12:36-04:00",
       "updated_at": "2026-10-28T10:57:33-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7709,6 +8016,7 @@
       "id": "greenhouse:squarepointcapital:8045124",
       "title": "Intern Software Developer - Warsaw 2027",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7723,7 +8031,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-06T11:19:41-04:00",
       "updated_at": "2026-10-28T10:57:33-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7734,6 +8042,7 @@
       "id": "greenhouse:squarepointcapital:3851879",
       "title": "Junior Discretionary Trader",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7748,7 +8057,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2022-02-04T16:58:05-05:00",
       "updated_at": "2026-10-28T07:55:15-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7762,6 +8071,7 @@
       "id": "greenhouse:squarepointcapital:6040731",
       "title": "Junior Software Developer (C++)",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7776,7 +8086,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:50-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7790,6 +8100,7 @@
       "id": "greenhouse:squarepointcapital:6034447",
       "title": "Junior Software Developer - Front-end",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7804,7 +8115,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:53-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7817,6 +8128,7 @@
       "id": "greenhouse:squarepointcapital:6380892",
       "title": "Junior SRE",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7831,7 +8143,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-23T16:34:49-04:00",
       "updated_at": "2026-10-28T10:59:25-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "sre"
@@ -7844,6 +8156,7 @@
       "id": "greenhouse:squarepointcapital:4904158",
       "title": "Senior Discretionary Trader - Macro",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7858,7 +8171,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-04-18T14:27:42-04:00",
       "updated_at": "2026-10-28T11:13:08-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7872,6 +8185,7 @@
       "id": "greenhouse:squarepointcapital:7479509",
       "title": "Senior Information Security Engineer",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7886,7 +8200,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2025-12-17T05:20:00-05:00",
       "updated_at": "2026-10-28T11:28:15-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7897,6 +8211,7 @@
       "id": "greenhouse:squarepointcapital:6977749",
       "title": "Shift Trader",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7911,7 +8226,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2025-06-25T00:16:04-04:00",
       "updated_at": "2026-10-28T11:08:54-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7922,6 +8237,7 @@
       "id": "greenhouse:squarepointcapital:1468761",
       "title": "Software Developer - Core Data",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -7937,7 +8253,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-11-30T07:49:23-05:00",
       "updated_at": "2026-10-28T11:41:21-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7952,6 +8268,7 @@
       "id": "greenhouse:squarepointcapital:8092777",
       "title": "Software Developer - Data Platform",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7966,7 +8283,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-28T16:06:10-04:00",
       "updated_at": "2026-10-28T11:41:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7979,6 +8296,7 @@
       "id": "greenhouse:squarepointcapital:4346989",
       "title": "Software Developer - Data Products and Services",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -7993,7 +8311,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2022-06-23T13:53:42-04:00",
       "updated_at": "2026-10-28T11:40:59-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8007,6 +8325,7 @@
       "id": "greenhouse:squarepointcapital:8092644",
       "title": "Software Developer - Data Reliability",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8021,7 +8340,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-28T15:28:05-04:00",
       "updated_at": "2026-10-28T11:41:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8032,6 +8351,7 @@
       "id": "greenhouse:squarepointcapital:6715949",
       "title": "Software Developer - Market Data Integration",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8046,7 +8366,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-23T01:02:19-04:00",
       "updated_at": "2026-10-28T11:39:47-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8057,6 +8377,7 @@
       "id": "greenhouse:squarepointcapital:5384579",
       "title": "Software Developer - Risk Reliability",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8071,7 +8392,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-09-25T09:26:38-04:00",
       "updated_at": "2026-10-28T11:39:08-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8082,6 +8403,7 @@
       "id": "greenhouse:squarepointcapital:6212106",
       "title": "Software Developer - Risk Technology",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8096,7 +8418,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-09-30T07:39:34-04:00",
       "updated_at": "2026-10-28T11:38:07-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8110,6 +8432,7 @@
       "id": "greenhouse:squarepointcapital:4992227",
       "title": "Software Developer – Internal Compute Frameworks (C++) ",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8124,7 +8447,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-05-02T09:17:00-04:00",
       "updated_at": "2026-10-28T11:40:23-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8137,6 +8460,7 @@
       "id": "greenhouse:squarepointcapital:2167156",
       "title": "Trade Flow Support - Trading Application Support ",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -8152,7 +8476,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-08-17T09:41:38-04:00",
       "updated_at": "2026-10-28T11:35:39-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8166,6 +8490,7 @@
       "id": "greenhouse:squarepointcapital:6420505",
       "title": "Trade Flow Support - Trading Infrastructure Support",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8180,7 +8505,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-12-04T04:16:11-05:00",
       "updated_at": "2026-10-28T11:35:19-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8191,6 +8516,7 @@
       "id": "greenhouse:squarepointcapital:7709566",
       "title": "Trade Flow Support - Trading Infrastructure Support Lead ",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8205,7 +8531,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-04-20T09:24:32-04:00",
       "updated_at": "2026-10-28T11:34:27-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8216,6 +8542,7 @@
       "id": "greenhouse:squarepointcapital:6099883",
       "title": "Trading Applications Specialist",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -8231,7 +8558,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-08-08T06:25:03-04:00",
       "updated_at": "2026-10-28T10:58:27-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8242,6 +8569,7 @@
       "id": "greenhouse:squarepointcapital:7757021",
       "title": "Trading Infrastructure Specialist – Graduate Program",
       "company": "Squarepoint Capital",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -8257,7 +8585,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-05-05T04:11:44-04:00",
       "updated_at": "2026-10-28T11:34:17-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8270,6 +8598,7 @@
       "id": "phenom:sig:11098",
       "title": "Application Support Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8284,7 +8613,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-07-28",
       "updated_at": "2026-10-16",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8295,6 +8624,7 @@
       "id": "phenom:sig:11703",
       "title": "ETF Pricing Analyst HK",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8309,7 +8639,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-26",
       "updated_at": "2026-10-26",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "pricing"
@@ -8320,6 +8650,7 @@
       "id": "phenom:sig:11329",
       "title": "GPU Performance Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8334,7 +8665,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-09-30",
       "updated_at": "2026-10-22",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8347,6 +8678,7 @@
       "id": "phenom:sig:11315",
       "title": "Security Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8361,7 +8693,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-08-25",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8372,6 +8704,7 @@
       "id": "phenom:sig:11648",
       "title": "Senior Production Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8386,7 +8719,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-26",
       "updated_at": "2026-11-05",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8397,6 +8730,7 @@
       "id": "phenom:sig:10971",
       "title": "Storage Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8411,7 +8745,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-08-03",
       "updated_at": "2026-10-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8422,6 +8756,7 @@
       "id": "phenom:sig:11244",
       "title": "Trading Operations Analyst Internship: Summer 2027",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8436,7 +8771,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-07-30",
       "updated_at": "2026-11-02",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8449,6 +8784,7 @@
       "id": "phenom:sig:10972",
       "title": "Windows Engineer",
       "company": "Susquehanna International Group (SIG)",
+      "employer_type": "direct",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8463,7 +8799,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-23",
       "updated_at": "2026-10-23",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8474,6 +8810,7 @@
       "id": "eFC:efc:ezg05li5fS7wGFAI",
       "title": "UX Research & Design",
       "company": "TEKsystems (Allegis Group Singapore Pte Ltd)",
+      "employer_type": "agency",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8488,7 +8825,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -8499,6 +8836,7 @@
       "id": "eFC:efc:7xKbj3McFarqvVqq",
       "title": "Relocate to APAC | Software Engineers, Quant Researchers & Technologists",
       "company": "Tribus",
+      "employer_type": "agency",
       "location": "Hong Kong",
       "locations": [
         "Hong Kong"
@@ -8513,7 +8851,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-03-20",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -8527,6 +8865,7 @@
       "id": "eFC:efc:T5BYobB3QK5nGebr",
       "title": "VP, Data Scientist, Enterprise AI, Innovation Group",
       "company": "United Overseas Bank",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8541,7 +8880,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-02",
       "updated_at": "",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -8552,6 +8891,7 @@
       "id": "greenhouse:virtu:6329460002",
       "title": "2027 Internship – Core Operations Engineer ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8566,7 +8906,7 @@
       "ats_slug": "virtu",
       "posted_at": "2022-08-15T21:50:53-04:00",
       "updated_at": "2026-07-30T03:08:51-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8577,6 +8917,7 @@
       "id": "greenhouse:virtu:4678573002",
       "title": "Core Developer - China Desk",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8591,7 +8932,7 @@
       "ats_slug": "virtu",
       "posted_at": "2020-03-12T01:23:13-04:00",
       "updated_at": "2026-06-04T22:48:43-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8606,6 +8947,7 @@
       "id": "greenhouse:virtu:8522534002",
       "title": "ETF Trader ",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8620,7 +8962,7 @@
       "ats_slug": "virtu",
       "posted_at": "2026-05-04T04:49:26-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -8631,6 +8973,7 @@
       "id": "greenhouse:virtu:5212847002",
       "title": "Options Trader",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8645,7 +8988,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-07-29T13:14:20-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -8658,6 +9001,7 @@
       "id": "greenhouse:virtu:5399242002",
       "title": "Trading Operations Specialist",
       "company": "Virtu Financial",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8672,7 +9016,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-07-15T20:55:20-04:00",
       "updated_at": "2026-09-18T03:02:27-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8685,6 +9029,7 @@
       "id": "greenhouse:worldquant:4232927006",
       "title": "Book Portfolio Manager",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8699,7 +9044,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-05-08T10:36:28-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -8710,6 +9055,7 @@
       "id": "greenhouse:worldquant:4250853006",
       "title": "BRAIN Researcher",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8724,7 +9070,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-06-07T22:37:46-04:00",
       "updated_at": "2026-06-07T22:44:03-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -8735,6 +9081,7 @@
       "id": "greenhouse:worldquant:4232960006",
       "title": "Independent Portfolio Manager",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Hong Kong, Singapore",
       "locations": [
         "Hong Kong",
@@ -8750,7 +9097,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-05-11T14:21:04-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -8761,6 +9108,7 @@
       "id": "greenhouse:worldquant:4661177006",
       "title": "Software Engineering Lead (MetaTech)",
       "company": "WorldQuant",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8775,7 +9123,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-03-19T09:20:16-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineering"
@@ -8786,6 +9134,7 @@
       "id": "greenhouse:xtxmarketstechnologies:7645996003",
       "title": "Datacentre Operations Engineer",
       "company": "XTX Markets",
+      "employer_type": "direct",
       "location": "Singapore",
       "locations": [
         "Singapore"
@@ -8800,7 +9149,7 @@
       "ats_slug": "xtxmarketstechnologies",
       "posted_at": "2026-03-09T12:32:38-04:00",
       "updated_at": "2026-06-23T09:35:44-04:00",
-      "fetched_at": "2026-11-06T16:20:31Z",
+      "fetched_at": "2026-11-06T17:00:51Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"

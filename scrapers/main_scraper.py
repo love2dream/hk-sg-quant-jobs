@@ -10,7 +10,8 @@ Playwright 仅在 custom 基金显式开启时「延迟导入」，没装也不�
 分层（对应全栈开发规范，CLI 版本）
     http_get_json          传输层：超时 / 重试 / 退避 / 4xx 快速失败
     fetch_*               适配层：把 ATS / 官网 JSON API / 聚合源的字段翻译成统一内部格式
-    finalize_job           领域层：地点过滤 + quant 关键词过滤 + 打标签
+    finalize_job           领域层：地点过滤 + quant 关键词过滤 + 打标签 + 雇主类型
+    classify_employer      雇主类型：直招 / 猎头（规则见 funds_config.py 第 3b 节）
     deduplicate            去重层：canonical URL -> 公司+标题+地点，官方源优先，确定性选优
     write_output           存储层：原子写 data/jobs.json
     main                   编排层：并发、统计、错误处理、CLI
@@ -57,11 +58,16 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from funds_config import (  # noqa: E402
+    AGENCY_DESCRIPTION_SIGNALS,
+    AGENCY_SIGNAL_SOURCES,
+    DIRECT_EMPLOYER_OVERRIDES,
     EXCLUDE_TITLE_KEYWORDS,
     FRESHTEAM_ENDPOINTS,
     FUNDS,
     PLAYWRIGHT_TEMPLATE,
     QUANT_KEYWORDS,
+    RECRUITER_AGENCIES,
+    RECRUITER_NAME_PATTERNS,
     ROLE_KEYWORDS,
     SETTINGS,
     SKILL_KEYWORDS,
@@ -334,6 +340,38 @@ def normalize_company(value: Any) -> str:
     while tokens and tokens[-1] in _LEGAL_SUFFIXES:
         tokens.pop()
     return " ".join(tokens)
+
+
+# ---------------------------------------------------------------------------
+# 雇主类型：直招 vs 猎头
+#   规则全部来自 funds_config.py（第 3b 节），这里只做归一化 + 判定。
+#   聚合站的 company 是「发广告的公司」，常是猎头而非真实雇主；A 类官方
+#   ATS 源天然是直招，但仍统一走一遍判定，保证字段永远存在。
+# ---------------------------------------------------------------------------
+_AGENCY_KEYS = frozenset(normalize_company(n) for n in RECRUITER_AGENCIES)
+_DIRECT_KEYS = frozenset(normalize_company(n) for n in DIRECT_EMPLOYER_OVERRIDES)
+_AGENCY_NAME_RE = re.compile(
+    "|".join("(?:%s)" % p for p in RECRUITER_NAME_PATTERNS), re.IGNORECASE
+)
+_AGENCY_DESC_RE = re.compile(
+    "|".join("(?:%s)" % p for p in AGENCY_DESCRIPTION_SIGNALS), re.IGNORECASE
+)
+
+
+def classify_employer(company: Any, source: Any, description: Any = "") -> str:
+    """返回 "direct" 或 "agency"；判定顺序：白名单 > 名称关键词 > JD 措辞。"""
+    key = normalize_company(company)
+    if key in _DIRECT_KEYS:
+        return "direct"
+    if key in _AGENCY_KEYS:
+        return "agency"
+    if _AGENCY_NAME_RE.search(str(company or "")):
+        return "agency"
+    # JD 措辞只在聚合站来源上生效：银行 / 交易所的直招 JD 也可能提到
+    # "our client"，但那指的是业务客户，不是代招的雇主。
+    if str(source or "") in AGENCY_SIGNAL_SOURCES and _AGENCY_DESC_RE.search(str(description or "")):
+        return "agency"
+    return "direct"
 
 
 def normalize_title(value: Any) -> str:
@@ -1227,11 +1265,14 @@ def finalize_job(
         description = description[: opts.description_limit].rstrip() + "..."
 
     job_id = f"{raw['source']}:{raw['slug']}:{raw['raw_id']}"
+    # 聚合源（LinkedIn / eFC）必须显示真实雇主，否则卡片会全写成 "LinkedIn"
+    company = raw.get("company_override") or fund["name"]
     job = {
         "id": job_id,
         "title": raw["title"],
-        # 聚合源（LinkedIn / eFC）必须显示真实雇主，否则卡片会全写成 "LinkedIn"
-        "company": raw.get("company_override") or fund["name"],
+        "company": company,
+        # 用未截断的原始 JD 判定，措辞信号可能出现在 600 字之后。
+        "employer_type": classify_employer(company, raw["source"], raw["description"]),
         "location": ", ".join(selected),
         "locations": selected,
         "city_key": "|".join(x.lower().replace(" ", "_") for x in selected),
@@ -1357,7 +1398,7 @@ def run(opts: RunOptions, funds: Sequence[Dict[str, Any]], *, merge_cache: bool 
         "raw_jobs": 0, "dropped_location": 0, "dropped_quant": 0,
         "duplicates_removed": 0, "dedupe_candidates": 0,
         "total_jobs": 0, "apify_cache_jobs": 0, "apify_cache_kept": 0,
-        "by_source": {}, "by_location": {},
+        "by_source": {}, "by_location": {}, "by_employer_type": {},
     }
     errors: List[Dict[str, str]] = []
     # 先全量收集、最后统一去重。不能边收边丢：as_completed 的完成顺序是
@@ -1409,6 +1450,8 @@ def run(opts: RunOptions, funds: Sequence[Dict[str, Any]], *, merge_cache: bool 
 
     for job in kept:
         stats["by_source"][job["source"]] = stats["by_source"].get(job["source"], 0) + 1
+        et = job.get("employer_type", "direct")
+        stats["by_employer_type"][et] = stats["by_employer_type"].get(et, 0) + 1
         for loc in job["locations"]:
             stats["by_location"][loc] = stats["by_location"].get(loc, 0) + 1
 
@@ -1556,6 +1599,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     LOG.info("最终 %d 条（%.1fs）", stats["total_jobs"], stats["elapsed_seconds"])
     LOG.info("来源分布: %s", stats["by_source"])
+    LOG.info("雇主类型: %s", stats["by_employer_type"])
     LOG.info("地点分布: %s", stats["by_location"])
     LOG.info("API 可用 %d 家 | 需 Playwright %d 家 | 失败 %d 家",
              stats["funds_ok"] + stats["funds_empty"],
