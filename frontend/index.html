@@ -35,7 +35,9 @@
          data-owned: it reads jobs[].employer_type, produced by the scraper
          from the editable rules in funds_config.py (section 3b). Full job
          descriptions expand inline from jobs[].description (or .content);
-         expansion lives in memory only, so a reload starts collapsed. Data
+         their flat text is rebuilt into headings / paragraphs / bullet lists
+         at render time; expansion lives in memory only, so a reload starts
+         collapsed. Data
          loading falls back across paths (and to the hosted JSON via CORS) so
          file:// and embedded-preview openings still show the live index.
 -->
@@ -236,9 +238,29 @@ select.input{width:auto;padding:.42rem 1.9rem .42rem .65rem;font-size:.78rem;bac
   margin:.85rem 0 0;padding:.9rem 1rem 1rem;max-width:78ch;
   background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);
   border-radius:2px;font-size:.8rem;line-height:1.7;color:var(--ink-2);
-  white-space:pre-wrap;overflow-wrap:anywhere;
+  overflow-wrap:anywhere;
 }
 .job-full[hidden]{display:none}
+/* Structured reading view. eFC / Phenom / SIG flatten their HTML into one
+   unbroken paragraph, so the renderer rebuilds section headings, paragraphs
+   and bullet lists from the original wording before it gets here. */
+.jd-body{white-space:normal}
+.jd-h{
+  margin:1.3rem 0 .5rem;padding:0 0 .3rem;
+  border-bottom:1px solid var(--line);
+  font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  color:var(--accent-deep);
+}
+.jd-body > .jd-h:first-child{margin-top:0}
+.jd-p{margin:0 0 .72rem}
+.jd-ul{margin:.1rem 0 .85rem;padding:0;list-style:none}
+.jd-li{position:relative;margin:0 0 .45rem;padding-left:1.05rem}
+.jd-li::before{
+  content:"";position:absolute;left:.12rem;top:.68em;
+  width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:.7;
+}
+.jd-lead{font-weight:750;color:var(--ink)}
+.jd-body > :last-child{margin-bottom:0}
 /* A long JD can be several screens tall, so the header carries its own
    collapse control: readers never have to scroll back up to close it. */
 .job-full-head{
@@ -387,6 +409,9 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   .desc-toggle{min-height:2.75rem;padding:.55rem 0;font-size:.78rem}
   .desc-collapse-top{min-height:2.25rem;padding:.45rem .45rem}
   .job-full{padding:.8rem .85rem .9rem;font-size:.79rem;line-height:1.65;max-width:100%}
+  .jd-h{margin-top:1.05rem;font-size:.62rem}
+  .jd-p{margin-bottom:.65rem}
+  .jd-li{margin-bottom:.4rem;padding-left:.95rem}
   .badge-new{margin-left:.4rem}
   .status-filter,.source-filter,.employer-filter{max-width:100%}
   .status-select{max-width:100%}
@@ -779,6 +804,153 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
       .trim();
   }
 
+  /* ---------- structured JD renderer ----------
+     Several feeds (eFC, Phenom, SIG) flatten the original HTML into a single
+     unbroken paragraph: no <p>, no <li>, no line breaks. Greenhouse / Eightfold
+     keep line breaks but still ship bare lines instead of real lists. Rebuild a
+     readable hierarchy WITHOUT changing a single word: only block boundaries
+     are inferred. Every text node is escaped and highlighted individually, so
+     no source markup is ever trusted.
+  */
+  var JD_LIST_STRONG = /(?:responsibilit|qualificat|requirement|duties|benefit|skills|why join|what you|what we|your (?:role|profile|tasks)|nice to have|must have|you will|we offer|typical day|key (?:skills|tasks)|preferred|minimum|basic|desired|essential|tech stack|technologies)/i;
+  var JD_LIST_ANY = /(?:responsibilit|qualificat|requirement|duties|benefit|skills|why join|what you|what we|overview|typical day|day.to.day|position|job description|experience|nice to have|must have|you will|we offer|ideal candidate|we are looking|you.ll (?:do|bring)|what to expect)/i;
+  var JD_BARE_HEAD = /^(What you can expect|What we(?:'re| are) looking for|What you(?:'ll| will) do|What we offer|What you(?:'ll| will) bring|Why Join(?: Us)?|About Us|Our Client|The Role|The Opportunity|The Firm|Job Description|Position Summary|Company Overview|Responsibilities|Qualifications|Requirements|Your Role|Duties|Benefits|Experience|Overview|Role Overview|Key Responsibilities|What We Offer|How to Apply|Equal Opportunity|Additional Information)\b\s+(?=[A-Z])/i;
+  // Some feeds glue section names straight onto the previous sentence and
+  // drop the colon entirely ("...for this position What you can expect ...").
+  var JD_EMBED_HEAD = /([a-z.!?])\s+((?:What you can expect|What we(?:'re| are) looking for|What you(?:'ll| will) do|What we offer|What you(?:'ll| will) bring|Why Join(?: Us)?|About Us|Our Client|The Role|The Opportunity|The Firm|Job Description|Key Responsibilities|Position Overview|Company Overview|How to Apply|Equal Opportunity|Additional Information)\b)/g;
+  var JD_HEAD_PREFIX = /^([A-Z][A-Za-z0-9 ,&'/+()\-]{2,48}):[ \t]+(?=[A-Z(])/;
+  var JD_HEAD_ONLY = /^([A-Z][A-Za-z0-9 ,&'/+()\-]{2,48}):$/;
+  var JD_HEAD_WORDS = /^(Overview|Responsibilities|Qualifications|Requirements|About Us|The Role|Your Role|Duties|Benefits|Experience|Our Client|Job Description|Position Overview|Key Responsibilities|What We Offer|Nice to Have|Must Have|Why Join(?: Us)?|What You Will Do|Typical Day)$/i;
+  var JD_BULLET = /^(?:[\u2022\u25aa\u25e6\u00b7\u2043*\-–—]\s*|\(?\d{1,2}[.)]\s+)/;
+  var JD_LEAD = /^([A-Z][A-Za-z0-9 ,&'/+()\-]{2,40}):(?=[A-Z])/;
+  var JD_ABBR = /\b(?:e\.g|i\.e|etc|vs|approx|Mr|Mrs|Ms|Dr|Inc|Ltd|Co|No|U\.S|U\.K|Ph\.D|B\.Sc|M\.Sc|B\.A|M\.A|Jr|Sr|a\.m|p\.m)\.$/i;
+
+  // Split on sentence ends that are followed by a capital or a digit. Abbrev-
+  // iations such as "Mr." / "No." are glued back onto the following sentence.
+  function splitSentences(s) {
+    var out = [], buf = "", m, last = 0;
+    var re = /([.!?])\s+(?=[A-Z0-9(])/g;
+    while ((m = re.exec(s)) !== null) {
+      buf += s.slice(last, m.index + 1);
+      if (!JD_ABBR.test(buf.trim())) { out.push(buf.trim()); buf = ""; }
+      else buf += " ";
+      last = m.index + m[0].length;
+    }
+    buf += s.slice(last);
+    if (buf.trim()) out.push(buf.trim());
+    return out;
+  }
+
+  function jdBlocks(full) {
+    var sourceLines = full.split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean);
+    var flat = sourceLines.length < 4;   // this feed lost its block structure
+    var lines = [];
+    sourceLines.forEach(function (line) {
+      // "Sentence. Heading: Body" and "Sentence. Sub-title:Body" boundaries
+      // are the only trace of sections left after the source flattened them.
+      var expanded = line;
+      if (flat) {
+        expanded = expanded
+          .replace(/([.!?]['"\u2019]?)\s+(?=[A-Z][A-Za-z0-9 ,&'/+()\-]{2,48}:\s*[A-Z(])/g, "$1\n")
+          .replace(JD_EMBED_HEAD, "$1\n$2");
+      }
+      String(expanded).split("\n").forEach(function (piece) {
+        piece = piece.trim();
+        if (piece) lines.push(piece);
+      });
+    });
+
+    var blocks = [], listish = false;
+    lines.forEach(function (line) {
+      var m, head = "";
+      // An explicit glyph / number prefix stays a list item.
+      m = line.match(JD_BULLET);
+      if (m) {
+        line = line.slice(m[0].length).trim();
+        if (line) blocks.push({ t: "li", v: line });
+        return;
+      }
+      // Standalone section line: "Position Overview:" or "Responsibilities".
+      m = line.match(JD_HEAD_ONLY);
+      if (m) head = m[1].trim();
+      else if (JD_HEAD_WORDS.test(line)) head = line;
+      if (head) {
+        blocks.push({ t: "h", v: head });
+        listish = JD_LIST_STRONG.test(head) || (!flat && JD_LIST_ANY.test(head));
+        return;
+      }
+      // Inline section: "The Firm: An innovative financial technology firm..."
+      m = line.match(JD_HEAD_PREFIX);
+      if (m) {
+        head = m[1].trim();
+        blocks.push({ t: "h", v: head });
+        listish = JD_LIST_STRONG.test(head) || (!flat && JD_LIST_ANY.test(head));
+        line = line.slice(m[0].length).trim();
+        if (!line) return;
+      } else {
+        // Bare heading with no colon: "Overview As a Quantitative ...".
+        m = line.match(JD_BARE_HEAD);
+        if (m) {
+          head = m[1];
+          blocks.push({ t: "h", v: head });
+          listish = JD_LIST_STRONG.test(head) || (!flat && JD_LIST_ANY.test(head));
+          line = line.slice(m[0].length).trim();
+          if (!line) return;
+        }
+      }
+      var sentences = (flat || line.length > 420) ? splitSentences(line) : [line];
+      if (listish) {
+        sentences.forEach(function (s) {
+          var lead = "", lm = s.match(JD_LEAD);
+          if (lm) { lead = lm[1].trim(); s = s.slice(lm[0].length).trim(); }
+          if (s) blocks.push({ t: "li", v: s, lead: lead });
+        });
+      } else {
+        // Narrative prose: two sentences per paragraph instead of one wall.
+        var buf = [];
+        sentences.forEach(function (s) {
+          buf.push(s);
+          if (buf.length >= 2) { blocks.push({ t: "p", v: buf.join(" ") }); buf = []; }
+        });
+        if (buf.length) blocks.push({ t: "p", v: buf.join(" ") });
+      }
+    });
+    return blocks;
+  }
+
+  function renderJd(blocks, terms) {
+    var html = "", inList = false;
+    function closeList() { if (inList) { html += "</ul>"; inList = false; } }
+    blocks.forEach(function (b) {
+      if (b.t === "h") {
+        closeList();
+        html += '<h4 class="jd-h">' + highlight(b.v, terms) + "</h4>";
+      } else if (b.t === "li") {
+        if (!inList) { html += '<ul class="jd-ul">'; inList = true; }
+        html += '<li class="jd-li">' +
+          (b.lead ? '<strong class="jd-lead">' + highlight(b.lead, terms) + "</strong>: " : "") +
+          highlight(b.v, terms) + "</li>";
+      } else {
+        closeList();
+        html += '<p class="jd-p">' + highlight(b.v, terms) + "</p>";
+      }
+    });
+    closeList();
+    return '<div class="jd-body">' + html + "</div>";
+  }
+
+  // Every filter change re-renders 150+ cards; the markup only depends on the
+  // text and the current resume terms, so keep it keyed and cheap.
+  var jdCache = Object.create(null);
+  function formattedDescription(key, full, terms) {
+    if (!full) return "";
+    var ck = key + "\u0001" + full.length + "\u0001" + (terms || []).join("\u0002");
+    if (jdCache[ck]) return jdCache[ck];
+    var out = renderJd(jdBlocks(full), terms);
+    jdCache[ck] = out;
+    return out;
+  }
+
   function formatDate(value) {
     if (!value) return "Date not listed";
     var d = new Date(value);
@@ -974,7 +1146,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
       '<button type="button" class="desc-collapse-top" ' +
         'aria-label="Collapse full description">Collapse &uarr;</button></div>';
     var regionBody = full
-      ? highlight(full, terms)
+      ? formattedDescription(key, full, terms)
       : '<span class="job-full-empty">This source did not include a description in the index. ' +
         'Use &ldquo;View original&rdquo; below to read the full listing on the employer site.</span>';
 

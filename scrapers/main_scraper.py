@@ -197,15 +197,25 @@ def capture(pattern: str, text: str) -> str:
 
 
 def html_to_text(raw: Any) -> str:
-    """Greenhouse content 是实体转义过的 HTML，转成纯文本。"""
+    """Greenhouse content 是实体转义过的 HTML，转成纯文本。
+
+    保留块级结构（段落空行、列表符号、<br> 换行）。前端展开面板靠这些
+    边界把长 JD 还原成标题 / 段落 / 项目符号列表；以前连续换行一律压成
+    单个 \\n，段落信息就此丢失，几千字的 JD 会变成一整坨。
+    注：eFC / Phenom 的 description 本身就是平台清洗过的扁平纯文本，
+    没有任何标签可保留，那类源仍由前端的章节识别逻辑兜底。
+    """
     if not raw:
         return ""
     text = html.unescape(html.unescape(str(raw)))
     text = re.sub(r"(?is)<(script|style|noscript).*?</\1>", " ", text)
-    text = re.sub(r"(?i)<br\s*/?>|</p>|</li>|</div>|</h[1-6]>|</tr>", "\n", text)
+    text = re.sub(r"(?i)<li\b[^>]*>", "\n\u2022 ", text)
+    text = re.sub(r"(?i)<br\s*/?>", "\n", text)
+    text = re.sub(r"(?i)</(p|div|li|h[1-6]|tr|ul|ol|section)>", "\n", text)
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"[ \t\xa0]+", " ", text)
-    text = re.sub(r"\n\s*\n+", "\n", text)
+    text = re.sub(r" *\n *", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
 
