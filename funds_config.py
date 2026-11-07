@@ -79,7 +79,10 @@ SETTINGS = {
     "with_content": True,         # Greenhouse 附带描述 + offices + departments
     "quant_only": True,
     "min_quant_score": 1,
-    "description_limit": 600,     # jobs.json 中每条描述的纯文本上限
+    # 前端卡片展开要显示接近原文的 JD，所以这里只是防异常数据的安全护栏，
+    # 不是摘要长度。实测完整 JD：eFC ~5k、Greenhouse ~2-8k、SIG ~7k 字符。
+    # 600 字会把几乎所有官方 JD 砍在半句话上，不要再调回去。
+    "description_limit": 12000,   # 单条描述纯文本上限（正常职位不会触顶）
 }
 
 # ---------------------------------------------------------------------------

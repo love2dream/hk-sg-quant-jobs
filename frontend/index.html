@@ -237,12 +237,21 @@ select.input{width:auto;padding:.42rem 1.9rem .42rem .65rem;font-size:.78rem;bac
   white-space:pre-wrap;overflow-wrap:anywhere;
 }
 .job-full[hidden]{display:none}
-.job-full::before{
-  content:"Full description";display:block;margin:0 0 .6rem;
+/* A long JD can be several screens tall, so the header carries its own
+   collapse control: readers never have to scroll back up to close it. */
+.job-full-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  margin:0 0 .6rem;white-space:normal;
   font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
-  color:var(--accent);white-space:normal;
+  color:var(--accent);
 }
-.job-full.is-empty::before{content:"Description unavailable";color:var(--muted)}
+.job-full.is-empty .job-full-head{color:var(--muted)}
+.desc-collapse-top{
+  border:0;background:none;padding:.15rem 0;font:inherit;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:750;
+  color:var(--muted);white-space:nowrap;
+}
+.desc-collapse-top:hover{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px}
 .job-full-empty{color:var(--muted);font-style:italic}
 .job.is-expanded .job-desc{display:none}
 .job-foot{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;margin-top:.9rem}
@@ -367,6 +376,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   .apply{margin-left:0;width:100%;margin-top:.35rem}
   .job-title{font-size:1.02rem}
   .desc-toggle{min-height:2.75rem;padding:.55rem 0;font-size:.78rem}
+  .desc-collapse-top{min-height:2.25rem;padding:.45rem .45rem}
   .job-full{padding:.8rem .85rem .9rem;font-size:.79rem;line-height:1.65;max-width:100%}
   .badge-new{margin-left:.4rem}
   .status-filter,.source-filter,.employer-filter{max-width:100%}
@@ -942,6 +952,10 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     var short = snippet(full, terms);
     var open = expandedKeys.has(key);
     var regionId = "job-desc-" + i;
+    var regionHead = '<div class="job-full-head"><span>' +
+      (full ? "Full description" : "Description unavailable") + "</span>" +
+      '<button type="button" class="desc-collapse-top" ' +
+        'aria-label="Collapse full description">Collapse &uarr;</button></div>';
     var regionBody = full
       ? highlight(full, terms)
       : '<span class="job-full-empty">This source did not include a description in the index. ' +
@@ -969,7 +983,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
         '<p class="job-desc">' + highlight(short, terms) + "</p>" +
         '<div class="job-full' + (full ? "" : " is-empty") + '" id="' + regionId + '" role="region" ' +
           'aria-label="Full description: ' + esc(j.title) + ' at ' + esc(j.company) + '"' +
-          (open ? "" : " hidden") + ">" + regionBody + "</div>" +
+          (open ? "" : " hidden") + ">" + regionHead + regionBody + "</div>" +
         '<button type="button" class="desc-toggle" data-key="' + esc(key) + '" ' +
           'aria-controls="' + regionId + '" aria-expanded="' + (open ? "true" : "false") + '">' +
           '<span class="desc-toggle-label">' + (open ? "Collapse" : "Show full description") + "</span>" +
@@ -1197,7 +1211,17 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   // re-renders inside this session; it is deliberately never persisted, so a
   // page reload starts with every card collapsed again.
   el.list.addEventListener("click", function (e) {
-    var btn = e.target && e.target.closest ? e.target.closest(".desc-toggle") : null;
+    var target = e.target;
+    // The in-panel header button on very long JDs is just a shortcut to the
+    // real toggle, so aria/label/state stay in one place.
+    var top = target && target.closest ? target.closest(".desc-collapse-top") : null;
+    if (top && el.list.contains(top)) {
+      var host = top.closest(".job");
+      var primary = host ? host.querySelector(".desc-toggle") : null;
+      if (primary) primary.click();
+      return;
+    }
+    var btn = target && target.closest ? target.closest(".desc-toggle") : null;
     if (!btn || !el.list.contains(btn)) return;
     var region = document.getElementById(btn.getAttribute("aria-controls"));
     if (!region) return;

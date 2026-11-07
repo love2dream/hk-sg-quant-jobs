@@ -49,6 +49,15 @@
 #   403/429 or a compliance request) set enabled=False in funds_config.py —
 #   no workflow change needed. Its robots.txt disallows /search and /v1.
 #
+# FULL JOB DESCRIPTIONS are intentional, not an accident:
+#   * Greenhouse / Lever / Phenom keep their whole JD (see description_limit
+#     = 12000 in funds_config.py); SIG also appends its `qualifications`.
+#   * eFC uses the full `description` field, never the 500-char `summary`.
+#   * Eightfold's list endpoint returns an empty job_description, so each
+#     position gets ONE detail request (/jobs/<id>) with 0.2s pacing (~45
+#     extra requests per run); a failed detail just leaves that JD empty.
+#   * The validate step fails the run if fewer than 20 roles have a full JD.
+#
 # DO NOT enable linkedin_guest here: LinkedIn's robots.txt explicitly
 # disallows /jobs-guest/ and a ban would take the free runner's egress down.
 # It stays opt-in for manual, one-off `--fund` runs only.
@@ -208,6 +217,13 @@ jobs:
               fail("unreadable fetched_at: %s" % exc)
           if age < 0 or age > 3600:
               fail("fetched_at is %ss old: %s" % (int(age), stamp))
+
+          # 7. The card expander shows this text verbatim, so 600-char
+          #    snippets are a regression (e.g. eFC falling back to `summary`,
+          #    or description_limit being turned back down).
+          full_jds = [j for j in jobs if len(j.get("description") or "") > 700]
+          if len(full_jds) < 20:
+              fail("only %s roles have a full JD (>700 chars); descriptions were truncated" % len(full_jds))
 
           summary = ("OK: %s roles (previous %s) | %s funds OK | %s funds failed | "
                      "%s errors | %ss old" %

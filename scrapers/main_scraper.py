@@ -396,7 +396,10 @@ def source_tier(job: Dict[str, Any]) -> int:
 
 def completeness_score(job: Dict[str, Any]) -> float:
     """同一优先级内的胜负手：信息越完整分越高。"""
-    score = min(len(job.get("description") or ""), 600) / 10.0
+    # 600 字以内保持原有权重（最高 60 分）；更完整的 JD 再小幅加分，
+    # 这样「完整度优先」在长 JD 之间仍然有区分度，又不挤压其他字段。
+    desc_len = len(job.get("description") or "")
+    score = min(desc_len, 600) / 10.0 + min(max(desc_len - 600, 0), 2400) / 100.0
     score += 20 if job.get("posted_at") else 0
     score += 6 if job.get("updated_at") else 0
     score += 8 if job.get("department") else 0
@@ -433,7 +436,9 @@ def _distinct_postings(a: Dict[str, Any], b: Dict[str, Any]) -> bool:
     da, db = a.get("description") or "", b.get("description") or ""
     if len(da) < 150 or len(db) < 150:
         return False
-    return description_similarity(da, db) < 0.35
+    # 只比前缀：5k 字 JD 尾部的免责声明/福利模板会稀释 Jaccard 相似度，
+    # 让同一岗位的两条记录看起来像不同岗位。前 1200 字足以区分职责。
+    return description_similarity(da[:1200], db[:1200]) < 0.35
 
 
 class _DisjointSet:
@@ -829,8 +834,35 @@ def fetch_eightfold_api(fund: Dict[str, Any], opts: "RunOptions") -> Tuple[List[
                 break
             time.sleep(0.25)  # 轻限速，别把对方站点打疼
 
+    def full_description(pos: Dict[str, Any]) -> str:
+        """列表接口的 job_description 恒为空；完整 JD 需按 id 请求详情接口。
+
+        详情端点与列表同源：/api/apply/v2/jobs/<id>?domain=<domain>，返回
+        job_description 的 HTML 正文（实测 ~2.8k 字符）。逐条轻限速，失败时
+        静默降级为空，不能因为一个详情页 404 拖垮整个数据源。
+        """
+        inline = html_to_text(pos.get("job_description") or "")
+        if inline:
+            return inline
+        pid = str(pos.get("id") or "")
+        if not pid:
+            return ""
+        url = base.rstrip("/") + "/" + pid + "?" + urlencode({"domain": domain})
+        try:
+            detail = _json_get(url, opts, retries=0)
+            return html_to_text(detail.get("job_description") or "") if isinstance(detail, dict) else ""
+        except (ScraperError, ValueError) as exc:
+            LOG.debug("Eightfold 详情 %s 不可用: %s", pid, exc)
+            return ""
+        finally:
+            time.sleep(0.2)  # 轻限速：一次全量约 30 个详情请求
+
     jobs: List[Dict] = []
+    with_description = 0
     for jid, pos in collected.items():
+        desc = full_description(pos)
+        if desc:
+            with_description += 1
         candidates = [str(pos.get("location") or "")]
         candidates.extend(str(x) for x in (pos.get("locations") or []))
         link = str(pos.get("canonicalPositionUrl") or
@@ -842,14 +874,15 @@ def fetch_eightfold_api(fund: Dict[str, Any], opts: "RunOptions") -> Tuple[List[
             department=", ".join(unique([
                 str(pos.get("department") or ""), str(pos.get("business_unit") or ""),
             ])),
-            description=html_to_text(pos.get("job_description") or ""),
+            description=desc,
             posted_at=epoch_to_iso(pos.get("t_create")),
             updated_at=epoch_to_iso(pos.get("t_update")),
             location_candidates=unique(candidates), career_url=fund.get("career_url", ""),
         ))
     if not jobs:
         raise ScraperError("Eightfold 全部查询无结果: " + "; ".join(problems[:3]))
-    return jobs, "ok", f"Eightfold {domain}: {len(jobs)} 条原始职位"
+    return jobs, "ok", (f"Eightfold {domain}: {len(jobs)} 条原始职位，"
+                        f"{with_description} 条带完整 JD")
 
 
 def fetch_phenom_api(fund: Dict[str, Any], opts: "RunOptions") -> Tuple[List[Dict], str, str]:
@@ -880,11 +913,17 @@ def fetch_phenom_api(fund: Dict[str, Any], opts: "RunOptions") -> Tuple[List[Dic
             link = str(item.get("apply_url") or f"https://careers.sig.com/jobs/{jid}")
             cats = item.get("categories")
             department = ", ".join(str(x) for x in cats) if isinstance(cats, list) else str(cats or "")
+            # SIG 把 JD 拆成 description（职责/介绍）与 qualifications（要求）
+            # 两个字段，原站两部分都显示。合并后才算完整 JD。
+            desc = html_to_text(item.get("description") or "")
+            quals = html_to_text(item.get("qualifications") or "")
+            if quals and quals[:80] not in desc:
+                desc = (desc + "\n\n" + quals).strip()
             jobs.append(raw_job(
                 source="phenom", slug=str(fund.get("ats_slug") or "sig"),
                 company=fund["name"], raw_id=jid, title=str(item.get("title") or ""),
                 url=link, apply_url=link, department=department,
-                description=html_to_text(item.get("description") or ""),
+                description=desc,
                 posted_at=str(item.get("posted_date") or "")[:10],
                 updated_at=str(item.get("update_date") or "")[:10],
                 location_candidates=unique([
@@ -980,7 +1019,10 @@ def fetch_efc_api(fund: Dict[str, Any], opts: "RunOptions") -> Tuple[List[Dict],
                     raw_id=str(item.get("id") or item.get("jobId") or ""),
                     title=str(item.get("title") or ""), url=link, apply_url=link,
                     department=str(item.get("positionType") or item.get("employmentType") or ""),
-                    description=html_to_text(item.get("summary") or item.get("description") or ""),
+                    # `summary` 是固定 ~500 字的搜索结果摘要（会在半句话处截断）；
+                    # `description` 才是完整 JD（实测 5k+ 字符）。优先取完整版，
+                    # 只有老接口没有 description 时才退回 summary。
+                    description=html_to_text(item.get("description") or item.get("summary") or ""),
                     posted_at=str(item.get("postedDate") or "")[:10], updated_at="",
                     location_candidates=unique([
                         str(jl.get(k) or "") for k in
@@ -1239,7 +1281,9 @@ def quant_match(title: str) -> Tuple[int, List[str]]:
 
 
 def build_tags(title: str, description: str) -> List[str]:
-    text = (title + " " + description[:1200]).lower()
+    # 完整 JD 可能 5k+ 字，技能关键词常在 Requirements 段（后半部分），
+    # 不能再只看前 1200 字。
+    text = (title + " " + description).lower()
     return [kw for kw in SKILL_KEYWORDS if kw in text][:6]
 
 
@@ -1261,8 +1305,14 @@ def finalize_job(
         return None, "quant"
 
     description = (raw["description"] or "").strip()
+    # 安全护栏（正常 JD 不会触顶）。万一触顶，也尽量收在句子边界，
+    # 不要在半句话上硬切——用户展开时看到的就是这段文本。
     if len(description) > opts.description_limit:
-        description = description[: opts.description_limit].rstrip() + "..."
+        cut = description[: opts.description_limit]
+        boundary = max(cut.rfind(". "), cut.rfind("。"), cut.rfind("\n"))
+        if boundary > opts.description_limit * 0.6:
+            cut = cut[: boundary + 1]
+        description = cut.rstrip() + "…"
 
     job_id = f"{raw['source']}:{raw['slug']}:{raw['raw_id']}"
     # 聚合源（LinkedIn / eFC）必须显示真实雇主，否则卡片会全写成 "LinkedIn"
@@ -1271,7 +1321,7 @@ def finalize_job(
         "id": job_id,
         "title": raw["title"],
         "company": company,
-        # 用未截断的原始 JD 判定，措辞信号可能出现在 600 字之后。
+        # 用未截断的原始 JD 判定：猎头措辞信号常出现在摘要之外。
         "employer_type": classify_employer(company, raw["source"], raw["description"]),
         "location": ", ".join(selected),
         "locations": selected,
@@ -1536,6 +1586,8 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                         help="调试用：不拉 Greenhouse content（会同时丢失 offices 地点字段，可能漏职位）")
     parser.add_argument("--all-jobs", action="store_true", help="关闭 quant 关键词过滤（调试用）")
     parser.add_argument("--min-score", type=int, default=SETTINGS["min_quant_score"], help="最低关键词命中数")
+    parser.add_argument("--description-limit", type=int, default=SETTINGS["description_limit"],
+                        help="单条描述纯文本上限（安全护栏，默认 12000）")
     parser.add_argument("--workers", type=int, default=SETTINGS["workers"], help="并发基金数")
     parser.add_argument("--timeout", type=int, default=SETTINGS["timeout_seconds"], help="单次请求超时秒数")
     parser.add_argument("--dry-run", action="store_true", help="不写文件，只打印结果预览")
@@ -1573,7 +1625,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         with_content=SETTINGS["with_content"] and not args.no_content,
         quant_only=SETTINGS["quant_only"] and not args.all_jobs,
         min_quant_score=args.min_score,
-        description_limit=SETTINGS["description_limit"],
+        description_limit=args.description_limit,
         locations=parse_locations(args.locations),
         dry_run=args.dry_run,
     )
