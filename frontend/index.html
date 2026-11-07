@@ -35,7 +35,9 @@
          data-owned: it reads jobs[].employer_type, produced by the scraper
          from the editable rules in funds_config.py (section 3b). Full job
          descriptions expand inline from jobs[].description (or .content);
-         expansion lives in memory only, so a reload starts collapsed.
+         expansion lives in memory only, so a reload starts collapsed. Data
+         loading falls back across paths (and to the hosted JSON via CORS) so
+         file:// and embedded-preview openings still show the live index.
 -->
 <style>
 /* ---------- tokens ---------- */
@@ -337,6 +339,13 @@ mark.hl{background:var(--mark);color:var(--mark-ink);padding:0 .1em;border-radiu
 .state pre{background:var(--surface);border:1px solid var(--line);padding:.9rem 1rem;overflow:auto;font-size:.78rem;line-height:1.6;color:var(--ink-2);border-radius:2px;margin:0 0 1.1rem}
 .state .clear-btn{padding:.55rem .9rem;font-size:.8rem}
 .state-error h3{color:var(--danger)}
+.state-link{
+  display:inline-block;padding:.55rem .95rem;border:1px solid var(--accent);
+  border-radius:2px;background:var(--accent);color:#fff;
+  font-size:.8rem;font-weight:700;text-decoration:none;
+}
+.state-link:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.state p.state-detail{font-size:.74rem;color:var(--faint);word-break:break-all}
 .skeleton{padding:1.6rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:2.6rem 1fr 8.5rem;gap:1.15rem}
 .skeleton:first-child{border-top:0}
 .sk{background:linear-gradient(90deg,var(--surface-2) 25%,#e8e7de 50%,var(--surface-2) 75%);background-size:200% 100%;animation:shimmer 1.4s linear infinite;border-radius:2px}
@@ -529,6 +538,14 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
 <script>
 (function () {
   "use strict";
+
+  // Hosted fallback. When this HTML is opened from file:// (double-clicking
+  // the local file) or inside an embedded preview that does not serve /data
+  // at its root, relative reads are blocked or 404. The hosted JSON allows
+  // those cases to still show the live index. See _headers (CORS allowance).
+  var LIVE_SITE = "https://hk-sg-quant-jobs.pages.dev/frontend/";
+  var LIVE_DATA = "https://hk-sg-quant-jobs.pages.dev/data/jobs.json";
+  var lastDataError = "";
 
   /* ---------------------------------------------------------------------
      Resume vocabulary. Built from the live index (matched_keywords + tags)
@@ -1009,8 +1026,17 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
 
   function stateMarkup(kind) {
     if (kind === "error") {
+      var fromDisk = location.protocol === "file:";
       return '<div class="state state-error"><h3>Could not load the job index</h3>' +
-        '<p>The page reads <code>/data/jobs.json</code> over HTTP. If you opened this file directly from disk, your browser blocked the request for security reasons.</p>' +
+        '<p>' + (fromDisk
+          ? 'This page was opened directly from disk (<code>file://</code>), so the browser blocks local file reads. '
+          : 'The page could not read the job index from this address. ') +
+          'The hosted site works without any setup:</p>' +
+        '<p><a class="state-link" href="' + esc(LIVE_SITE) + '" target="_blank" rel="noopener noreferrer">' +
+          'Open the live site &rarr;</a></p>' +
+        (lastDataError ? '<p class="state-detail">Last error: <code>' + esc(lastDataError.slice(0, 160)) + '</code></p>' : "") +
+        '<p class="state-detail">Opened from: <code>' + esc(location.href.slice(0, 160)) + '</code></p>' +
+        '<p>Or serve this repository locally instead:</p>' +
         '<pre>python -m http.server 8000\n# then open http://localhost:8000/frontend/</pre>' +
         '<button type="button" class="clear-btn" id="retryBtn">Try again</button></div>';
     }
@@ -1119,23 +1145,38 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   }
 
   /* ---------- data loading ---------- */
+  // Try each candidate in order. A failure is never fatal on its own: the
+  // page may simply be mounted somewhere unexpected. Keep the last reason so
+  // the error state can tell the user what actually happened.
+  function fetchIndex(urls, i) {
+    if (i >= urls.length) return Promise.reject(new Error(lastDataError || "no data source"));
+    return fetch(urls[i], { cache: "no-store" })
+      .then(function (resp) {
+        if (!resp.ok) throw new Error("HTTP " + resp.status + " at " + urls[i]);
+        return resp.json();
+      })
+      .catch(function (err) {
+        lastDataError = String((err && err.message) || err);
+        return fetchIndex(urls, i + 1);
+      });
+  }
+
   function loadJobs() {
     el.list.setAttribute("aria-busy", "true");
     el.live.classList.remove("is-error");
     el.liveText.textContent = "Loading index";
-    // Cloudflare Pages serves this site at the domain root, so an absolute path
-    // is unambiguous: it resolves identically from /frontend/, from
-    // /frontend/index.html and from any root-level rewrite, and it matches the
-    // /data/jobs.json rule in _headers exactly.
-    // `cache: "no-store"` only controls the browser; the ?v= bucket additionally
-    // bypasses edge caches (10-minute granularity, no re-fetch on every reload).
-    // For a GitHub Pages PROJECT site served under /<repo>/, use "../data/jobs.json".
-    var dataUrl = "/data/jobs.json?v=" + Math.floor(Date.now() / 600000);
-    fetch(dataUrl, { cache: "no-store" })
-      .then(function (resp) {
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
-        return resp.json();
-      })
+    // Cloudflare Pages serves this site at the domain root, so /data/jobs.json
+    // is the primary path. The same HTML is also opened from file:// or from
+    // previews mounted under a different root, where that absolute path 404s;
+    // try relative paths, then the hosted copy (CORS is allowed in _headers).
+    // `cache: "no-store"` + the ?v= bucket bypass browser and edge caches.
+    var bucket = "?v=" + Math.floor(Date.now() / 600000);
+    var urls = ["/data/jobs.json", "../data/jobs.json", "data/jobs.json"].map(
+      function (p) { return p + bucket; }
+    );
+    if (location.origin !== "https://hk-sg-quant-jobs.pages.dev") urls.push(LIVE_DATA + bucket);
+    lastDataError = "";
+    fetchIndex(urls, 0)
       .then(function (data) {
         allJobs = Array.isArray(data.jobs) ? data.jobs : [];
         meta = data;
@@ -1150,7 +1191,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
         render();
       })
       .catch(function (err) {
-        console.error("Failed to load /data/jobs.json", err);
+        console.error("Failed to load the job index", err);
         el.live.classList.add("is-error");
         el.liveText.textContent = "Data unavailable";
         el.count.textContent = "Index unavailable";

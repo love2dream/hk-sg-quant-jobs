@@ -23,8 +23,12 @@
 # Both must print "Cache-Control: no-store, max-age=0, must-revalidate".
 
 # Regenerated 4x/day by GitHub Actions. Never serve a stale copy.
+# CORS: the frontend falls back to this absolute URL when the page is opened
+# from file:// or from an embedded preview that does not serve /data at its
+# root. The request is a simple GET with no credentials, so "*" is safe.
 /data/jobs.json
   Cache-Control: no-store, max-age=0, must-revalidate
+  Access-Control-Allow-Origin: *
 
 # Written once/day by linkedin-apify.yml. Not fetched by the frontend directly,
 # but keep it uncacheable so a stale cache never gets inspected during debugging.
