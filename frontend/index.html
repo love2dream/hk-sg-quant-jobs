@@ -33,7 +33,9 @@
          /data/jobs.json (plus the static favicon assets at the site root);
          all-English UI, responsive, reduced-motion safe. The Agency badge is
          data-owned: it reads jobs[].employer_type, produced by the scraper
-         from the editable rules in funds_config.py (section 3b).
+         from the editable rules in funds_config.py (section 3b). Full job
+         descriptions expand inline from jobs[].description (or .content);
+         expansion lives in memory only, so a reload starts collapsed.
 -->
 <style>
 /* ---------- tokens ---------- */
@@ -215,6 +217,34 @@ select.input{width:auto;padding:.42rem 1.9rem .42rem .65rem;font-size:.78rem;bac
 .dot{color:var(--faint);font-size:.7rem}
 .loc{font-size:.78rem;color:var(--muted);font-weight:600}
 .job-desc{margin:.65rem 0 0;font-size:.82rem;line-height:1.58;color:var(--muted);max-width:74ch}
+/* Inline description expansion: the full text lives in the DOM (hidden) and
+   is toggled in place, so no re-render, no extra request and no lost focus. */
+.desc-toggle{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:.55rem;padding:.25rem 0;
+  border:0;border-bottom:1px solid transparent;background:none;
+  font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.02em;
+  color:var(--accent);text-align:left;
+  transition:color .2s,border-color .2s;
+}
+.desc-toggle:hover{color:var(--accent-deep);border-bottom-color:var(--accent)}
+.desc-toggle svg{width:10px;height:10px;flex:none;transition:transform .25s var(--ease)}
+.job.is-expanded .desc-toggle svg{transform:rotate(180deg)}
+.job-full{
+  margin:.85rem 0 0;padding:.9rem 1rem 1rem;max-width:78ch;
+  background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);
+  border-radius:2px;font-size:.8rem;line-height:1.7;color:var(--ink-2);
+  white-space:pre-wrap;overflow-wrap:anywhere;
+}
+.job-full[hidden]{display:none}
+.job-full::before{
+  content:"Full description";display:block;margin:0 0 .6rem;
+  font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  color:var(--accent);white-space:normal;
+}
+.job-full.is-empty::before{content:"Description unavailable";color:var(--muted)}
+.job-full-empty{color:var(--muted);font-style:italic}
+.job.is-expanded .job-desc{display:none}
 .job-foot{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;margin-top:.9rem}
 .tag{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;font-weight:750;color:var(--muted);border:1px solid var(--line);padding:.13rem .38rem;border-radius:2px}
 .tag.source{color:var(--accent);border-color:#c9dcd0;background:var(--accent-soft)}
@@ -336,6 +366,8 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   .score-label{display:none}
   .apply{margin-left:0;width:100%;margin-top:.35rem}
   .job-title{font-size:1.02rem}
+  .desc-toggle{min-height:2.75rem;padding:.55rem 0;font-size:.78rem}
+  .job-full{padding:.8rem .85rem .9rem;font-size:.79rem;line-height:1.65;max-width:100%}
   .badge-new{margin-left:.4rem}
   .status-filter,.source-filter,.employer-filter{max-width:100%}
   .status-select{max-width:100%}
@@ -576,6 +608,7 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
   var recentCutoff = 0;      // Date.now() - WINDOW_DAYS
   var visitedAt = 0;         // baseline used to compute NEW for this visit
   var newIds = new Set();    // session snapshot; survives re-renders, not reloads
+  var expandedKeys = new Set();  // in-memory only: reload always starts collapsed
   var userStatuses = {};     // { jobId: statusId }
   var meta = {};
   var state = {
@@ -703,6 +736,20 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     var start = Math.max(0, pos - 65);
     var end = Math.min(clean.length, pos + 145);
     return (start > 0 ? "…" : "") + clean.slice(start, end) + (end < clean.length ? "…" : "");
+  }
+
+  // Full text for the inline expander. The scraper ships plain text in
+  // `description`; `content` is accepted too for older/alternate indexes and
+  // the longer of the two wins. Only whitespace is normalised (line breaks and
+  // bullet lines are kept) — no HTML is ever injected; callers still esc().
+  function fullDescription(j) {
+    var d = String(j.description == null ? "" : j.description);
+    var c = String(j.content == null ? "" : j.content);
+    return (c.length > d.length ? c : d)
+      .replace(/\r\n?/g, "\n")
+      .replace(/[ \t]+\n/g, "\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
   }
 
   function formatDate(value) {
@@ -888,13 +935,25 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
     var stId = userStatuses[key] || "";          // user marker, fully independent
     var st = STATUS_BY_ID[stId];
 
+    // Every card gets the control. Some sources (notably Eightfold) ship no
+    // description at all; those say so explicitly instead of showing a dead
+    // button, and still point the reader to "View original".
+    var full = fullDescription(j);
+    var short = snippet(full, terms);
+    var open = expandedKeys.has(key);
+    var regionId = "job-desc-" + i;
+    var regionBody = full
+      ? highlight(full, terms)
+      : '<span class="job-full-empty">This source did not include a description in the index. ' +
+        'Use &ldquo;View original&rdquo; below to read the full listing on the employer site.</span>';
+
     var opts = ['<option value="">' + (st ? "Clear status" : "+ Set status") + "</option>"];
     STATUSES.forEach(function (s) {
       opts.push('<option value="' + s.id + '"' + (s.id === stId ? " selected" : "") +
                 ">" + esc(s.label) + "</option>");
     });
 
-    return '<article class="job" style="--i:' + Math.min(i, 12) + '">' +
+    return '<article class="job' + (open ? " is-expanded" : "") + '" style="--i:' + Math.min(i, 12) + '">' +
       '<div class="job-num" aria-hidden="true">' + String(i + 1).padStart(2, "0") + "</div>" +
       '<div class="job-body">' +
         '<h3 class="job-title">' + highlight(j.title, terms) +
@@ -907,7 +966,15 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
           '<span class="dot" aria-hidden="true">·</span>' +
           '<span class="loc">' + esc(j.location) + "</span>" +
         "</div>" +
-        '<p class="job-desc">' + highlight(snippet(j.description, terms), terms) + "</p>" +
+        '<p class="job-desc">' + highlight(short, terms) + "</p>" +
+        '<div class="job-full' + (full ? "" : " is-empty") + '" id="' + regionId + '" role="region" ' +
+          'aria-label="Full description: ' + esc(j.title) + ' at ' + esc(j.company) + '"' +
+          (open ? "" : " hidden") + ">" + regionBody + "</div>" +
+        '<button type="button" class="desc-toggle" data-key="' + esc(key) + '" ' +
+          'aria-controls="' + regionId + '" aria-expanded="' + (open ? "true" : "false") + '">' +
+          '<span class="desc-toggle-label">' + (open ? "Collapse" : "Show full description") + "</span>" +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>' +
+        "</button>" +
         '<div class="job-foot">' +
           '<span class="tag source">' + esc(j.source) + "</span>" +
           (j.department ? '<span class="tag">' + esc(j.department) + "</span>" : "") +
@@ -1125,6 +1192,26 @@ footer{border-top:1px solid var(--line-strong);padding:1.4rem 0 2.5rem;display:f
 
   // Event delegation: the list is re-rendered on every change, so a direct
   // per-element listener would be lost immediately.
+  // Inline expand/collapse toggles the existing DOM in place (no re-render),
+  // which keeps focus and scroll position. expandedKeys only survives
+  // re-renders inside this session; it is deliberately never persisted, so a
+  // page reload starts with every card collapsed again.
+  el.list.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest ? e.target.closest(".desc-toggle") : null;
+    if (!btn || !el.list.contains(btn)) return;
+    var region = document.getElementById(btn.getAttribute("aria-controls"));
+    if (!region) return;
+    var card = btn.closest(".job");
+    var open = btn.getAttribute("aria-expanded") !== "true";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    var label = btn.querySelector(".desc-toggle-label");
+    if (label) label.textContent = open ? "Collapse" : "Show full description";
+    region.hidden = !open;
+    if (card) card.classList.toggle("is-expanded", open);
+    var key = btn.getAttribute("data-key");
+    if (key) { if (open) expandedKeys.add(key); else expandedKeys.delete(key); }
+  });
+
   el.list.addEventListener("change", function (e) {
     var t = e.target;
     if (!t || !t.getAttribute || !t.classList || !t.classList.contains("status-select")) return;
