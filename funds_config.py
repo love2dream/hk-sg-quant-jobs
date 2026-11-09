@@ -55,7 +55,8 @@ HK/SG Quant Jobs - 配置与数据契约 (funds_config.py)
     1. python scrapers/main_scraper.py 无需 pip install 即可产出 data/jobs.json
     2. 每条职位必须命中 TARGET_LOCATIONS 之一且命中 QUANT 关键词
     3. 单家基金失败不影响其它基金，失败原因写入 jobs.json 的 errors
-    4. 不得含实习 / 应届 / 校招职位（EXCLUDE_LEVEL_KEYWORDS，标题 + JD 全文）
+    4. 自动剔除实习岗（EXCLUDE_LEVEL_KEYWORDS，标题 + JD 全文）；
+       Graduate / Campus 岗位刻意保留、由人工判断，避免误删正职岗
 
 【核实日期】2026-11-06（所有 URL 均实际发起过 HTTP 请求验证）
 """
@@ -148,25 +149,25 @@ EXCLUDE_TITLE_KEYWORDS = [
 ]
 
 # ---------------------------------------------------------------------------
-# 3a. 实习 / 应届 / 校招职位排除层（与 quant 收录规则正交）
-#     本站只看有经验的正职岗位。这一层在 finalize_job() 里、quant 过滤之后
-#     执行：即使标题同时命中 quant 和 intern，也照样剔除。
-#     判定同时看「标题 + 原始 JD 全文」，大小写不敏感。
+# 3a. 实习职位排除层（与 quant 收录规则正交）
+#     只自动剔除「实习岗」。Graduate / Campus 等应届 / 校招岗刻意留在数据里，
+#     由人工在页面上判断：正职 JD 常把 graduate 当学历要求写，例如
+#     "Graduate degree (Master or above)"、"Graduate & Postgraduate study"、
+#     "talented graduates will be considered"、"fresh graduates or up to 2
+#     years' experience"。见词就删会误删有经验岗位（2026-11-09 复核误删 6 条）。
 #
-#     必须用词边界（\b）：裸子串 intern 会命中 international / internal（实测
-#     412 处），graduate 会命中 postgraduate / undergraduate，campus 会命中
-#     "campus computer lab"。这些都不是实习/应届职位。
+#     在 finalize_job() 里、quant 过滤之后执行：即使标题同时命中 quant 和
+#     intern 也照样剔除。标题 + 原始 JD 全文一起判定，大小写不敏感 ——
+#     不少机构把实习岗标题写成 "Software Engineer"，只在正文里说
+#     "as an intern ... during the internship"。
 #
-#     `\bgraduate\b` / `\bgraduates\b` 已覆盖用户列出的
-#     "graduate programme" / "graduate program" / "entry-level graduate"；
-#     `\binternship\b` 覆盖 "internship"；`\bcampus\b` 覆盖校招。
-#     改这份名单即可调整口径，不必改抓取器或前端。
+#     必须用词边界（\b）：裸子串 intern 会命中 international / internal
+#     （实测 412 处），这些并不是实习岗。改这份名单即可调整口径，
+#     不必改抓取器或前端。
 # ---------------------------------------------------------------------------
 EXCLUDE_LEVEL_KEYWORDS = [
     r"\bintern\b", r"\binterns\b",
     r"\binternship\b", r"\binternships\b",
-    r"\bgraduate\b", r"\bgraduates\b",
-    r"\bcampus\b",
 ]
 
 # 仅用于生成展示标签，不参与收录判定

@@ -10,7 +10,7 @@ Playwright 仅在 custom 基金显式开启时「延迟导入」，没装也不�
 分层（对应全栈开发规范，CLI 版本）
     http_get_json          传输层：超时 / 重试 / 退避 / 4xx 快速失败
     fetch_*               适配层：把 ATS / 官网 JSON API / 聚合源的字段翻译成统一内部格式
-    finalize_job           领域层：地点过滤 + quant 关键词过滤 + 实习/应届排除 + 打标签 + 雇主类型
+    finalize_job           领域层：地点过滤 + quant 关键词过滤 + 实习排除 + 打标签 + 雇主类型
     classify_employer      雇主类型：直招 / 猎头（规则见 funds_config.py 第 3b 节）
     deduplicate            去重层：canonical URL -> 公司+标题+地点，官方源优先，确定性选优
     write_output           存储层：原子写 data/jobs.json
@@ -1291,15 +1291,17 @@ def quant_match(title: str) -> Tuple[int, List[str]]:
     return len(hits), hits
 
 
-# 实习 / 应届 / 校招排除层：与上面的 quant 收录规则完全正交，名单集中在
+# 实习排除层：与上面的 quant 收录规则完全正交，名单集中在
 # funds_config.EXCLUDE_LEVEL_KEYWORDS。词边界由名单里的 \b 保证。
+# 只拦 intern 系列；graduate / campus 刻意保留，交给人工判断，避免把正职 JD
+# 里的 "Graduate degree (Master or above)" 学历要求误判成应届岗。
 LEVEL_EXCLUDE_RE = re.compile(
     "|".join("(?:%s)" % p for p in EXCLUDE_LEVEL_KEYWORDS), re.IGNORECASE
 )
 
 
 def level_exclusion(title: str, description: str) -> str:
-    """命中的实习/应届关键词（小写），没有则空串。
+    """命中的实习关键词（小写），没有则空串。
 
     同时检查标题和 JD 全文：不少机构把实习岗写成 "Software Engineer"，
     只在正文里说 "as an intern ... during the internship"。
@@ -1333,9 +1335,9 @@ def finalize_job(
     if opts.quant_only and score < opts.min_quant_score:
         return None, "quant"
 
-    # 3) 实习 / 应届 / 校招排除层：在 quant 之后，所以标题同时含
-    #    "quant" 和 "intern" 的职位照样在这里被剔除。判定用未截断的
-    #    原始 JD，避免护栏截断把关键词切掉。
+    # 3) 实习排除层：在 quant 之后，所以标题同时含 "quant" 和 "intern"
+    #    的职位照样在这里被剔除。判定用未截断的原始 JD，避免护栏截断
+    #    把关键词切掉。Graduate / Campus 保留，由人工判断。
     if opts.exclude_level and level_exclusion(raw["title"], raw["description"]):
         return None, "level"
 
@@ -1438,7 +1440,7 @@ class RunOptions:
     min_quant_score: int
     description_limit: int
     locations: List[str]
-    exclude_level: bool = True   # 过滤 Intern / Graduate / Campus 职位；--keep-early-career 可关闭做对照
+    exclude_level: bool = True   # 只过滤实习岗（intern 系列）；--keep-early-career 可关闭做对照
     dry_run: bool = False
 
 
@@ -1638,7 +1640,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                         help="调试用：不拉 Greenhouse content（会同时丢失 offices 地点字段，可能漏职位）")
     parser.add_argument("--all-jobs", action="store_true", help="关闭 quant 关键词过滤（调试用）")
     parser.add_argument("--keep-early-career", action="store_true",
-                        help="调试用：保留 Intern / Graduate / Campus 职位（关闭排除层，便于做过滤前后对照）")
+                        help="调试用：保留实习岗（关闭 intern 排除层，便于做过滤前后对照）")
     parser.add_argument("--min-score", type=int, default=SETTINGS["min_quant_score"], help="最低关键词命中数")
     parser.add_argument("--description-limit", type=int, default=SETTINGS["description_limit"],
                         help="单条描述纯文本上限（安全护栏，默认 12000）")
@@ -1687,7 +1689,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     LOG.info("开始抓取：%d 家基金 | 地点 %s | quant_only=%s | 并发 %d",
              len(funds), "/".join(opts.locations), opts.quant_only, opts.workers)
-    LOG.info("实习/应届/校招排除层：%s（词边界匹配，检查标题 + JD 全文）",
+    LOG.info("实习排除层：%s（只拦 intern 系列，词边界匹配，检查标题 + JD 全文；Graduate/Campus 保留交人工判断）",
              "启用" if opts.exclude_level else "关闭（--keep-early-career）")
     if not opts.with_content:
         LOG.warning("--no-content 模式：Greenhouse 不返回 offices/departments，地点过滤会偏严、结果偏少")
@@ -1696,7 +1698,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     dd = payload["dedupe"]
     LOG.info(
-        "完成：原始 %d -> 地点剔除 %d / quant 剔除 %d / 实习应届剔除 %d -> 去重前 %d 条",
+        "完成：原始 %d -> 地点剔除 %d / quant 剔除 %d / 实习剔除 %d -> 去重前 %d 条",
         stats["raw_jobs"], stats["dropped_location"], stats["dropped_quant"],
         stats["dropped_level"], dd["candidates"],
     )
