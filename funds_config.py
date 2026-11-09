@@ -55,6 +55,7 @@ HK/SG Quant Jobs - 配置与数据契约 (funds_config.py)
     1. python scrapers/main_scraper.py 无需 pip install 即可产出 data/jobs.json
     2. 每条职位必须命中 TARGET_LOCATIONS 之一且命中 QUANT 关键词
     3. 单家基金失败不影响其它基金，失败原因写入 jobs.json 的 errors
+    4. 不得含实习 / 应届 / 校招职位（EXCLUDE_LEVEL_KEYWORDS，标题 + JD 全文）
 
 【核实日期】2026-11-06（所有 URL 均实际发起过 HTTP 请求验证）
 """
@@ -144,6 +145,28 @@ EXCLUDE_TITLE_KEYWORDS = [
     r"\bcontent\s*writer\b", r"\bevent\s*coordinator\b",
     r"\bav\s*engineer\b", r"\bcybersecurity\b", r"\bhelpdesk\b",
     r"\bdesktop\s*support\b", r"\bit\s*support\b",
+]
+
+# ---------------------------------------------------------------------------
+# 3a. 实习 / 应届 / 校招职位排除层（与 quant 收录规则正交）
+#     本站只看有经验的正职岗位。这一层在 finalize_job() 里、quant 过滤之后
+#     执行：即使标题同时命中 quant 和 intern，也照样剔除。
+#     判定同时看「标题 + 原始 JD 全文」，大小写不敏感。
+#
+#     必须用词边界（\b）：裸子串 intern 会命中 international / internal（实测
+#     412 处），graduate 会命中 postgraduate / undergraduate，campus 会命中
+#     "campus computer lab"。这些都不是实习/应届职位。
+#
+#     `\bgraduate\b` / `\bgraduates\b` 已覆盖用户列出的
+#     "graduate programme" / "graduate program" / "entry-level graduate"；
+#     `\binternship\b` 覆盖 "internship"；`\bcampus\b` 覆盖校招。
+#     改这份名单即可调整口径，不必改抓取器或前端。
+# ---------------------------------------------------------------------------
+EXCLUDE_LEVEL_KEYWORDS = [
+    r"\bintern\b", r"\binterns\b",
+    r"\binternship\b", r"\binternships\b",
+    r"\bgraduate\b", r"\bgraduates\b",
+    r"\bcampus\b",
 ]
 
 # 仅用于生成展示标签，不参与收录判定

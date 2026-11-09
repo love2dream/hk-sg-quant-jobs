@@ -225,6 +225,23 @@ jobs:
           if len(full_jds) < 20:
               fail("only %s roles have a full JD (>700 chars); descriptions were truncated" % len(full_jds))
 
+          # 8. Intern / Graduate / Campus roles must never leak back in.
+          #    Reuse the scraper's own keyword list so the gate can't drift
+          #    away from the filter (word boundaries live in the patterns).
+          import re
+          from funds_config import EXCLUDE_LEVEL_KEYWORDS
+          level_re = re.compile(
+              "|".join("(?:%s)" % p for p in EXCLUDE_LEVEL_KEYWORDS), re.I)
+          leaked = []
+          for j in jobs:
+              m = level_re.search("%s \n %s" % (j.get("title") or "",
+                                                j.get("description") or ""))
+              if m:
+                  leaked.append((j.get("title"), m.group(0)))
+          if leaked:
+              fail("%s intern/graduate roles leaked through (e.g. %r)" %
+                   (len(leaked), leaked[:3]))
+
           summary = ("OK: %s roles (previous %s) | %s funds OK | %s funds failed | "
                      "%s errors | %ss old" %
                      (n, old_n, stats.get("funds_ok", "?"), failed,
