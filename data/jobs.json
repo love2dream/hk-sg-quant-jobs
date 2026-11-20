@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "fetched_at": "2026-11-20T00:42:41Z",
-  "generated_at": "2026-11-20T00:42:41Z",
-  "total_jobs": 270,
+  "fetched_at": "2026-11-20T07:27:33Z",
+  "generated_at": "2026-11-20T07:27:33Z",
+  "total_jobs": 272,
   "filters": {
     "locations": [
       "Hong Kong",
@@ -17,8 +17,8 @@
   },
   "dedupe": {
     "strategy": "canonical_url -> company+title+location; official > aggregator > LinkedIn; then completeness",
-    "candidates": 365,
-    "kept": 270,
+    "candidates": 367,
+    "kept": 272,
     "removed_total": 95,
     "by_url": 71,
     "by_identity": 24,
@@ -39,36 +39,36 @@
     "funds_empty": 0,
     "funds_error": 0,
     "funds_needs_playwright": 4,
-    "raw_jobs": 1617,
-    "dropped_location": 1037,
-    "dropped_quant": 126,
+    "raw_jobs": 1619,
+    "dropped_location": 1036,
+    "dropped_quant": 127,
     "dropped_level": 89,
     "duplicates_removed": 95,
-    "dedupe_candidates": 365,
-    "total_jobs": 270,
+    "dedupe_candidates": 367,
+    "total_jobs": 272,
     "apify_cache_jobs": 0,
     "apify_cache_kept": 0,
     "by_source": {
       "eFC": 77,
-      "eightfold": 37,
+      "eightfold": 39,
       "greenhouse": 137,
       "lever": 2,
       "polymer_api": 7,
       "phenom": 10
     },
     "by_location": {
-      "Hong Kong": 167,
+      "Hong Kong": 169,
       "Singapore": 130
     },
     "by_employer_type": {
       "agency": 52,
-      "direct": 218
+      "direct": 220
     },
-    "elapsed_seconds": 81.97,
+    "elapsed_seconds": 81.82,
     "dedupe": {
       "strategy": "canonical_url -> company+title+location; official > aggregator > LinkedIn; then completeness",
-      "candidates": 365,
-      "kept": 270,
+      "candidates": 367,
+      "kept": 272,
       "removed_total": 95,
       "by_url": 71,
       "by_identity": 24,
@@ -104,7 +104,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 7,
       "matched_keywords": [
         "quant",
@@ -141,7 +141,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 6,
       "matched_keywords": [
         "quantitative",
@@ -176,7 +176,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -212,7 +212,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-19",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -226,38 +226,6 @@
         "java",
         "machine learning",
         "futures",
-        "equities"
-      ]
-    },
-    {
-      "id": "eFC:efc:YgZjNbi4JcRD1Tik",
-      "title": "Execution Quant Researcher / trader – Global Equities / Execution/ / Global Hedge Fund / Hong Kong",
-      "company": "BAH Partners",
-      "employer_type": "agency",
-      "location": "Hong Kong",
-      "locations": [
-        "Hong Kong"
-      ],
-      "city_key": "hong_kong",
-      "department": "Permanent",
-      "description": "A leading global hedge fund is hiring an Execution-focused Quant Researcher to join a systematic equities team trading across APAC and global markets. This role sits at the intersection of execution research, market microstructure and trading technology. Rather than focusing primarily on alpha generation, you will improve how portfolio decisions translate into live trades—optimising execution quality, reducing transaction costs, and improving trading performance. What We’re Looking For Ideally 3-10 years of work experience Background in execution research, electronic trading, systematic trading, market making or quant development Strong Python and quantitative skills Good understanding of equity market structure and execution Comfortable working with live trading systems and large trading datasets Strong problem-solving skills and ability to work independently Experience in any of the following: Transaction Cost Analysis / TCA FIX Low-latency trading APAC equities Smart order routing Signal research Trading infrastructure or data pipelines Why This Role Direct impact on execution quality and trading P&L Strong blend of research, engineering and execution trading Work closely with the PM in a high-visibility role Broad ownership across both research and production trading Flat, collaborative environment with limited bureaucracy Opportunity to help shape the execution framework as the strategy continues to scale This would suit someone who enjoys solving real trading problems and wants a role closer to the market than a traditional research or engineering position. If you are interested in learning more, please reach out at katie.huang@bahpartners.com for a confidential chat.",
-      "url": "https://www.efinancialcareers.com/jobs-Hong_Kong-Hong_Kong-Execution_Quant_Researcher__trader_%E2%80%93_Global_Equities__Execution__Global_Hedge_Fund__Hong_Kong.id24963888",
-      "apply_url": "https://www.efinancialcareers.com/jobs-Hong_Kong-Hong_Kong-Execution_Quant_Researcher__trader_%E2%80%93_Global_Equities__Execution__Global_Hedge_Fund__Hong_Kong.id24963888",
-      "career_url": "https://www.efinancialcareers.com",
-      "source": "eFC",
-      "ats_slug": "efc",
-      "posted_at": "2026-11-18",
-      "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
-      "quant_score": 4,
-      "matched_keywords": [
-        "quant",
-        "researcher",
-        "trader",
-        "execution"
-      ],
-      "tags": [
-        "python",
         "equities"
       ]
     },
@@ -280,7 +248,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -315,7 +283,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-15",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -351,7 +319,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -387,7 +355,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -421,7 +389,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-03-26T00:00:00Z",
       "updated_at": "2025-03-26T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quantitative",
@@ -435,6 +403,41 @@
         "machine learning",
         "linux",
         "equities"
+      ]
+    },
+    {
+      "id": "eightfold:mlp.com:755959881507",
+      "title": "Quantitative Researcher – Alpha Research",
+      "company": "Millennium Management",
+      "employer_type": "direct",
+      "location": "Hong Kong",
+      "locations": [
+        "Hong Kong"
+      ],
+      "city_key": "hong_kong",
+      "department": "Trading, Quant Strategies",
+      "description": "Quantitative Researcher – Alpha Research\n\nJob Description: Quantitative Researcher – Alpha Research\nJob Function Summary\nWe are seeking a Quantitative Researcher to join our Alpha Research team. You will explore diverse datasets, extract predictive signals using statistical and machine learning methods, and analyze live strategy attribution to drive continuous alpha generation.\nPrincipal Responsibilities\n· Source, clean, and evaluate the predictive efficacy of novel and alternative datasets.\n· Conduct statistical analyses and domain-driven factor mining across multi-modal data to extract predictive market signals.\n· Engineer features and build predictive models utilizing machine learning, deep learning, and statistical techniques.\n· Design and track live trading metrics, analyzing PnL attribution and potential return drivers to guide overall strategy optimization.\nQualifications/Skills Required\n· Bachelor’s degree or higher in Computer Science, Mathematics, Physics, Statistics, or Financial Engineering from a leading institution; Master’s or PhD preferred.\n· Extensive research experience with strong mathematical foundations; publications in top-tier academic venues preferred.\n· Proficiency in Python or C++, familiarity with Linux environments, and strong software engineering habits.\n· Strong logical reasoning, innovative thinking, rigorous research methodology, and collaborative communication skills.\n· Passion for technical deep dives, intellectual curiosity, and strong independent problem-solving skills in challenging environments.\nPreferred Qualifications\n· Top placements in big data competitions (e.g., Kaggle, Tianchi) or awards in mathematics, physics, or computer science Olympiads/competitions.",
+      "url": "https://mlp.eightfold.ai/careers/job/755959881507",
+      "apply_url": "https://mlp.eightfold.ai/careers/job/755959881507",
+      "career_url": "https://career.mlp.com/careers",
+      "source": "eightfold",
+      "ats_slug": "mlp.com",
+      "posted_at": "2026-11-20T00:00:00Z",
+      "updated_at": "2026-11-20T07:13:32Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
+      "quant_score": 4,
+      "matched_keywords": [
+        "quantitative",
+        "researcher",
+        "research",
+        "alpha"
+      ],
+      "tags": [
+        "python",
+        "c++",
+        "machine learning",
+        "deep learning",
+        "linux"
       ]
     },
     {
@@ -457,7 +460,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-07-11T08:07:31-04:00",
       "updated_at": "2026-10-28T07:52:14-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -490,7 +493,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -523,7 +526,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-09-30",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 4,
       "matched_keywords": [
         "quant",
@@ -554,7 +557,7 @@
       "ats_slug": "ambergroup",
       "posted_at": "2023-02-10T11:52:57Z",
       "updated_at": "2023-02-10T11:52:57Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -582,7 +585,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -615,9 +618,9 @@
       "career_url": "https://www.efinancialcareers.com",
       "source": "eFC",
       "ats_slug": "efc",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-20",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -651,7 +654,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -684,7 +687,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -717,7 +720,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-15",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -750,7 +753,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-15",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -782,9 +785,9 @@
       "career_url": "https://www.efinancialcareers.com",
       "source": "eFC",
       "ats_slug": "efc",
-      "posted_at": "2026-11-14",
+      "posted_at": "2026-11-20",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -816,7 +819,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-11",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -849,7 +852,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-07-17T21:58:55-04:00",
       "updated_at": "2026-10-07T22:53:37-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -880,7 +883,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -915,7 +918,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -945,7 +948,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-15",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -977,7 +980,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1010,7 +1013,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-19",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1041,7 +1044,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-18T21:04:06-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1076,7 +1079,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-20T00:48:10-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1110,7 +1113,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-20T22:56:40-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1143,7 +1146,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2023-06-13T16:46:07-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "research",
@@ -1176,7 +1179,7 @@
       "ats_slug": "jumptrading",
       "posted_at": "2026-08-24T01:57:26-04:00",
       "updated_at": "2026-11-13T05:28:25-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1208,7 +1211,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-20T00:00:00Z",
       "updated_at": "2026-10-20T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1239,7 +1242,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-24T00:00:00Z",
       "updated_at": "2026-07-24T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1273,7 +1276,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-22T00:00:00Z",
       "updated_at": "2026-10-22T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1305,7 +1308,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-14T00:00:00Z",
       "updated_at": "2026-08-14T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1339,7 +1342,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-10T00:00:00Z",
       "updated_at": "2026-07-10T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1370,7 +1373,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-04-29T00:00:00Z",
       "updated_at": "2026-04-29T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1403,8 +1406,8 @@
       "source": "eightfold",
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-22T00:00:00Z",
-      "updated_at": "2026-11-20T00:34:44Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "updated_at": "2026-11-20T07:04:26Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "systematic",
@@ -1436,7 +1439,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1468,7 +1471,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1501,7 +1504,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1532,7 +1535,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1563,7 +1566,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1596,7 +1599,7 @@
       "ats_slug": "point72",
       "posted_at": "2025-06-04T12:20:58-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1629,7 +1632,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-07-08",
       "updated_at": "2026-07-08",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1657,7 +1660,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1689,7 +1692,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2021-07-06T12:41:19-04:00",
       "updated_at": "2026-10-28T07:40:00-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1720,7 +1723,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-10-23T15:06:31-04:00",
       "updated_at": "2026-10-28T07:39:47-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1753,7 +1756,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:11-04:00",
       "updated_at": "2026-10-28T11:10:11-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1785,7 +1788,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-27",
       "updated_at": "2026-11-15",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "trading",
@@ -1817,7 +1820,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-03",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quant",
@@ -1848,7 +1851,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-03-23T17:18:01-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 3,
       "matched_keywords": [
         "quantitative",
@@ -1882,7 +1885,7 @@
       "ats_slug": "ambergroup",
       "posted_at": "2022-04-07T07:32:46Z",
       "updated_at": "2022-04-07T07:32:46Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -1909,7 +1912,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -1942,7 +1945,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -1976,7 +1979,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2010,7 +2013,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2039,7 +2042,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2066,7 +2069,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2097,7 +2100,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2128,7 +2131,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-07-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2162,7 +2165,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-05",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2193,7 +2196,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-05-30",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2225,7 +2228,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2254,7 +2257,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-19",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -2287,7 +2290,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-28T23:58:05-04:00",
       "updated_at": "2026-10-20T00:12:04-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -2320,7 +2323,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-04-27T14:16:36-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2350,7 +2353,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-07-30T11:08:54-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2384,7 +2387,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-15T23:40:28-04:00",
       "updated_at": "2026-10-20T00:13:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2418,7 +2421,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2448,7 +2451,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2478,7 +2481,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-04",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2508,7 +2511,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-03-11T22:23:52-04:00",
       "updated_at": "2026-10-13T04:26:15-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2540,7 +2543,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-09-21T23:23:04-04:00",
       "updated_at": "2026-09-21T23:23:04-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2571,7 +2574,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2022-03-04T00:31:35-05:00",
       "updated_at": "2026-09-18T04:15:09-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2600,7 +2603,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-08-25T07:54:56-04:00",
       "updated_at": "2026-09-21T03:23:23-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2632,7 +2635,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-11-30T21:30:37-05:00",
       "updated_at": "2026-11-08T21:08:54-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "research",
@@ -2664,7 +2667,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2025-06-26T00:56:39-04:00",
       "updated_at": "2026-11-06T00:27:40-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -2695,7 +2698,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-09-17T22:57:48-04:00",
       "updated_at": "2026-11-06T00:28:17-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -2724,7 +2727,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-19",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2755,7 +2758,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2786,7 +2789,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-29",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2815,7 +2818,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2845,7 +2848,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -2875,7 +2878,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2025-09-08T06:04:56-04:00",
       "updated_at": "2026-11-19T01:13:19-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -2904,7 +2907,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2023-10-03T04:18:55-04:00",
       "updated_at": "2026-11-19T01:13:19-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2936,7 +2939,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2026-10-19T05:23:17-04:00",
       "updated_at": "2026-11-19T01:13:19-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2967,7 +2970,7 @@
       "ats_slug": "gravitonresearchcapital",
       "posted_at": "2020-02-13T02:51:15-05:00",
       "updated_at": "2026-11-19T01:13:19-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -2997,7 +3000,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-06-26T02:38:52-04:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -3030,7 +3033,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-01-14T21:30:39-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3064,7 +3067,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-23T01:16:58-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3096,7 +3099,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-07-22T02:53:05-04:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3128,7 +3131,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-10-03T20:16:05-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3158,7 +3161,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-05-20T17:22:15-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -3189,7 +3192,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-06-04T12:40:37-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "researcher",
@@ -3221,7 +3224,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-03-29T22:04:50-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3248,7 +3251,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-09-09T06:45:09-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3280,7 +3283,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-09-09T06:44:12-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3309,7 +3312,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-01-25T22:13:18-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3338,7 +3341,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2024-03-17T22:42:29-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3367,7 +3370,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-08-31T23:23:22-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3397,7 +3400,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-08-31T23:25:34-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3427,7 +3430,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-08-11T23:38:05-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -3454,7 +3457,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-13T00:00:00Z",
       "updated_at": "2026-10-13T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3489,7 +3492,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-21T00:00:00Z",
       "updated_at": "2026-07-24T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3523,7 +3526,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-06T00:00:00Z",
       "updated_at": "2026-11-06T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3555,7 +3558,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-03T00:00:00Z",
       "updated_at": "2026-08-03T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3585,7 +3588,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3616,7 +3619,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-01-21T00:00:00Z",
       "updated_at": "2026-01-21T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3649,7 +3652,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-09-30T00:00:00Z",
       "updated_at": "2026-09-30T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -3680,7 +3683,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-01T00:00:00Z",
       "updated_at": "2026-10-01T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3691,6 +3694,35 @@
         "c++",
         "machine learning",
         "options",
+        "backtesting"
+      ]
+    },
+    {
+      "id": "eightfold:mlp.com:755959881392",
+      "title": "Quantitative Researcher – Portfolio Construction",
+      "company": "Millennium Management",
+      "employer_type": "direct",
+      "location": "Hong Kong",
+      "locations": [
+        "Hong Kong"
+      ],
+      "city_key": "hong_kong",
+      "department": "Trading, Quant Strategies",
+      "description": "Quantitative Researcher – Portfolio Construction\n\nAbout 4C Trading\n4C Trading is a Hong Kong-based quantitative investment firm driven by quantitative research and artificial intelligence. The firm has built partnership with Millennium Management (MLP), a leading global multi-strategy hedge fund manager. It develops proprietary systematic strategies and live trading capabilities, with strategies spanning multiple markets and asset classes.\nOur team brings together experience from leading quantitative investment firms and technology companies in China and abroad, combining equity strategy research with AI model development. Its members are graduates of leading universities and include researchers whose work has appeared at leading conferences such as NeurIPS, ICLR, and ICML, as well as gold medalists from the CMO, NOI, and ICPC World Finals.\nJob Description: Quantitative Researcher – Portfolio Construction\nJob Function Summary\nWe are looking for a Quantitative Researcher to join our Portfolio Construction team. In this role, you will analyze China A-share market dynamics, evaluate alpha signals, and build portfolio optimization and execution algorithms to bridge the gap between theoretical signals and live trading performance.\nPrincipal Responsibilities\n· Analyze and mine China A-share market data to develop a deep understanding of market microstructure and mechanics.\n· Evaluate the quality, statistical properties, and optimal combination methodologies of quantitative signals.\n· Develop and optimize trading algorithms, conducting rigorous research on backtesting frameworks and live trading execution behavior.\nQualifications/Skills Required\n· Bachelor’s degree or higher in a quantitative or STEM discipline (e.g., Mathematics, Physics, Statistics, Computer Science) from a top-tier university; PhD preferred.\n· Extensive research experience with a strong foundation in mathematics and programming; publications in top-tier academic conferences or journals are a strong plus.\n· Strong innovative mindset, logical reasoning, rigorous research habits, and effective communication and collaboration skills.\n· Self-driven and adaptable to a fast-paced, agile research environment.\n· Medalists or award winners in mathematics, physics, or computer science competitions are preferred.",
+      "url": "https://mlp.eightfold.ai/careers/job/755959881392",
+      "apply_url": "https://mlp.eightfold.ai/careers/job/755959881392",
+      "career_url": "https://career.mlp.com/careers",
+      "source": "eightfold",
+      "ats_slug": "mlp.com",
+      "posted_at": "2026-11-20T00:00:00Z",
+      "updated_at": "2026-11-20T07:04:26Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
+      "quant_score": 2,
+      "matched_keywords": [
+        "quantitative",
+        "researcher"
+      ],
+      "tags": [
         "backtesting"
       ]
     },
@@ -3714,7 +3746,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-05-18T00:00:00Z",
       "updated_at": "2025-05-18T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3746,7 +3778,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-02-05T00:00:00Z",
       "updated_at": "2026-02-05T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3777,7 +3809,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-04-23T00:00:00Z",
       "updated_at": "2026-04-23T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3807,7 +3839,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3834,7 +3866,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-13T00:00:00Z",
       "updated_at": "2026-11-13T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -3863,7 +3895,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-09-25T00:00:00Z",
       "updated_at": "2026-09-25T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -3894,7 +3926,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-24T00:00:00Z",
       "updated_at": "2026-08-24T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "systematic",
@@ -3928,7 +3960,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -3959,9 +3991,9 @@
       "career_url": "https://www.efinancialcareers.com",
       "source": "eFC",
       "ats_slug": "efc",
-      "posted_at": "2026-11-14",
+      "posted_at": "2026-11-20",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -3992,7 +4024,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4023,7 +4055,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-16",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -4052,7 +4084,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:04:16-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4085,7 +4117,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:08:20-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4119,7 +4151,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-10-06T11:31:03-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4151,7 +4183,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4178,7 +4210,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4205,7 +4237,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4237,7 +4269,7 @@
       "ats_slug": "quadraturecapital",
       "posted_at": "2026-06-25T06:08:05-04:00",
       "updated_at": "2026-11-05T04:14:27-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4268,7 +4300,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4302,7 +4334,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-21T08:57:01-04:00",
       "updated_at": "2026-11-05T06:51:12-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "engineer",
@@ -4333,7 +4365,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2025-04-03T11:35:23-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4367,7 +4399,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-02-17T18:24:50-05:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4401,7 +4433,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-01-06T14:07:00-05:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4431,7 +4463,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4463,7 +4495,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -4495,7 +4527,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4526,7 +4558,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T07:48:32-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4561,7 +4593,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-04-03T14:34:19-04:00",
       "updated_at": "2026-10-28T07:52:14-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4592,7 +4624,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:55-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "kdb",
@@ -4625,7 +4657,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T07:39:21-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -4660,7 +4692,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:11:58-04:00",
       "updated_at": "2026-10-28T11:11:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4694,7 +4726,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:43-04:00",
       "updated_at": "2026-10-28T11:10:43-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4727,7 +4759,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-10-28T11:10:32-04:00",
       "updated_at": "2026-10-28T11:10:32-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4759,7 +4791,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2019-05-28T11:12:02-04:00",
       "updated_at": "2026-10-28T11:09:04-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quant",
@@ -4790,7 +4822,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-12-15T11:38:37-05:00",
       "updated_at": "2026-10-28T11:40:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -4821,7 +4853,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-05-28T11:32:51-04:00",
       "updated_at": "2026-10-28T11:39:59-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "developer",
@@ -4853,7 +4885,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-20",
       "updated_at": "2026-11-04",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "pricing",
@@ -4885,7 +4917,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-09-15",
       "updated_at": "2026-10-13",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -4916,7 +4948,7 @@
       "ats_slug": "towerresearchcapital",
       "posted_at": "2026-03-12T22:01:57-04:00",
       "updated_at": "2026-09-29T23:31:53-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "machine learning",
@@ -4950,7 +4982,7 @@
       "ats_slug": "virtu",
       "posted_at": "2026-09-18T02:53:10-04:00",
       "updated_at": "2026-09-18T02:53:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -4982,7 +5014,7 @@
       "ats_slug": "virtu",
       "posted_at": "2022-02-01T06:06:33-05:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5014,7 +5046,7 @@
       "ats_slug": "virtu",
       "posted_at": "2019-03-11T16:01:36-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5046,7 +5078,7 @@
       "ats_slug": "virtu",
       "posted_at": "2024-01-16T22:52:57-05:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trading",
@@ -5075,7 +5107,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-08-02T21:57:26-04:00",
       "updated_at": "2026-08-12T21:38:39-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5106,7 +5138,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-07-17T10:37:41-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5140,7 +5172,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-09-10T22:12:01-04:00",
       "updated_at": "2026-09-10T22:12:01-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "trader",
@@ -5173,7 +5205,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2025-01-17T10:41:39-05:00",
       "updated_at": "2026-08-12T21:37:21-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "quantitative",
@@ -5205,7 +5237,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-07-02T21:41:20-04:00",
       "updated_at": "2026-09-15T03:43:40-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5236,7 +5268,7 @@
       "ats_slug": "xtxmarketstechnologies",
       "posted_at": "2026-08-19T06:20:58-04:00",
       "updated_at": "2026-10-13T07:04:37-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 2,
       "matched_keywords": [
         "software engineer",
@@ -5270,7 +5302,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5298,7 +5330,7 @@
       "ats_slug": "akunacapital",
       "posted_at": "2026-11-12T23:35:26-05:00",
       "updated_at": "2026-11-19T12:33:58-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -5327,7 +5359,7 @@
       "ats_slug": "akunacapital",
       "posted_at": "2025-02-14T01:17:57-05:00",
       "updated_at": "2026-11-19T12:33:58-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5359,7 +5391,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5388,7 +5420,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5416,7 +5448,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5442,7 +5474,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-09-23",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5468,7 +5500,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-13T10:34:36-04:00",
       "updated_at": "2026-10-20T00:16:50-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -5500,7 +5532,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-06-24T10:52:29-04:00",
       "updated_at": "2026-08-07T10:53:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -5530,7 +5562,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2023-04-19T12:38:01-04:00",
       "updated_at": "2026-08-05T11:14:34-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -5561,7 +5593,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-09-17T10:20:30-04:00",
       "updated_at": "2026-10-20T00:17:27-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -5590,7 +5622,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-08-13T10:58:59-04:00",
       "updated_at": "2026-08-13T10:58:59-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -5619,7 +5651,7 @@
       "ats_slug": "dvtrading",
       "posted_at": "2026-05-07T15:31:01-04:00",
       "updated_at": "2026-10-20T00:13:57-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -5652,7 +5684,7 @@
       "ats_slug": "flowtraders",
       "posted_at": "2026-04-28T11:18:33-04:00",
       "updated_at": "2026-10-13T10:20:29-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -5682,13 +5714,41 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
       ],
       "tags": [
         "python"
+      ]
+    },
+    {
+      "id": "eFC:efc:RIgdQVmppgJjWfsr",
+      "title": "C++ Market Data Developer",
+      "company": "Gravitas Recruitment Group",
+      "employer_type": "agency",
+      "location": "Hong Kong",
+      "locations": [
+        "Hong Kong"
+      ],
+      "city_key": "hong_kong",
+      "department": "Permanent",
+      "description": "1. Expansion of Recruitment Needs and Candidate Profiles In addition to the previously identified quantitative researcher roles, the client highlighted the following priority positions to support the development of its Asia technology and management teams: Mid-level Engineers • Skills: Proficient in C++; experienced in low-latency system development; familiar with market data feed handlers, trading systems, exchange connectivity, and API development. • Background: Must have hands-on experience working in relevant teams. Senior Engineers / Technical Leads • Experience: 10+ years of relevant experience, with the ability to build an Asia trading stack from the ground up. • Role: Responsible for overall system architecture and technical leadership. Trading Operations Professionals • Target profiles: Traders or quantitative developers from leading high-frequency trading firms, such as Optiver, DRW, Citadel Securities, IMC, and Jump Trading. • Core value: Deep understanding of local market nuances and exchange rules.",
+      "url": "https://www.efinancialcareers.com/jobs-Hong_Kong-Hong_Kong-C_Market_Data_Developer.id24881973",
+      "apply_url": "https://www.efinancialcareers.com/jobs-Hong_Kong-Hong_Kong-C_Market_Data_Developer.id24881973",
+      "career_url": "https://www.efinancialcareers.com",
+      "source": "eFC",
+      "ats_slug": "efc",
+      "posted_at": "2026-11-17",
+      "updated_at": "",
+      "fetched_at": "2026-11-20T07:27:33Z",
+      "quant_score": 1,
+      "matched_keywords": [
+        "developer"
+      ],
+      "tags": [
+        "c++"
       ]
     },
     {
@@ -5710,7 +5770,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-14",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -5736,7 +5796,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-15",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5764,7 +5824,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-10-23",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -5794,7 +5854,7 @@
       "ats_slug": "imc",
       "posted_at": "2026-02-18T21:44:36-05:00",
       "updated_at": "2026-11-19T12:32:14-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -5826,7 +5886,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2023-04-07T04:28:17-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5855,7 +5915,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-08-02T04:20:47-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5884,7 +5944,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-09-11T23:56:59-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5910,7 +5970,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-09-11T23:57:49-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5936,7 +5996,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-06-18T00:18:07-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -5965,7 +6025,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-05-19T06:09:40-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -5991,7 +6051,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2021-11-16T23:09:54-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6019,7 +6079,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-07-22T06:32:31-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6047,7 +6107,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-10-18T22:10:09-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6075,7 +6135,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2026-10-06T23:58:26-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "derivatives"
@@ -6103,7 +6163,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-01-10T02:56:14-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6129,7 +6189,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2022-01-10T02:56:37-05:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6155,7 +6215,7 @@
       "ats_slug": "janestreet",
       "posted_at": "2025-06-23T05:19:52-04:00",
       "updated_at": "2026-11-03T10:18:06-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6183,7 +6243,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6209,7 +6269,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-13T00:00:00Z",
       "updated_at": "2026-08-13T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6241,7 +6301,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-20T00:00:00Z",
       "updated_at": "2026-08-20T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6270,7 +6330,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2025-05-21T00:00:00Z",
       "updated_at": "2025-05-21T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6298,7 +6358,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-01T00:00:00Z",
       "updated_at": "2026-10-01T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6331,7 +6391,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-11-03T00:00:00Z",
       "updated_at": "2026-11-03T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6357,7 +6417,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-05-28T00:00:00Z",
       "updated_at": "2026-05-28T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -6383,7 +6443,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-01T00:00:00Z",
       "updated_at": "2026-10-01T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -6414,7 +6474,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-09T00:00:00Z",
       "updated_at": "2026-10-09T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -6447,7 +6507,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-08-04T00:00:00Z",
       "updated_at": "2026-08-04T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -6475,7 +6535,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2021-10-07T00:00:00Z",
       "updated_at": "2021-10-07T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6501,7 +6561,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-20T00:00:00Z",
       "updated_at": "2026-10-20T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6529,8 +6589,8 @@
       "source": "eightfold",
       "ats_slug": "mlp.com",
       "posted_at": "2026-05-20T00:00:00Z",
-      "updated_at": "2026-05-20T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "updated_at": "2026-11-20T07:16:11Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6561,7 +6621,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-07-21T00:00:00Z",
       "updated_at": "2026-07-21T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6593,7 +6653,7 @@
       "ats_slug": "mlp.com",
       "posted_at": "2026-10-07T00:00:00Z",
       "updated_at": "2026-10-07T00:00:00Z",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "systematic"
@@ -6624,7 +6684,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "derivatives"
@@ -6654,7 +6714,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-18",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -6683,7 +6743,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-05-12T10:30:05-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -6709,7 +6769,7 @@
       "ats_slug": "point72",
       "posted_at": "2023-11-20T13:23:03-05:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6742,7 +6802,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T16:56:42-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6773,7 +6833,7 @@
       "ats_slug": "point72",
       "posted_at": "2024-08-15T17:00:07-04:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -6804,7 +6864,7 @@
       "ats_slug": "point72",
       "posted_at": "2023-12-15T09:26:33-05:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "data scientist"
@@ -6837,7 +6897,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-09-22T02:04:46-04:00",
       "updated_at": "2026-11-11T03:19:40-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -6867,7 +6927,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-11-17T04:37:35-05:00",
       "updated_at": "2026-11-17T22:52:16-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -6895,7 +6955,7 @@
       "ats_slug": "point72",
       "posted_at": "2026-01-14T13:29:51-05:00",
       "updated_at": "2026-11-09T22:51:55-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -6924,7 +6984,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -6950,7 +7010,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-08-05",
       "updated_at": "2026-08-05",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -6976,7 +7036,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7002,7 +7062,7 @@
       "ats_slug": "polymer-capital",
       "posted_at": "2026-06-23",
       "updated_at": "2026-06-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7028,7 +7088,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7060,7 +7120,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-10-21T08:53:55-04:00",
       "updated_at": "2026-10-22T06:33:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7088,7 +7148,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-09-21T08:06:00-04:00",
       "updated_at": "2026-10-12T07:56:55-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7116,7 +7176,7 @@
       "ats_slug": "schonfeld",
       "posted_at": "2026-08-18T17:22:57-04:00",
       "updated_at": "2026-09-30T11:04:07-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "strategist"
@@ -7145,7 +7205,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-12-21T04:26:42-05:00",
       "updated_at": "2026-10-28T07:49:11-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -7178,7 +7238,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-14T12:28:24-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7212,7 +7272,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-08-08T06:24:12-04:00",
       "updated_at": "2026-10-28T10:58:27-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7241,7 +7301,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:50-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7273,7 +7333,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-06-21T03:20:53-04:00",
       "updated_at": "2026-10-28T10:56:58-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7301,7 +7361,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-23T16:34:49-04:00",
       "updated_at": "2026-10-28T10:59:25-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "sre"
@@ -7334,7 +7394,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-04-18T14:27:42-04:00",
       "updated_at": "2026-10-28T11:13:08-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7363,7 +7423,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2025-12-17T05:20:00-05:00",
       "updated_at": "2026-10-28T11:28:15-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7391,7 +7451,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2025-06-25T00:16:04-04:00",
       "updated_at": "2026-10-28T11:08:54-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -7421,7 +7481,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-11-30T07:49:23-05:00",
       "updated_at": "2026-10-28T11:41:21-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7453,7 +7513,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-28T16:06:10-04:00",
       "updated_at": "2026-10-28T11:41:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7485,7 +7545,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2022-06-23T13:53:42-04:00",
       "updated_at": "2026-10-28T11:40:59-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7516,7 +7576,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-28T15:28:05-04:00",
       "updated_at": "2026-10-28T11:41:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7546,7 +7606,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-07-23T01:02:19-04:00",
       "updated_at": "2026-10-28T11:39:47-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7576,7 +7636,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-09-25T09:26:38-04:00",
       "updated_at": "2026-10-28T11:39:08-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7607,7 +7667,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-09-30T07:39:34-04:00",
       "updated_at": "2026-10-28T11:38:07-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7639,7 +7699,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2023-05-02T09:17:00-04:00",
       "updated_at": "2026-10-28T11:40:23-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -7670,7 +7730,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2020-08-17T09:41:38-04:00",
       "updated_at": "2026-10-28T11:35:39-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7701,7 +7761,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-12-04T04:16:11-05:00",
       "updated_at": "2026-10-28T11:35:19-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7731,7 +7791,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-04-20T09:24:32-04:00",
       "updated_at": "2026-10-28T11:34:27-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7760,7 +7820,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2024-08-08T06:25:03-04:00",
       "updated_at": "2026-10-28T10:58:27-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7793,7 +7853,7 @@
       "ats_slug": "squarepointcapital",
       "posted_at": "2026-05-05T04:11:44-04:00",
       "updated_at": "2026-10-28T11:34:17-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -7822,7 +7882,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-09",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quantitative"
@@ -7853,7 +7913,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-07-28",
       "updated_at": "2026-10-16",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7883,7 +7943,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-26",
       "updated_at": "2026-10-26",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "pricing"
@@ -7913,7 +7973,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-09-30",
       "updated_at": "2026-10-22",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7942,7 +8002,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-08-25",
       "updated_at": "2026-10-06",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -7971,7 +8031,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-26",
       "updated_at": "2026-11-09",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8001,7 +8061,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-08-03",
       "updated_at": "2026-10-23",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8030,7 +8090,7 @@
       "ats_slug": "sig",
       "posted_at": "2026-10-23",
       "updated_at": "2026-11-19",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8056,7 +8116,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-19",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "research"
@@ -8082,7 +8142,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-11-17",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "hft"
@@ -8113,7 +8173,7 @@
       "ats_slug": "efc",
       "posted_at": "2026-03-20",
       "updated_at": "",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "quant"
@@ -8146,7 +8206,7 @@
       "ats_slug": "virtu",
       "posted_at": "2020-03-12T01:23:13-04:00",
       "updated_at": "2026-06-04T22:48:43-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "developer"
@@ -8176,7 +8236,7 @@
       "ats_slug": "virtu",
       "posted_at": "2026-05-04T04:49:26-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -8205,7 +8265,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-07-29T13:14:20-04:00",
       "updated_at": "2026-05-12T18:11:31-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trader"
@@ -8235,7 +8295,7 @@
       "ats_slug": "virtu",
       "posted_at": "2021-07-15T20:55:20-04:00",
       "updated_at": "2026-09-18T03:02:27-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
@@ -8265,7 +8325,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-05-08T10:36:28-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -8298,7 +8358,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-06-07T22:37:46-04:00",
       "updated_at": "2026-06-07T22:44:03-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "researcher"
@@ -8330,7 +8390,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2023-05-11T14:21:04-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "portfolio manager"
@@ -8362,7 +8422,7 @@
       "ats_slug": "worldquant",
       "posted_at": "2026-03-19T09:20:16-04:00",
       "updated_at": "2026-05-04T13:20:10-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineering"
@@ -8392,7 +8452,7 @@
       "ats_slug": "xtxmarketstechnologies",
       "posted_at": "2026-03-09T12:32:38-04:00",
       "updated_at": "2026-06-23T09:35:44-04:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "engineer"
@@ -8423,7 +8483,7 @@
       "ats_slug": "xtxmarketstechnologies",
       "posted_at": "2026-07-22T04:51:54-04:00",
       "updated_at": "2026-11-17T05:38:37-05:00",
-      "fetched_at": "2026-11-20T00:42:41Z",
+      "fetched_at": "2026-11-20T07:27:33Z",
       "quant_score": 1,
       "matched_keywords": [
         "trading"
